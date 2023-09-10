@@ -3,6 +3,7 @@ package org.soulslike;
 
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.RegisterGuiOverlaysEvent;
@@ -17,10 +18,12 @@ import org.soulslike.common.objects.blocks.vase.GenericVaseEntityRenderer;
 import org.soulslike.common.registries.SoulsBlockEntities;
 import org.soulslike.common.registries.SoulsFluids;
 
-@Mod.EventBusSubscriber(modid = Soulslike.MODID, value = Dist.CLIENT)
+import static org.soulslike.Soulslike.MODID;
+
+@Mod.EventBusSubscriber(modid = MODID, value = Dist.CLIENT)
 public class ClientEvents {
 
-    @Mod.EventBusSubscriber(modid = Soulslike.MODID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD)
+    @Mod.EventBusSubscriber(modid = MODID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD)
     public static class ClientModBusEvents {
         @SubscribeEvent
         public static void registerGuiOverlays(RegisterGuiOverlaysEvent event) {

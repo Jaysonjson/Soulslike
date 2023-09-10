@@ -14,6 +14,7 @@ import org.soulslike.Soulslike;
 import org.soulslike.common.objects.items.BeeTears;
 import org.soulslike.common.objects.items.ItemWithDescription;
 import org.soulslike.common.objects.items.SoulItem;
+import org.soulslike.common.objects.items.gecko.WandItem;
 import org.soulslike.common.objects.items.staff.CloudStaff;
 import org.soulslike.common.objects.items.staff.FeatherStaff;
 import org.soulslike.common.objects.items.staff.RoseStaff;
@@ -44,7 +45,10 @@ public class SoulsItems {
     //public static final RegistryObject<Item> RUBY = registerItem("ruby", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB);
     FEATHER_STAFF = registerItem("feather_staff", () -> new FeatherStaff(new Item.Properties().defaultDurability(450), 120), SoulsCreativeTabs.WEAPON_TAB),
     FEATHER_WAND = registerItem("feather_wand", () -> new FeatherStaff(new Item.Properties().defaultDurability(325), 200), SoulsCreativeTabs.WEAPON_TAB),
-    BLOOD_BUCKET = registerItem("blood_bucket", () -> new BucketItem(SoulsFluids.SOURCE_BLOOD, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)), SoulsCreativeTabs.OTHER_TAB)
+    BLOOD_BUCKET = registerItem("blood_bucket", () -> new BucketItem(SoulsFluids.SOURCE_BLOOD, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)), SoulsCreativeTabs.OTHER_TAB),
+    SCROLL = registerItem("scroll", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
+    OAK_BARK = registerItem("oak_bark", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
+    OAK_WAND = registerItem("oak_wand", () -> new WandItem(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB)
 
     ;
 
