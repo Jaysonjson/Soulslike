@@ -38,6 +38,7 @@ public class WandItem extends Item implements GeoItem {
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
         if (level instanceof ServerLevel serverLevel) {
+            player.getCooldowns().addCooldown(this, 30);
             Random random = new Random();
             int c = random.nextInt(3) + 1;
             triggerAnim(player, GeoItem.getOrAssignId(player.getItemInHand(hand), serverLevel), "cast" + c, "cast" + c);
