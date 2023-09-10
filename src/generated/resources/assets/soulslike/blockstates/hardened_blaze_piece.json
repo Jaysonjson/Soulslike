@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "soulslike:item/hardened_blaze_piece"
+    }
+  }
+}

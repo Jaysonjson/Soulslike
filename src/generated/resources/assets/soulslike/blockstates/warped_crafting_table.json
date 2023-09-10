@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "soulslike:item/warped_crafting_table"
+    }
+  }
+}

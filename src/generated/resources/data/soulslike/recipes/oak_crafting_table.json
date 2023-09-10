@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "soulslike:souls_crafting_tables"
+    }
+  ],
+  "result": {
+    "item": "minecraft:crafting_table"
+  }
+}

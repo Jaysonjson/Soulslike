@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "entries": [
+    "soulslike:big_scrapped_sword",
+    "soulslike:hardened_blaze",
+    "soulslike:titanitol_ingot",
+    "soulslike:big_stone_sword",
+    "soulslike:iron_dagger",
+    "soulslike:scrapped_dagger",
+    "soulslike:cloud_staff",
+    "soulslike:cloud_wand",
+    "soulslike:rose_wand"
+  ]
+}

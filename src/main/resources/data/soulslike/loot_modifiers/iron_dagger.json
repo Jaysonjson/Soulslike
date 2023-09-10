@@ -1,0 +1,33 @@
+{
+  "type": "soulslike:new_single_item",
+  "conditions": [{
+    "condition": "minecraft:random_chance",
+    "chance": 0.65
+  },
+    {
+      "condition": "minecraft:any_of",
+      "terms": [{
+        "condition": "forge:loot_table_id",
+        "loot_table_id": "minecraft:chests/village/village_armorer"
+      },
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "minecraft:chests/village/village_weaponsmith"
+        }
+      ]
+    }
+  ],
+  "enchantments": [{
+    "enchantment": "minecraft:sharpness",
+    "level": 1,
+    "chance": 0.3,
+    "upgrade_chance": 0.15
+  }, {
+    "enchantment": "minecraft:looting",
+    "level": 1,
+    "chance": 0.2,
+    "upgrade_chance": 0.15
+  }
+  ],
+  "item": "soulslike:iron_dagger"
+}

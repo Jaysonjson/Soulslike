@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "   ",
+    "_ _",
+    "___"
+  ],
+  "key": {
+    "_": {
+      "item": "minecraft:quartz_slab"
+    }
+  },
+  "result": {
+    "item": "soulslike:quartz_cake_plate",
+    "count": 1
+  }
+}

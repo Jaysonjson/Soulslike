@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "soulslike:titanitol_ingot"
+    }
+  },
+  "result": {
+    "item": "soulslike:titanitol_block",
+    "count": 1
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "M": {
+      "item": "minecraft:birch_slab"
+    },
+    "S": {
+      "item": "minecraft:birch_planks"
+    }
+  },
+  "pattern": [
+    "MMM",
+    "S S",
+    "MMM"
+  ],
+  "result": {
+    "item": "soulslike:birch_crate"
+  },
+  "show_notification": true
+}

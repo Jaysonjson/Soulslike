@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "soulslike:item/big_swords/big_wooden_sword"
+  }
+}

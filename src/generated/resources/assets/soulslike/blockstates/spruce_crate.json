@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "soulslike:item/spruce_crate"
+    }
+  }
+}

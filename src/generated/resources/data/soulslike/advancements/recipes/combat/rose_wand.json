@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "soulslike:rose_wand"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "ruby_rose": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "soulslike:ruby_rose"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "ruby_rose",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "soulslike:rose_wand"
+    ]
+  },
+  "sends_telemetry_event": false
+}

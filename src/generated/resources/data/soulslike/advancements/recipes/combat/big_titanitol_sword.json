@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "soulslike:big_titanitol_sword"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "titanitol_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "soulslike:titanitol_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "titanitol_ingot",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "soulslike:big_titanitol_sword"
+    ]
+  },
+  "sends_telemetry_event": false
+}

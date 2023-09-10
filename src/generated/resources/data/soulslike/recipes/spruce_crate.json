@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "M": {
+      "item": "minecraft:spruce_slab"
+    },
+    "S": {
+      "item": "minecraft:spruce_planks"
+    }
+  },
+  "pattern": [
+    "MMM",
+    "S S",
+    "MMM"
+  ],
+  "result": {
+    "item": "soulslike:spruce_crate"
+  },
+  "show_notification": true
+}

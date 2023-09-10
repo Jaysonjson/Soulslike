@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "soulslike:item/dark_oak_crate"
+    }
+  }
+}

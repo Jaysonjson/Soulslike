@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "M": {
+      "item": "minecraft:oak_log"
+    },
+    "S": {
+      "item": "minecraft:oak_planks"
+    }
+  },
+  "pattern": [
+    "MMM",
+    "S S",
+    "MMM"
+  ],
+  "result": {
+    "item": "soulslike:oak_log_crate"
+  },
+  "show_notification": true
+}

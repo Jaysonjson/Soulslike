@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "R": {
+      "item": "soulslike:ruby_rose"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "R",
+    "S"
+  ],
+  "result": {
+    "item": "soulslike:rose_wand"
+  },
+  "show_notification": true
+}

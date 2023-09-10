@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "soulslike:item/bamboo_crafting_table"
+    }
+  }
+}

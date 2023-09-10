@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "M": {
+      "item": "soulslike:hardened_blaze"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    " MM",
+    "MMM",
+    "SM "
+  ],
+  "result": {
+    "item": "soulslike:big_blaze_sword"
+  },
+  "show_notification": true
+}

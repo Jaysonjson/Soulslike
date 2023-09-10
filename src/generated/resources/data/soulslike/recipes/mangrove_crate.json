@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "M": {
+      "item": "minecraft:mangrove_slab"
+    },
+    "S": {
+      "item": "minecraft:mangrove_planks"
+    }
+  },
+  "pattern": [
+    "MMM",
+    "S S",
+    "MMM"
+  ],
+  "result": {
+    "item": "soulslike:mangrove_crate"
+  },
+  "show_notification": true
+}

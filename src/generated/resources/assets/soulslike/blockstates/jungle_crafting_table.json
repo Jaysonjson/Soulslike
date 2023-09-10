@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "soulslike:item/jungle_crafting_table"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "M": {
+      "item": "minecraft:cherry_slab"
+    },
+    "S": {
+      "item": "minecraft:cherry_planks"
+    }
+  },
+  "pattern": [
+    "MMM",
+    "S S",
+    "MMM"
+  ],
+  "result": {
+    "item": "soulslike:cherry_crate"
+  },
+  "show_notification": true
+}

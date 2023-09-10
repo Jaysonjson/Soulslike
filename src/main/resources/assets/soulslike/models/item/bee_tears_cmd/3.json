@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "soulslike:item/bee_tears/bee_tears_50"
+  }
+}

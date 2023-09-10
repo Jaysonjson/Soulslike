@@ -1,0 +1,18 @@
+{
+  "fallback": "minecraft:empty",
+
+  "elements": [
+    {
+
+      "weight": 1,
+      "element": {
+
+        "location": "soulslike:mud_church",
+
+        "processors": "soulslike:randomize_mud",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "soulslike:titanitol_block"
+    }
+  ],
+  "result": {
+    "item": "soulslike:titanitol_ingot",
+    "count": 9
+  }
+}

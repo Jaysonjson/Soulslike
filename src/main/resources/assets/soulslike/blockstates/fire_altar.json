@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "unlighted=true": { "model": "soulslike:block/fire_altar" },
+    "unlighted=false": { "model": "soulslike:block/fire_altar_lighted" }
+
+  }
+}

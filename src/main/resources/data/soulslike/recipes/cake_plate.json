@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "   ",
+    "_ _",
+    "___"
+  ],
+  "key": {
+    "_": {
+      "item": "minecraft:smooth_stone_slab"
+    }
+  },
+  "result": {
+    "item": "soulslike:cake_plate",
+    "count": 1
+  }
+}

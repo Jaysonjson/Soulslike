@@ -1,0 +1,33 @@
+{
+  "processors": [
+    {
+      "processor_type": "minecraft:rule",
+      "rules": [
+        {
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "input_predicate": {
+            "predicate_type": "minecraft:block_match",
+            "block": "minecraft:oak_slab"
+          },
+          "output_state": {
+            "Name": "minecraft:acacia_slab"
+          }
+        },
+        {
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "input_predicate": {
+            "predicate_type": "minecraft:block_match",
+            "block": "minecraft:oak_fence"
+          },
+          "output_state": {
+            "Name": "minecraft:acacia_fence"
+          }
+        }
+      ]
+    }
+  ]
+}
