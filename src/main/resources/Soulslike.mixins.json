@@ -1,12 +1,13 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "org.Soulslike.mixin",
-  "compatibilityLevel": "JAVA_8",
+  "package": "org.soulslike.mixins",
+  "compatibilityLevel": "JAVA_17",
   "refmap": "soulslike.refmap.json",
   "mixins": [
   ],
   "client": [
+    "ClientPlayerDeath"
   ],
   "injectors": {
     "defaultRequire": 1
