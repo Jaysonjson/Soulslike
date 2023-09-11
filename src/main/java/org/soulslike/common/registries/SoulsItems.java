@@ -10,7 +10,9 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import org.soulslike.SoulsMap;
 import org.soulslike.Soulslike;
+import org.soulslike.common.Data;
 import org.soulslike.common.objects.items.BeeTears;
 import org.soulslike.common.objects.items.ItemWithDescription;
 import org.soulslike.common.objects.items.SoulItem;
@@ -89,7 +91,7 @@ public class SoulsItems {
     public static ArrayList<RegistryObject<Item>> ENTITY_SOULS = new ArrayList<>();
 
     public static void createEntitySouls() {
-        for (Map.Entry<String, Integer> stringIntegerEntry : Soulslike.SOULS.soulsMap.entrySet()) {
+        for (Map.Entry<String, Integer> stringIntegerEntry : Data.SOULS_MAP.entrySet()) {
             RegistryObject<Item> placeHolder = ITEMS.register(stringIntegerEntry.getKey() + "_soul", () -> new SoulItem(new Item.Properties(), stringIntegerEntry.getValue(), "item.soulslike.soul_of_a_giant.description"));
             ENTITY_SOULS.add(placeHolder);
         }

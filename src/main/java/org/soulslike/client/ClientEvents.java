@@ -1,4 +1,4 @@
-package org.soulslike;
+package org.soulslike.client;
 
 
 import net.minecraft.client.renderer.ItemBlockRenderTypes;

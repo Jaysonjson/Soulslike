@@ -1,4 +1,4 @@
-package org.soulslike;
+package org.soulslike.common;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
@@ -13,6 +13,7 @@ import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.LogicalSide;
 import net.minecraftforge.fml.common.Mod;
+import org.soulslike.Soulslike;
 import org.soulslike.common.capabilities.PlayerLevelProvider;
 import org.soulslike.common.capabilities.PlayerSoulsProvider;
 
@@ -34,12 +35,6 @@ public class ModEvents {
     public static void testTick(TickEvent.PlayerTickEvent event) {
         if(event.side == LogicalSide.SERVER) {
             event.player.getCapability(PlayerSoulsProvider.PLAYER_SOULS).ifPresent(playerSouls -> {
-               // if(event.player.getRandom().nextFloat() < 0.005f) {
-                    //playerSouls.setSouls(playerSouls.getSouls() + 10000000);
-                    //String str = String.valueOf(playerSouls.getSouls());
-                    //event.player.sendSystemMessage(Component.literal(str));
-                    //ModMessages.sendToPlayer(new PlayerSoulsDataSyncS2CPacket(playerSouls.getSouls()), (ServerPlayer) event.player);
-               // }
                 if(playerSouls.newSouls_ != 0) {
                     ++playerSouls.newSoulsTick;
                     playerSouls.sync((ServerPlayer) event.player);
@@ -74,8 +69,8 @@ public class ModEvents {
     public static void onEntityDeath(LivingDeathEvent event) {
         if(event.getSource().getEntity() instanceof Player player) {
             player.getCapability(PlayerSoulsProvider.PLAYER_SOULS).ifPresent(playerSouls -> {
-                if (Soulslike.SOULS.soulsMap.containsKey(event.getEntity().getType().getDescriptionId())) {
-                    playerSouls.setSouls(playerSouls.getSouls() + Soulslike.SOULS.soulsMap.get(event.getEntity().getType().getDescriptionId()));
+                if (Data.SOULS_MAP.containsKey(event.getEntity().getType().getDescriptionId())) {
+                    playerSouls.setSouls(playerSouls.getSouls() + Data.SOULS_MAP.get(event.getEntity().getType().getDescriptionId()));
                     playerSouls.sync((ServerPlayer) player);
                 }
             });

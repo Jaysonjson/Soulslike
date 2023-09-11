@@ -1,15 +1,11 @@
 package org.soulslike.common.capabilities;
 
-import com.mojang.datafixers.types.templates.CompoundList;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.NbtUtils;
-import net.minecraft.nbt.Tag;
 import net.minecraft.server.level.ServerPlayer;
-import org.apache.commons.lang3.SerializationUtils;
-import org.soulslike.ModMessages;
-import org.soulslike.network.packet.PlayerLevelDataSyncS2CPacket;
+import org.soulslike.network.packet.ModMessages;
 import org.soulslike.network.packet.PlayerSoulsDataSyncS2CPacket;
 
 import java.util.ArrayList;

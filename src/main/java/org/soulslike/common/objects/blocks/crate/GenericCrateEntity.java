@@ -12,7 +12,7 @@ import net.minecraft.world.inventory.ChestMenu;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.RandomizableContainerBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import org.soulslike.ModMessages;
+import org.soulslike.network.packet.ModMessages;
 import org.soulslike.network.packet.CrateSyncS2CPacket;
 import org.soulslike.common.registries.SoulsBlockEntities;
 

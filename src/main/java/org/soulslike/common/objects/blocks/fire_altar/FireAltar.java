@@ -21,7 +21,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
-import org.soulslike.ModMessages;
+import org.soulslike.network.packet.ModMessages;
 import org.soulslike.SoulsTags;
 import org.soulslike.network.packet.FireAltarSyncS2CPacket;
 

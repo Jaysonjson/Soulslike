@@ -2,7 +2,7 @@ package org.soulslike;
 
 import java.util.HashMap;
 
-public class Souls {
-    public HashMap<String, Integer> soulsMap = new HashMap<>();
+public class SoulsMap {
+    public HashMap<String, Integer> SOULS_MAP = new HashMap<>();
     public String PROTOCOL = "0V0";
 }

@@ -30,7 +30,6 @@ public abstract class SoulsRecipeBuilder extends RecipeProvider implements ICond
                 pattern("S S").
                 pattern("MMM").
                 unlockedBy(planks.toString(), inventoryTrigger(ItemPredicate.Builder.item().of(planks).build())).save(consumer);
-
     }
 
     public void bigSwordRecipe(Consumer<FinishedRecipe> consumer, Item sword, Item material) {

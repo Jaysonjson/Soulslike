@@ -1,13 +1,9 @@
-package org.soulslike.objects.codecs;
+package org.soulslike.common.objects.codecs;
 
 import com.google.gson.*;
-import com.mojang.authlib.properties.Property;
-import com.mojang.authlib.properties.PropertyMap;
-import org.soulslike.common.objects.codecs.EnchantmentCodec;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.Map;
 
 @Deprecated
 public class EnchantmentCodecArray {

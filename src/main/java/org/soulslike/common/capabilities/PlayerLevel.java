@@ -5,7 +5,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import org.apache.commons.lang3.SerializationUtils;
-import org.soulslike.ModMessages;
+import org.soulslike.network.packet.ModMessages;
 import org.soulslike.network.packet.PlayerLevelDataSyncS2CPacket;
 
 import java.util.HashMap;

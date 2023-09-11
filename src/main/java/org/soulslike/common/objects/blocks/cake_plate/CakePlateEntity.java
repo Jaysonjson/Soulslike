@@ -7,7 +7,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.registries.ForgeRegistries;
-import org.soulslike.ModMessages;
+import org.soulslike.network.packet.ModMessages;
 import org.soulslike.common.SoulsNBTKeys;
 import org.soulslike.common.registries.SoulsBlockEntities;
 import org.soulslike.network.packet.CakePlateSyncS2CPacket;
