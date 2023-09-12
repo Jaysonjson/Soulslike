@@ -7,7 +7,7 @@
   "mixins": [
   ],
   "client": [
-    "ClientPlayerDeath"
+    "ClientPlayerDeath", "ClientPlayerDeathMinecraft"
   ],
   "injectors": {
     "defaultRequire": 1

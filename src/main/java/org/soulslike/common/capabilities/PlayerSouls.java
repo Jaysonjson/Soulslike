@@ -37,6 +37,10 @@ public class PlayerSouls {
         souls_ = Math.min(souls, MAX_SOULS);
     }
 
+    public void increaseSouls(int increment) {
+        setSouls(getSouls() + increment);
+    }
+
     public void saveData(CompoundTag tag) {
         tag.putInt(NBT_TAG_SOULS, souls_);
         ListTag blockPosList = new ListTag();

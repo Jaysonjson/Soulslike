@@ -18,6 +18,7 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 println "Java: ${System.getProperty 'java.version'}, JVM: ${System.getProperty 'java.vm.version'} (${System.getProperty 'java.vendor'}), Arch: ${System.getProperty 'os.arch'}"
 minecraft {
     mappings channel: mapping_channel, version: mapping_version
+    accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
     copyIdeResources = true
     runs {
         configureEach {
@@ -79,8 +80,18 @@ dependencies {
     runtimeOnly(fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}"))
 
     implementation fg.deobf("software.bernie.geckolib:geckolib-forge-${minecraft_version}:${geckolib_version}")
-
+    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 }
+
+mixin {
+    // MixinGradle Settings
+    add sourceSets.main, 'soulslike.refmap.json'
+    config 'Soulslike.mixins.json'
+
+    debug.verbose = true
+    debug.export = true
+}
+
 tasks.withType(ProcessResources).configureEach {
     var replaceProperties = [
             minecraft_version   : minecraft_version, minecraft_version_range: minecraft_version_range,

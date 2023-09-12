@@ -10,12 +10,14 @@ import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.EntityJoinLevelEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
+import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.LogicalSide;
 import net.minecraftforge.fml.common.Mod;
 import org.soulslike.Soulslike;
 import org.soulslike.common.capabilities.PlayerLevelProvider;
 import org.soulslike.common.capabilities.PlayerSoulsProvider;
+import org.soulslike.helpers.SoulsUtil;
 
 @Mod.EventBusSubscriber(modid = Soulslike.MODID)
 public class ModEvents {
@@ -32,7 +34,7 @@ public class ModEvents {
     }
 
     @SubscribeEvent
-    public static void testTick(TickEvent.PlayerTickEvent event) {
+    public static void soulsDisplayTick(TickEvent.PlayerTickEvent event) {
         if(event.side == LogicalSide.SERVER) {
             event.player.getCapability(PlayerSoulsProvider.PLAYER_SOULS).ifPresent(playerSouls -> {
                 if(playerSouls.newSouls_ != 0) {
@@ -69,25 +71,23 @@ public class ModEvents {
     public static void onEntityDeath(LivingDeathEvent event) {
         if(event.getSource().getEntity() instanceof Player player) {
             player.getCapability(PlayerSoulsProvider.PLAYER_SOULS).ifPresent(playerSouls -> {
-                if (Data.SOULS_MAP.containsKey(event.getEntity().getType().getDescriptionId())) {
-                    playerSouls.setSouls(playerSouls.getSouls() + Data.SOULS_MAP.get(event.getEntity().getType().getDescriptionId()));
-                    playerSouls.sync((ServerPlayer) player);
-                }
+                playerSouls.increaseSouls(SoulsUtil.getEntitySouls(event.getEntity()));
+                playerSouls.sync((ServerPlayer) player);
             });
         }
 
         if(event.getSource().getEntity() instanceof Player attacker && event.getEntity() instanceof Player victim) {
             attacker.getCapability(PlayerSoulsProvider.PLAYER_SOULS).ifPresent(attackerSouls -> victim.getCapability(PlayerSoulsProvider.PLAYER_SOULS).ifPresent(victimSouls -> {
-                attackerSouls.setSouls(attackerSouls.getSouls() + victimSouls.getSouls());
+                attackerSouls.increaseSouls(victimSouls.getSouls());
                 attackerSouls.sync((ServerPlayer) attacker);
             }));
         }
     }
 
-   /* @SubscribeEvent
+    /*@SubscribeEvent
     public static void onPlayerClone(PlayerEvent.Clone event) {
         if(event.isWasDeath()) {
-            event.getOriginal().getCapability(PlayerSoulsProvider.PLAYER_SOULS).ifPresent(oldStore -> event.getEntity().getCapability(PlayerSoulsProvider.PLAYER_SOULS).ifPresent(newStore -> newStore.setShowDeathText(true)));
+            event.getOriginal().getCapability(PlayerLevelProvider.PLAYER_LEVEL).ifPresent(oldStore -> event.getEntity().getCapability(PlayerLevelProvider.PLAYER_LEVEL).ifPresent(newStore -> newStore.setShowDeathText(true)));
         }
     }*/
 
