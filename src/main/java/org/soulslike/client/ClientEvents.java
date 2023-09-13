@@ -12,13 +12,15 @@ import net.minecraftforge.client.event.RegisterGuiOverlaysEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import org.soulslike.client.overlay.DeathTextOverlay;
+import org.soulslike.client.overlay.EntityTextOverlay;
 import org.soulslike.client.overlay.PlayerSoulsEntityOverlay;
 import org.soulslike.client.overlay.SoulsHudOverlay;
 import org.soulslike.client.renderer.PlayerSoulsEntityRenderer;
 import org.soulslike.common.objects.blocks.cake_plate.CakePlateEntityRenderer;
 import org.soulslike.common.objects.blocks.fire_altar.FireAltarEntityRenderer;
 import org.soulslike.common.objects.blocks.vase.GenericVaseEntityRenderer;
+import org.soulslike.common.objects.entities.IEntityTextOverlay;
+import org.soulslike.common.objects.entities.IRayTracedEntity;
 import org.soulslike.common.objects.entities.PlayerSoulsEntity;
 import org.soulslike.common.registries.SoulsBlockEntities;
 import org.soulslike.common.registries.SoulsEntities;
@@ -33,9 +35,9 @@ public class ClientEvents {
     public static class ClientModBusEvents {
         @SubscribeEvent
         public static void registerGuiOverlays(RegisterGuiOverlaysEvent event) {
-            event.registerAboveAll("souls", SoulsHudOverlay.HUD_SOULS);
-            event.registerAboveAll("death_text", DeathTextOverlay.HUD_DEATH_TEXT);
-            event.registerAboveAll("player_souls_entity_overlay", PlayerSoulsEntityOverlay.HUD);
+            event.registerAboveAll("souls", SoulsHudOverlay.HUD);
+            //event.registerAboveAll("player_souls_entity_overlay", PlayerSoulsEntityOverlay.HUD);
+            event.registerAboveAll("entity_text", EntityTextOverlay.HUD);
         }
 
         @SubscribeEvent
@@ -57,11 +59,23 @@ public class ClientEvents {
     @SubscribeEvent
     public void mouseMove(MovementInputUpdateEvent event) {
         EntityTrace entityTrace = new EntityTrace();
-        Entity entity = entityTrace.getEntityInCrosshair(Minecraft.getInstance().getPartialTick(), 50.0);
-        if(entity instanceof PlayerSoulsEntity playerSoulsEntity) {
+        Entity entity = entityTrace.getEntityInCrosshair(Minecraft.getInstance().getPartialTick(), 7.0f);
+        /*if(entity instanceof PlayerSoulsEntity playerSoulsEntity) {
             PlayerSoulsEntityOverlay.SOULS = playerSoulsEntity.getEntityData().get(PlayerSoulsEntity.SOULS);
         } else {
             PlayerSoulsEntityOverlay.SOULS = 0;
+        }*/
+
+        /*if(entity instanceof IRayTracedEntity rayTracedEntity) {
+            rayTracedEntity.onMouseRayTraceHit();
+        } else {
+            PlayerSoulsEntityOverlay.SOULS = 0;
+        }*/
+
+        if(entity instanceof IEntityTextOverlay entityTextOverlay) {
+            EntityTextOverlay.TEXT = entityTextOverlay.getEntityTextOverlay();
+        } else {
+            EntityTextOverlay.TEXT = "";
         }
 
     }

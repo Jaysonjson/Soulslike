@@ -11,7 +11,7 @@ public class SoulsHudOverlay {
 
     private static final ResourceLocation BACKGROUND = new ResourceLocation(Soulslike.MODID, "textures/hud/souls/background.png");
     private static final ResourceLocation SOULS = new ResourceLocation(Soulslike.MODID, "textures/hud/souls/souls.png");
-    public static final IGuiOverlay HUD_SOULS = ((gui, guiGraphics, partialTick, screenWidth, screenHeight) -> {
+    public static final IGuiOverlay HUD = ((gui, guiGraphics, partialTick, screenWidth, screenHeight) -> {
         int x = screenWidth;
         int y = screenHeight;
         int souls = ClientSoulsData.getSouls();

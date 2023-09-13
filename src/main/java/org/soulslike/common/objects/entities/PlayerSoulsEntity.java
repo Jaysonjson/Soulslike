@@ -37,12 +37,13 @@ import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
+import org.soulslike.client.overlay.PlayerSoulsEntityOverlay;
 import org.soulslike.common.SoulsNBTKeys;
 import org.soulslike.common.capabilities.PlayerSoulsProvider;
 import org.soulslike.common.registries.SoulsEntities;
 import org.soulslike.helpers.SoulsUtil;
 
-public class PlayerSoulsEntity extends Entity {
+public class PlayerSoulsEntity extends Entity implements IEntityTextOverlay {
 
     int souls = 0;
     int time = 0;
@@ -133,5 +134,10 @@ public class PlayerSoulsEntity extends Entity {
 
     public int getSouls() {
         return souls;
+    }
+
+    @Override
+    public String getEntityTextOverlay() {
+        return "Contained Souls: " + getEntityData().get(PlayerSoulsEntity.SOULS);
     }
 }
