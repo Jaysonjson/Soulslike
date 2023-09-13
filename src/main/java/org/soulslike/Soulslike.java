@@ -41,6 +41,7 @@ public class Soulslike {
         SoulsFluidTypes.register(modEventBus);
         SoulsCreativeTabs.register(modEventBus);
         SoulsLootCodecs.register(modEventBus);
+        SoulsEntities.register(modEventBus);
     }
 
     @SubscribeEvent

@@ -5,7 +5,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraftforge.network.NetworkEvent;
 import org.soulslike.common.capabilities.PlayerSouls;
-import org.soulslike.client.ClientSoulsData;
+import org.soulslike.client.data.ClientSoulsData;
 
 import java.util.ArrayList;
 import java.util.function.Supplier;
@@ -39,9 +39,9 @@ public class PlayerSoulsDataSyncS2CPacket {
         this.newPlayerSouls = buf.readInt();
         this.newPlayerSoulsTick = buf.readInt();
         this.beeStatuesSize = buf.readInt();
-        /*for (int i = 0; i == beeStatuesSize; i++) {
+        for (int i = 0; i < beeStatuesSize; i++) {
             this.beeStatues.add(buf.readBlockPos());
-        }*/
+        }
     }
 
     public void toBytes(FriendlyByteBuf buf) {

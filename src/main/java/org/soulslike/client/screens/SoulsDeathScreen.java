@@ -8,10 +8,7 @@ import net.minecraft.network.chat.Style;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.Nullable;
-import org.soulslike.client.ClientSoulsData;
-import org.soulslike.common.capabilities.PlayerSoulsProvider;
-
-import java.util.concurrent.atomic.AtomicReference;
+import org.soulslike.client.data.ClientSoulsData;
 
 @OnlyIn(Dist.CLIENT)
 public class SoulsDeathScreen extends DeathScreen {

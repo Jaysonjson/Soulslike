@@ -4,7 +4,7 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraftforge.network.NetworkEvent;
 import org.apache.commons.lang3.SerializationUtils;
 import org.soulslike.common.capabilities.PlayerLevel;
-import org.soulslike.client.ClientPlayerData;
+import org.soulslike.client.data.ClientPlayerData;
 
 import java.util.HashMap;
 import java.util.function.Supplier;

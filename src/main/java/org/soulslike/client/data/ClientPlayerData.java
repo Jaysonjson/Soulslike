@@ -1,4 +1,4 @@
-package org.soulslike.client;
+package org.soulslike.client.data;
 
 import java.util.HashMap;
 

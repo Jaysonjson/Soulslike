@@ -17,6 +17,7 @@ import net.minecraftforge.fml.common.Mod;
 import org.soulslike.Soulslike;
 import org.soulslike.common.capabilities.PlayerLevelProvider;
 import org.soulslike.common.capabilities.PlayerSoulsProvider;
+import org.soulslike.common.objects.entities.PlayerSoulsEntity;
 import org.soulslike.helpers.SoulsUtil;
 
 @Mod.EventBusSubscriber(modid = Soulslike.MODID)
@@ -81,6 +82,10 @@ public class ModEvents {
                 attackerSouls.increaseSouls(victimSouls.getSouls());
                 attackerSouls.sync((ServerPlayer) attacker);
             }));
+        } else if(event.getEntity() instanceof Player player) {
+            player.getCapability(PlayerSoulsProvider.PLAYER_SOULS).ifPresent(playerSouls -> {
+                player.level().addFreshEntity(new PlayerSoulsEntity(player.level(), player.position().x, player.position().y + 1, player.position().z, playerSouls.getSouls()));
+            });
         }
     }
 
