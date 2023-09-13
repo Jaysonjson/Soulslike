@@ -73,9 +73,9 @@ public class ClientEvents {
         }*/
 
         if(entity instanceof IEntityTextOverlay entityTextOverlay) {
-            EntityTextOverlay.TEXT = entityTextOverlay.getEntityTextOverlay();
+            entityTextOverlay.alterEntityOverlayText();
         } else {
-            EntityTextOverlay.TEXT = "";
+            EntityTextOverlay.TEXTS.clear();
         }
 
     }

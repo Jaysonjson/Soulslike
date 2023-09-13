@@ -37,7 +37,9 @@ import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
+import org.soulslike.client.overlay.EntityTextOverlay;
 import org.soulslike.client.overlay.PlayerSoulsEntityOverlay;
+import org.soulslike.client.overlay.player_souls.PlayerSoulsEntityEntries;
 import org.soulslike.common.SoulsNBTKeys;
 import org.soulslike.common.capabilities.PlayerSoulsProvider;
 import org.soulslike.common.registries.SoulsEntities;
@@ -49,6 +51,7 @@ public class PlayerSoulsEntity extends Entity implements IEntityTextOverlay {
     int time = 0;
 
     public static final EntityDataAccessor<Integer> SOULS = SynchedEntityData.defineId(PlayerSoulsEntity.class, EntityDataSerializers.INT);
+    public static final EntityDataAccessor<String> PLAYER_NAME = SynchedEntityData.defineId(PlayerSoulsEntity.class, EntityDataSerializers.STRING);
 
 
     public PlayerSoulsEntity(EntityType<?> p_19870_, Level p_19871_) {
@@ -56,11 +59,12 @@ public class PlayerSoulsEntity extends Entity implements IEntityTextOverlay {
         setNoGravity(false);
     }
 
-    public PlayerSoulsEntity(Level level, double x, double y, double z, int souls) {
+    public PlayerSoulsEntity(Level level, double x, double y, double z, int souls, String playerName) {
         this(SoulsEntities.PLAYER_SOULS.get(), level);
         setPos(x, y, z);
         this.souls = souls;
         getEntityData().set(SOULS, souls);
+        getEntityData().set(PLAYER_NAME, playerName);
         setNoGravity(false);
     }
 
@@ -117,6 +121,7 @@ public class PlayerSoulsEntity extends Entity implements IEntityTextOverlay {
     @Override
     protected void defineSynchedData() {
         getEntityData().define(SOULS, souls);
+        getEntityData().define(PLAYER_NAME, "Unknown");
     }
 
     @Override
@@ -137,7 +142,13 @@ public class PlayerSoulsEntity extends Entity implements IEntityTextOverlay {
     }
 
     @Override
-    public String getEntityTextOverlay() {
-        return "Contained Souls: " + getEntityData().get(PlayerSoulsEntity.SOULS);
+    public void alterEntityOverlayText() {
+        PlayerSoulsEntityEntries.Souls souls1 = new PlayerSoulsEntityEntries.Souls();
+        souls1.text = "Contained Souls: " + getEntityData().get(PlayerSoulsEntity.SOULS);
+        EntityTextOverlay.TEXTS.add(souls1);
+
+        PlayerSoulsEntityEntries.Player player = new PlayerSoulsEntityEntries.Player();
+        player.text = getEntityData().get(PlayerSoulsEntity.PLAYER_NAME) + "`s Souls";
+        EntityTextOverlay.TEXTS.add(player);
     }
 }

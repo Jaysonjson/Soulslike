@@ -84,7 +84,7 @@ public class ModEvents {
             }));
         } else if(event.getEntity() instanceof Player player) {
             player.getCapability(PlayerSoulsProvider.PLAYER_SOULS).ifPresent(playerSouls -> {
-                player.level().addFreshEntity(new PlayerSoulsEntity(player.level(), player.position().x, player.position().y + 1, player.position().z, playerSouls.getSouls()));
+                player.level().addFreshEntity(new PlayerSoulsEntity(player.level(), player.position().x, player.position().y + 1, player.position().z, playerSouls.getSouls(), player.getName().getString()));
             });
         }
     }
