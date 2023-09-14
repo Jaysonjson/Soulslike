@@ -5,6 +5,9 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.level.ClipContext;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.MovementInputUpdateEvent;
@@ -16,7 +19,9 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import org.soulslike.client.overlay.EntityTextOverlay;
 import org.soulslike.client.overlay.PlayerSoulsEntityOverlay;
 import org.soulslike.client.overlay.SoulsHudOverlay;
+import org.soulslike.client.overlay.block_overlay.BlockTextOverlay;
 import org.soulslike.client.renderer.PlayerSoulsEntityRenderer;
+import org.soulslike.common.objects.blocks.IBlockTextOverlay;
 import org.soulslike.common.objects.blocks.cake_plate.CakePlateEntityRenderer;
 import org.soulslike.common.objects.blocks.fire_altar.FireAltarEntityRenderer;
 import org.soulslike.common.objects.blocks.vase.GenericVaseEntityRenderer;
@@ -42,6 +47,7 @@ public class ClientEvents {
             event.registerAboveAll("souls", SoulsHudOverlay.HUD);
             //event.registerAboveAll("player_souls_entity_overlay", PlayerSoulsEntityOverlay.HUD);
             event.registerAboveAll("entity_text", EntityTextOverlay.HUD);
+            event.registerAboveAll("block_text", BlockTextOverlay.HUD);
         }
 
         @SubscribeEvent
@@ -64,6 +70,16 @@ public class ClientEvents {
     public void mouseMove(MovementInputUpdateEvent event) {
         EntityTrace entityTrace = new EntityTrace();
         Entity entity = entityTrace.getEntityInCrosshair(Minecraft.getInstance().getPartialTick(), 7.0f);
+        BlockHitResult blockHitResult = entityTrace.getBlockInCrosshair(Minecraft.getInstance().getPartialTick(), 7.0f, ClipContext.Block.COLLIDER);
+        if(blockHitResult != null) {
+            Block block = Minecraft.getInstance().level.getBlockState(blockHitResult.getBlockPos()).getBlock();
+            if(block instanceof IBlockTextOverlay textOverlay) {
+                textOverlay.alterBlockOverlayText(blockHitResult.getBlockPos());
+            } else {
+                BlockTextOverlay.TEXTS.clear();
+            }
+        }
+
         /*if(entity instanceof PlayerSoulsEntity playerSoulsEntity) {
             PlayerSoulsEntityOverlay.SOULS = playerSoulsEntity.getEntityData().get(PlayerSoulsEntity.SOULS);
         } else {

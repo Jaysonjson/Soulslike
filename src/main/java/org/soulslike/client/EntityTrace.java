@@ -12,6 +12,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.ProjectileUtil;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.ClipContext;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.FluidState;
@@ -80,6 +81,26 @@ public class EntityTrace implements BlockGetter {
         return null;
     }
 
+    public BlockHitResult getBlockInCrosshair(float partialTicks, double reachDistance, ClipContext.Block block) {
+        Minecraft client = Minecraft.getInstance();
+        Entity viewer = client.getCameraEntity();
+
+        if (viewer == null) {
+            return null;
+        }
+
+        Vec3 position = viewer.getEyePosition(partialTicks);
+        Vec3 look = viewer.getViewVector(1.0F);
+        Vec3 max = position.add(look.x * reachDistance, look.y * reachDistance, look.z * reachDistance);
+        BlockHitResult result = clip(new ClipContext(position, max,block, ClipContext.Fluid.ANY,Minecraft.getInstance().player));
+        if(result != null) {
+            if (Minecraft.getInstance().level.getBlockState(result.getBlockPos()).getBlock() == Blocks.AIR) {
+                return null;
+            }
+        }
+        return result;
+    }
+
     private ClipContext setupRayTraceContext(Player player, double distance, ClipContext.Fluid fluidHandling) {
         float pitch = player.getXRot();
         float yaw = player.getYRot();
@@ -99,9 +120,9 @@ public class EntityTrace implements BlockGetter {
     public @NotNull BlockHitResult clip(ClipContext context) {
         return BlockGetter.traverseBlocks(context.getFrom(), context.getTo(), context, (c, pos) -> {
             BlockState block = this.getBlockState(pos);
-            if (!block.canOcclude()) {
+            /*if (!block.canOcclude()) {
                 return null;
-            }
+            }*/
             VoxelShape voxelshape = c.getBlockShape(block, this, pos);
             return this.clipWithInteractionOverride(c.getFrom(), c.getTo(), pos, voxelshape, block);
         }, (c) -> {

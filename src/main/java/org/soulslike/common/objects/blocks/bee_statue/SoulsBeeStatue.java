@@ -14,11 +14,16 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.phys.BlockHitResult;
+import org.soulslike.client.overlay.EntityTextOverlay;
+import org.soulslike.client.overlay.block_overlay.BlockTextOverlay;
+import org.soulslike.client.overlay.player_souls.PlayerSoulsEntityEntries;
 import org.soulslike.common.capabilities.PlayerLevel;
 import org.soulslike.common.capabilities.PlayerLevelProvider;
 import org.soulslike.common.capabilities.PlayerSoulsProvider;
+import org.soulslike.common.objects.blocks.IBlockTextOverlay;
+import org.soulslike.common.objects.entities.PlayerSoulsEntity;
 
-public class SoulsBeeStatue extends BaseEntityBlock {
+public class SoulsBeeStatue extends BaseEntityBlock implements IBlockTextOverlay {
     public SoulsBeeStatue(Properties p_49224_) {
         super(p_49224_);
     }
@@ -75,4 +80,8 @@ public class SoulsBeeStatue extends BaseEntityBlock {
         return false;
     }
 
+    @Override
+    public void alterBlockOverlayText(BlockPos blockPos) {
+        addBlockOverlayEntry(new TestEntry.Player());
+    }
 }
