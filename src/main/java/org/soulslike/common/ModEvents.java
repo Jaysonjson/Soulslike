@@ -6,6 +6,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.GameRules;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.EntityJoinLevelEvent;
@@ -18,6 +19,7 @@ import org.soulslike.Soulslike;
 import org.soulslike.common.capabilities.PlayerLevelProvider;
 import org.soulslike.common.capabilities.PlayerSoulsProvider;
 import org.soulslike.common.objects.entities.PlayerSoulsEntity;
+import org.soulslike.common.registries.SoulsGameRules;
 import org.soulslike.helpers.SoulsUtil;
 
 @Mod.EventBusSubscriber(modid = Soulslike.MODID)
@@ -83,18 +85,33 @@ public class ModEvents {
                 attackerSouls.sync((ServerPlayer) attacker);
             }));
         } else if(event.getEntity() instanceof Player player) {
-            player.getCapability(PlayerSoulsProvider.PLAYER_SOULS).ifPresent(playerSouls -> {
-                player.level().addFreshEntity(new PlayerSoulsEntity(player.level(), player.position().x, player.position().y + 1, player.position().z, playerSouls.getSouls(), player.getName().getString()));
-            });
+            if(!player.level().getGameRules().getBoolean(SoulsGameRules.RULE_KEEPSOULS)) {
+                player.getCapability(PlayerSoulsProvider.PLAYER_SOULS).ifPresent(playerSouls -> {
+                    if(playerSouls.getSouls() > 0) {
+                        player.level().addFreshEntity(new PlayerSoulsEntity(player.level(), player.position().x, player.position().y + 1, player.position().z, playerSouls.getSouls(), player.getName().getString()));
+                    }
+                });
+            }
         }
     }
 
-    /*@SubscribeEvent
+    @SubscribeEvent
     public static void onPlayerClone(PlayerEvent.Clone event) {
         if(event.isWasDeath()) {
-            event.getOriginal().getCapability(PlayerLevelProvider.PLAYER_LEVEL).ifPresent(oldStore -> event.getEntity().getCapability(PlayerLevelProvider.PLAYER_LEVEL).ifPresent(newStore -> newStore.setShowDeathText(true)));
+            if(event.getEntity().level().getGameRules().getBoolean(SoulsGameRules.RULE_KEEPSOULS)) {
+                event.getOriginal().getCapability(PlayerSoulsProvider.PLAYER_SOULS).ifPresent(oldStore -> event.getEntity().getCapability(PlayerSoulsProvider.PLAYER_SOULS).ifPresent(newStore -> {
+                    newStore.setSouls(oldStore.getSouls());
+                }));
+            }
         }
-    }*/
+    }
 
-
+    @SubscribeEvent
+    public static void onPlayerLogin(PlayerEvent.PlayerLoggedInEvent event) {
+        Player player = event.getEntity();
+        player.getCapability(PlayerSoulsProvider.PLAYER_SOULS).ifPresent(oldStore -> {
+            oldStore.sync((ServerPlayer) player);
+        });
+    }
 }
+

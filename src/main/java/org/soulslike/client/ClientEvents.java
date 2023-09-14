@@ -8,6 +8,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.MovementInputUpdateEvent;
+import net.minecraftforge.client.event.RegisterColorHandlersEvent;
 import net.minecraftforge.client.event.RegisterGuiOverlaysEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -22,9 +23,12 @@ import org.soulslike.common.objects.blocks.vase.GenericVaseEntityRenderer;
 import org.soulslike.common.objects.entities.IEntityTextOverlay;
 import org.soulslike.common.objects.entities.IRayTracedEntity;
 import org.soulslike.common.objects.entities.PlayerSoulsEntity;
+import org.soulslike.common.objects.items.RandomItemColor;
+import org.soulslike.common.objects.items.ThighHighs;
 import org.soulslike.common.registries.SoulsBlockEntities;
 import org.soulslike.common.registries.SoulsEntities;
 import org.soulslike.common.registries.SoulsFluids;
+import org.soulslike.common.registries.SoulsItems;
 
 import static org.soulslike.Soulslike.MODID;
 

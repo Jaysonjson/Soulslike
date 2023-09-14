@@ -1,0 +1,7 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "soulslike:item/thigh_highs",
+    "layer1": "soulslike:item/thigh_highs_stripes"
+  }
+}

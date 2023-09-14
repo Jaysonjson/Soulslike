@@ -15,7 +15,7 @@ public class PlayerSoulsEntityEntries {
         public String text = "";
         @Override
         public void handle() {
-            guiGraphics.drawCenteredString(minecraft.font, text, screenWidth / 2, (int)((float)screenHeight / 1.25f), 0xFFFFFFFF);
+            guiGraphics.drawCenteredString(minecraft.font, text, screenWidth / 2, (int)((float)screenHeight / 1.575f), 0xFFFFFFFF);
         }
     }
 }
