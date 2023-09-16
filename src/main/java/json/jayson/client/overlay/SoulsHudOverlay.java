@@ -14,7 +14,7 @@ public class SoulsHudOverlay {
     public static final IGuiOverlay HUD = ((gui, guiGraphics, partialTick, screenWidth, screenHeight) -> {
         int x = screenWidth;
         int y = screenHeight;
-        int souls = ClientSoulsData.getSouls();
+        long souls = ClientSoulsData.getSouls();
         Minecraft minecraft = Minecraft.getInstance();
         int textWidth = minecraft.font.width(String.valueOf(souls));
         int textWidth2 = minecraft.font.width("+" + ClientSoulsData.getNewPlayerSouls());

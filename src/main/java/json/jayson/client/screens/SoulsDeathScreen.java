@@ -12,7 +12,7 @@ import json.jayson.client.data.ClientSoulsData;
 
 @OnlyIn(Dist.CLIENT)
 public class SoulsDeathScreen extends DeathScreen {
-    int souls = 0;
+    long souls = 0;
     public SoulsDeathScreen(@Nullable Component p_95911_, boolean p_95912_) {
         super(p_95911_, p_95912_);
         souls = ClientSoulsData.getSouls();

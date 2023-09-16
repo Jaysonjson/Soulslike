@@ -4,6 +4,11 @@ import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.platform.Lighting;
 import com.mojang.blaze3d.systems.RenderSystem;
 import json.jayson.Soulslike;
+import json.jayson.client.data.ClientPlayerData;
+import json.jayson.client.data.ClientSoulsData;
+import json.jayson.common.capabilities.PlayerLevel;
+import json.jayson.common.capabilities.PlayerLevelProvider;
+import json.jayson.common.capabilities.PlayerSoulsProvider;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.Screen;
@@ -25,28 +30,71 @@ import static net.minecraft.client.gui.screens.inventory.AbstractContainerScreen
 
 public class LevelUpScreen extends Screen {
     public static final ResourceLocation BACKGROUND = new ResourceLocation(Soulslike.MODID, "textures/gui/container/level_up.png");
+    int level_increase = 99;
     public LevelUpScreen() {
         super(Component.literal("Test"));
     }
 
     @Override
     public void render(@NotNull GuiGraphics p_281549_, int p_281550_, int p_282878_, float p_282465_) {
-        drawHalfSizeString(p_281549_, "Level 8" + " --> 10", -353, 15);
-        drawHalfSizeString(p_281549_, "Souls Held 500 --> 125", -353, 35);
-        drawHalfSizeString(p_281549_, "Souls Needed 375", -353, 55);
+       /* minecraft.player.getCapability(PlayerLevelProvider.PLAYER_LEVEL).ifPresent(playerLevel -> {
+            minecraft.player.getCapability(PlayerSoulsProvider.PLAYER_SOULS).ifPresent(playerSouls -> {
+                drawHalfSizeString(p_281549_, "Souls Held " + playerSouls.getSouls() + " --> " + (playerSouls.getSouls() - playerLevel.requiredSouls(playerLevel.getLevel() + level_increase)), -353, 35);
+            });
+            drawHalfSizeString(p_281549_, "Level " + playerLevel.getLevel() + " --> " + (playerLevel.getLevel() + level_increase), -353, 15);
+            drawHalfSizeString(p_281549_, "Souls Needed " + playerLevel.requiredSouls(playerLevel.getLevel() + level_increase), -353, 55);
+
+            p_281549_.drawCenteredString(minecraft.font, this.minecraft.player.getName().getString(), (width + 50) / 2, (height - 150) / 2, 0xFFFFFFFF);
+
+            p_281549_.blit(BACKGROUND, (width - 256) / 2, (height - 165) / 2,0,0, 256, 165);
+            renderEntityInInventoryFollowsMouse(p_281549_, (width - 180) / 2, (height - 5) / 2, 30, (float)(width / 4) - p_281550_, (float)(height / 2 - 50) - p_282878_, this.minecraft.player);
+        });*/
+
+
+        drawHalfSizeString(p_281549_, "Level " + ClientPlayerData.getLevel() + " --> " + (ClientPlayerData.getLevel() + level_increase), -353, 15);
+        drawHalfSizeString(p_281549_, "Souls Held " + ClientSoulsData.getSouls(), -353, 35);
+        drawHalfSizeString(p_281549_, "Souls Needed " + PlayerLevel.requiredSouls(ClientPlayerData.getLevel() + level_increase), -353, 55);
+        long newSouls = (ClientSoulsData.getSouls() - PlayerLevel.requiredSouls(ClientPlayerData.getLevel() + level_increase));
+        if(newSouls > 0) {
+            drawHalfSizeString(p_281549_, newSouls + "", -353, 70, 0x43ff64);
+        } else {
+            drawHalfSizeString(p_281549_,  newSouls + "", -353, 70, 0xff4364);
+        }
+
 
         p_281549_.drawCenteredString(minecraft.font, this.minecraft.player.getName().getString(), (width + 50) / 2, (height - 150) / 2, 0xFFFFFFFF);
-
-        p_281549_.blit(BACKGROUND, (width - 256) / 2, (height - 165) / 2,0,0, 256, 165);
+        p_281549_.blit(BACKGROUND, (width - 255) / 2, (height - 165) / 2,0,0, 255, 165);
         renderEntityInInventoryFollowsMouse(p_281549_, (width - 180) / 2, (height - 5) / 2, 30, (float)(width / 4) - p_281550_, (float)(height / 2 - 50) - p_282878_, this.minecraft.player);
+
     }
 
-    public void drawHalfSizeString(GuiGraphics p_281549_, String text, int x, int y) {
+    public void drawHalfSizeString(GuiGraphics p_281549_, String text, int x, int y, int color ) {
         p_281549_.pose().pushPose();
         p_281549_.pose().scale(0.5f, 0.5f, 0.5f);
         int scaledWidth = width * 2;
         int scaledHeight = height * 2;
-        p_281549_.drawCenteredString(minecraft.font, text, (scaledWidth + x) / 2, (scaledHeight + y) / 2, 0xFFFFFFFF);
+        p_281549_.drawCenteredString(minecraft.font, text, (scaledWidth + x) / 2, (scaledHeight + y) / 2, color);
+        p_281549_.pose().popPose();
+    }
+
+    public void drawHalfSizeString(GuiGraphics p_281549_, String text, int x, int y) {
+       drawHalfSizeString(p_281549_, text, x, y, 0xFFFFFFFF);
+    }
+    public void drawHalfSizeStringRight(GuiGraphics p_281549_, String text, int x, int y) {
+        p_281549_.pose().pushPose();
+        p_281549_.pose().scale(0.5f, 0.5f, 0.5f);
+        int scaledWidth = width * 2;
+        int scaledHeight = height * 2;
+        p_281549_.drawCenteredString(minecraft.font, text, (scaledWidth + (x - minecraft.font.width(text))) / 2, (scaledHeight + y) / 2, 0xFFFFFFFF);
+        p_281549_.pose().popPose();
+    }
+
+    public void drawHalfSizeStringLeft(GuiGraphics p_281549_, String text, int x, int y, int color) {
+        p_281549_.pose().pushPose();
+        p_281549_.pose().scale(0.5f, 0.5f, 0.5f);
+        int scaledWidth = width * 2;
+        int scaledHeight = height * 2;
+        p_281549_.drawCenteredString(minecraft.font, text, (scaledWidth + (x + minecraft.font.width(text))) / 2, (scaledHeight + y) / 2, color);
         p_281549_.pose().popPose();
     }
 

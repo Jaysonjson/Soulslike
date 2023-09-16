@@ -44,6 +44,15 @@ public class PlayerLevel {
         player.getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(getLevelifiedAttribute(player, Attributes.ATTACK_DAMAGE));
     }
 
+    public int requiredSouls() {
+        return requiredSouls(level_);
+    }
+
+    public static int requiredSouls(int level) {
+        return (int) (523 * (level * level) * 1.3);
+    }
+
+
     public double getLevelifiedAttribute(Player player, Attribute attribute) {
         if(attribute == Attributes.MAX_HEALTH) return 19 + getAttributeLevel(PlayerLevel.ATTRIBUTE_VITALITY);
         if(attribute == Attributes.ATTACK_SPEED) return 4.0 + (getAttributeLevel(PlayerLevel.ATTRIBUTE_DEXTERITY) / 200.0);

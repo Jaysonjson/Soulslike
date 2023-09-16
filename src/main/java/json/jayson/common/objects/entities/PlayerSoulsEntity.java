@@ -26,10 +26,10 @@ import json.jayson.common.registries.SoulsEntities;
 
 public class PlayerSoulsEntity extends Entity implements IEntityTextOverlay {
 
-    int souls = 0;
+    long souls = 0;
     int time = 0;
 
-    public static final EntityDataAccessor<Integer> SOULS = SynchedEntityData.defineId(PlayerSoulsEntity.class, EntityDataSerializers.INT);
+    public static final EntityDataAccessor<Long> SOULS = SynchedEntityData.defineId(PlayerSoulsEntity.class, EntityDataSerializers.LONG);
     public static final EntityDataAccessor<String> PLAYER_NAME = SynchedEntityData.defineId(PlayerSoulsEntity.class, EntityDataSerializers.STRING);
 
 
@@ -38,7 +38,7 @@ public class PlayerSoulsEntity extends Entity implements IEntityTextOverlay {
         setNoGravity(false);
     }
 
-    public PlayerSoulsEntity(Level level, double x, double y, double z, int souls, String playerName) {
+    public PlayerSoulsEntity(Level level, double x, double y, double z, long souls, String playerName) {
         this(SoulsEntities.PLAYER_SOULS.get(), level);
         setPos(x, y, z);
         this.souls = souls;
@@ -105,17 +105,17 @@ public class PlayerSoulsEntity extends Entity implements IEntityTextOverlay {
     @Override
     public void readAdditionalSaveData(CompoundTag tag) {
         if(tag.contains(SoulsNBTKeys.ENTITY_PLAYER_SOULS_CONTAINED_SOULS)) {
-            souls = tag.getInt(SoulsNBTKeys.ENTITY_PLAYER_SOULS_CONTAINED_SOULS);
+            souls = tag.getLong(SoulsNBTKeys.ENTITY_PLAYER_SOULS_CONTAINED_SOULS);
             getEntityData().set(SOULS, souls);
         }
     }
 
     @Override
     public void addAdditionalSaveData(CompoundTag tag) {
-        tag.putInt(SoulsNBTKeys.ENTITY_PLAYER_SOULS_CONTAINED_SOULS, souls);
+        tag.putLong(SoulsNBTKeys.ENTITY_PLAYER_SOULS_CONTAINED_SOULS, souls);
     }
 
-    public int getSouls() {
+    public long getSouls() {
         return souls;
     }
 

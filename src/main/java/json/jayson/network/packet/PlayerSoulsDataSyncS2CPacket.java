@@ -11,12 +11,12 @@ import java.util.ArrayList;
 import java.util.function.Supplier;
 
 public class PlayerSoulsDataSyncS2CPacket {
-    private final int souls;
+    private final long souls;
     private ArrayList<BlockPos> beeStatues = new ArrayList<>();
     private int beeStatuesSize;
-    private final int newPlayerSouls;
+    private final long newPlayerSouls;
 
-    private final int newPlayerSoulsTick;
+    private final long newPlayerSoulsTick;
 
     public PlayerSoulsDataSyncS2CPacket(PlayerSouls playerSouls) {
         this.souls = playerSouls.getSouls();
@@ -26,7 +26,7 @@ public class PlayerSoulsDataSyncS2CPacket {
         this.beeStatuesSize = playerSouls.getBeeStatues().size();
     }
 
-    public PlayerSoulsDataSyncS2CPacket(int souls, int newPlayerSouls, int newPlayerSoulsTick, ArrayList<BlockPos> beeStatues) {
+    public PlayerSoulsDataSyncS2CPacket(long souls, long newPlayerSouls, long newPlayerSoulsTick, ArrayList<BlockPos> beeStatues) {
         this.souls = souls;
         this.newPlayerSouls = newPlayerSouls;
         this.newPlayerSoulsTick = newPlayerSoulsTick;
@@ -35,9 +35,9 @@ public class PlayerSoulsDataSyncS2CPacket {
     }
 
     public PlayerSoulsDataSyncS2CPacket(FriendlyByteBuf buf) {
-        this.souls = buf.readInt();
-        this.newPlayerSouls = buf.readInt();
-        this.newPlayerSoulsTick = buf.readInt();
+        this.souls = buf.readLong();
+        this.newPlayerSouls = buf.readLong();
+        this.newPlayerSoulsTick = buf.readLong();
         this.beeStatuesSize = buf.readInt();
         for (int i = 0; i < beeStatuesSize; i++) {
             this.beeStatues.add(buf.readBlockPos());
@@ -45,9 +45,9 @@ public class PlayerSoulsDataSyncS2CPacket {
     }
 
     public void toBytes(FriendlyByteBuf buf) {
-        buf.writeInt(souls);
-        buf.writeInt(newPlayerSouls);
-        buf.writeInt(newPlayerSoulsTick);
+        buf.writeLong(souls);
+        buf.writeLong(newPlayerSouls);
+        buf.writeLong(newPlayerSoulsTick);
         buf.writeInt(beeStatuesSize);
         for (BlockPos beeStatue : beeStatues) {
             buf.writeBlockPos(beeStatue);

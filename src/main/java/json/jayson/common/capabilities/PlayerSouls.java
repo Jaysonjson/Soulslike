@@ -16,14 +16,14 @@ public class PlayerSouls {
 
     public static String NBT_TAG_SHOW_DEATH_TEXT = "death_text";
 
-    int souls_ = 0;
-    public int newSouls_ = 0;
-    public int newSoulsTick = 0;
+    long souls_ = 0;
+    public long newSouls_ = 0;
+    public long newSoulsTick = 0;
     ArrayList<BlockPos> beeStatues = new ArrayList<>();
     public int beeStatuesSize = 0;
     public static final int MAX_SOULS = 999999999;
 
-    public int getSouls() {
+    public long getSouls() {
         return souls_;
     }
 
@@ -31,18 +31,18 @@ public class PlayerSouls {
         return beeStatues;
     }
 
-    public void setSouls(int souls) {
+    public void setSouls(long souls) {
         newSouls_ += souls - souls_;
         newSoulsTick = 0;
         souls_ = Math.min(souls, MAX_SOULS);
     }
 
-    public void increaseSouls(int increment) {
+    public void increaseSouls(long increment) {
         setSouls(getSouls() + increment);
     }
 
     public void saveData(CompoundTag tag) {
-        tag.putInt(NBT_TAG_SOULS, souls_);
+        tag.putLong(NBT_TAG_SOULS, souls_);
         ListTag blockPosList = new ListTag();
         for (BlockPos beeStatue : beeStatues) {
             blockPosList.add(NbtUtils.writeBlockPos(beeStatue));
@@ -52,7 +52,7 @@ public class PlayerSouls {
     }
 
     public void loadData(CompoundTag tag) {
-        souls_ = tag.getInt(NBT_TAG_SOULS);
+        souls_ = tag.getLong(NBT_TAG_SOULS);
         beeStatues = new ArrayList<>();
         ListTag listTag = (ListTag) tag.get(NBT_TAG_BEE_STATUES);
         beeStatuesSize = tag.getInt("bee_statues_size");
