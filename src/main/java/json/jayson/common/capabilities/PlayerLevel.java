@@ -11,7 +11,7 @@ import org.apache.commons.lang3.SerializationUtils;
 
 import java.util.HashMap;
 
-public class PlayerLevel {
+public class PlayerLevel implements Cloneable {
 
     protected static String NBT_TAG_LEVEL = "level";
     protected static String NBT_TAG_ATTRIBUTES = "attributes";
@@ -51,10 +51,10 @@ public class PlayerLevel {
     }
 
     public static long requiredSouls(int level) {
-        if(level / MAX_LEVEL * 100 > 74) return (int) (523 * (level * level) * 4.3);
+        if(level / MAX_LEVEL * 100 > 74) return (int) (612 * (level * level) * 4.3);
         if(level / MAX_LEVEL * 100 > 44) return (int) (523 * (level * level) * 2.7);
-        if(level / MAX_LEVEL * 100 > 24) return (int) (523 * (level * level) * 2.3);
-        return (int) (523 * (level) * 2.3);
+        if(level / MAX_LEVEL * 100 > 24) return (int) (278 * (level * level) * 2.3);
+        return (int) (135 * (level) * 2.3);
     }
 
 
@@ -66,8 +66,6 @@ public class PlayerLevel {
         if(attribute == Attributes.ATTACK_DAMAGE) return 2 + (getAttributeLevel(PlayerLevel.ATTRIBUTE_STRENGTH) / 18.5);
         return attribute.getDefaultValue();
     }
-
-
 
     public HashMap<String, Integer> getAttributes() {
         return attributes_;
@@ -95,4 +93,12 @@ public class PlayerLevel {
         ModMessages.sendToPlayer(new PlayerLevelDataSyncS2CPacket(this), player);
     }
 
+    @Override
+    public PlayerLevel clone() {
+        try {
+            return (PlayerLevel) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError();
+        }
+    }
 }

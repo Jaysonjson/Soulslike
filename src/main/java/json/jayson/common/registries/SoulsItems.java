@@ -53,7 +53,7 @@ public class SoulsItems {
     OAK_BARK = registerItem("oak_bark", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
     OAK_WAND = registerItem("oak_wand", () -> new WandItem(new Item.Properties()), SoulsCreativeTabs.WEAPON_TAB),
 
-    THIGH_HIGHS = registerItem("thigh_highs", () -> new ThighHighs(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB)
+    THIGH_HIGHS = registerItem("thigh_highs", () -> new ThighHighs(new Item.Properties()))
 
     ;
 
