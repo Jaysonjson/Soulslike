@@ -22,6 +22,8 @@ public class PlayerLevel {
     public static final String ATTRIBUTE_LUCK = "lck";
     public static final String ATTRIBUTE_RESISTANCE = "rsnc";
 
+    public static final int MAX_LEVEL = 99 * 5;
+
     public PlayerLevel() {
         attributes_.put(ATTRIBUTE_VITALITY, 1);
         attributes_.put(ATTRIBUTE_STRENGTH, 1);
@@ -44,12 +46,15 @@ public class PlayerLevel {
         player.getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(getLevelifiedAttribute(player, Attributes.ATTACK_DAMAGE));
     }
 
-    public int requiredSouls() {
+    public long requiredSouls() {
         return requiredSouls(level_);
     }
 
-    public static int requiredSouls(int level) {
-        return (int) (523 * (level * level) * 1.3);
+    public static long requiredSouls(int level) {
+        if(level / MAX_LEVEL * 100 > 74) return (int) (523 * (level * level) * 4.3);
+        if(level / MAX_LEVEL * 100 > 44) return (int) (523 * (level * level) * 2.7);
+        if(level / MAX_LEVEL * 100 > 24) return (int) (523 * (level * level) * 2.3);
+        return (int) (523 * (level) * 2.3);
     }
 
 
@@ -61,6 +66,8 @@ public class PlayerLevel {
         if(attribute == Attributes.ATTACK_DAMAGE) return 2 + (getAttributeLevel(PlayerLevel.ATTRIBUTE_STRENGTH) / 18.5);
         return attribute.getDefaultValue();
     }
+
+
 
     public HashMap<String, Integer> getAttributes() {
         return attributes_;

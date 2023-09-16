@@ -15,9 +15,9 @@ import json.jayson.common.capabilities.PlayerSoulsProvider;
 import java.util.List;
 
 public class SoulItem extends Item {
-    public int souls;
+    public long souls;
     public String hoverText;
-    public SoulItem(Properties p_41383_, int souls, String hoverText) {
+    public SoulItem(Properties p_41383_, long souls, String hoverText) {
         super(p_41383_);
         this.souls = souls;
         this.hoverText = hoverText;

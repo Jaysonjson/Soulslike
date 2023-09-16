@@ -37,6 +37,7 @@ public class SoulsItems {
     BEE_TEARS = registerItem("bee_tears", () -> new BeeTears(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
     UNKNOWN_SOUL = registerItem("unknown_soul", () -> new SoulItem(new Item.Properties(), 50, "item.soulslike.unknown_soul.description"), SoulsCreativeTabs.OTHER_TAB),
     SOUL_OF_A_GIANT = registerItem("soul_of_a_giant", () -> new SoulItem(new Item.Properties(), 1000, "item.soulslike.soul_of_a_giant.description"), SoulsCreativeTabs.OTHER_TAB),
+    WTF_SOUL = registerItem("wtf_souls", () -> new SoulItem(new Item.Properties(), 999999999, "item.soulslike.soul_of_a_giant.description"), SoulsCreativeTabs.OTHER_TAB),
     TITANITOL_INGOT = registerItem("titanitol_ingot",
             () -> new ItemWithDescription(new Item.Properties(), Component.translatable("item.soulslike.titanitol_ingot.description").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC)), SoulsCreativeTabs.OTHER_TAB),
     HARDENED_BLAZE = registerItem("hardened_blaze", () -> new ItemWithDescription(new Item.Properties(), Component.translatable("item.soulslike.hardened_blaze.description").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC)), SoulsCreativeTabs.OTHER_TAB),

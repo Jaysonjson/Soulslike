@@ -30,38 +30,22 @@ import static net.minecraft.client.gui.screens.inventory.AbstractContainerScreen
 
 public class LevelUpScreen extends Screen {
     public static final ResourceLocation BACKGROUND = new ResourceLocation(Soulslike.MODID, "textures/gui/container/level_up.png");
-    int level_increase = 99;
+    int level_increase = 12;
     public LevelUpScreen() {
         super(Component.literal("Test"));
     }
 
     @Override
     public void render(@NotNull GuiGraphics p_281549_, int p_281550_, int p_282878_, float p_282465_) {
-       /* minecraft.player.getCapability(PlayerLevelProvider.PLAYER_LEVEL).ifPresent(playerLevel -> {
-            minecraft.player.getCapability(PlayerSoulsProvider.PLAYER_SOULS).ifPresent(playerSouls -> {
-                drawHalfSizeString(p_281549_, "Souls Held " + playerSouls.getSouls() + " --> " + (playerSouls.getSouls() - playerLevel.requiredSouls(playerLevel.getLevel() + level_increase)), -353, 35);
-            });
-            drawHalfSizeString(p_281549_, "Level " + playerLevel.getLevel() + " --> " + (playerLevel.getLevel() + level_increase), -353, 15);
-            drawHalfSizeString(p_281549_, "Souls Needed " + playerLevel.requiredSouls(playerLevel.getLevel() + level_increase), -353, 55);
-
-            p_281549_.drawCenteredString(minecraft.font, this.minecraft.player.getName().getString(), (width + 50) / 2, (height - 150) / 2, 0xFFFFFFFF);
-
-            p_281549_.blit(BACKGROUND, (width - 256) / 2, (height - 165) / 2,0,0, 256, 165);
-            renderEntityInInventoryFollowsMouse(p_281549_, (width - 180) / 2, (height - 5) / 2, 30, (float)(width / 4) - p_281550_, (float)(height / 2 - 50) - p_282878_, this.minecraft.player);
-        });*/
-
-
         drawHalfSizeString(p_281549_, "Level " + ClientPlayerData.getLevel() + " --> " + (ClientPlayerData.getLevel() + level_increase), -353, 15);
         drawHalfSizeString(p_281549_, "Souls Held " + ClientSoulsData.getSouls(), -353, 35);
         drawHalfSizeString(p_281549_, "Souls Needed " + PlayerLevel.requiredSouls(ClientPlayerData.getLevel() + level_increase), -353, 55);
         long newSouls = (ClientSoulsData.getSouls() - PlayerLevel.requiredSouls(ClientPlayerData.getLevel() + level_increase));
         if(newSouls > 0) {
-            drawHalfSizeString(p_281549_, newSouls + "", -353, 70, 0x43ff64);
+            drawHalfSizeString(p_281549_, newSouls + "", -353, 75, 0x43ff64);
         } else {
-            drawHalfSizeString(p_281549_,  newSouls + "", -353, 70, 0xff4364);
+            drawHalfSizeString(p_281549_,  newSouls + "", -353, 75, 0xff4364);
         }
-
-
         p_281549_.drawCenteredString(minecraft.font, this.minecraft.player.getName().getString(), (width + 50) / 2, (height - 150) / 2, 0xFFFFFFFF);
         p_281549_.blit(BACKGROUND, (width - 255) / 2, (height - 165) / 2,0,0, 255, 165);
         renderEntityInInventoryFollowsMouse(p_281549_, (width - 180) / 2, (height - 5) / 2, 30, (float)(width / 4) - p_281550_, (float)(height / 2 - 50) - p_282878_, this.minecraft.player);

@@ -6,8 +6,10 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import net.minecraft.commands.CommandBuildContext;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
+import net.minecraft.commands.arguments.EntityArgument;
 import net.minecraft.network.chat.Component;
 import json.jayson.common.commands.arguments.ScreenArgument;
+import net.minecraft.server.commands.GiveCommand;
 
 public class SoulsLikeCommand {
 
@@ -16,6 +18,8 @@ public class SoulsLikeCommand {
             return p_137777_.hasPermission(2);
         }).then(Commands.argument("screens", ScreenArgument.id()).executes((p_137784_) -> {
             return openScren(p_137784_.getSource(), p_137784_);
+        })).then(Commands.argument("targets", EntityArgument.players()).executes(context -> {
+            return 0;
         })));
     }
 
