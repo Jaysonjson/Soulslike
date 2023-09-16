@@ -90,7 +90,6 @@ public class PlayerSoulsEntity extends Entity implements IEntityTextOverlay {
                     this.discard();
                 }
             } else {
-                BlockState blockstate = this.level().getBlockState(blockpos);
                 this.setDeltaMovement(this.getDeltaMovement().multiply(0.7D, -0.5D, 0.7D));
             }
         }

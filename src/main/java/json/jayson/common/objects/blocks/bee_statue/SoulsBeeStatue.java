@@ -1,11 +1,16 @@
 package json.jayson.common.objects.blocks.bee_statue;
 
+import json.jayson.client.screens.LevelUpScreen;
 import json.jayson.common.capabilities.PlayerLevel;
 import json.jayson.common.capabilities.PlayerLevelProvider;
 import json.jayson.common.capabilities.PlayerSoulsProvider;
 import json.jayson.common.objects.blocks.IBlockTextOverlay;
+import json.jayson.network.packet.ModMessages;
+import json.jayson.network.packet.OpenLevelUpScreenS2CPacket;
+import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
@@ -40,6 +45,7 @@ public class SoulsBeeStatue extends BaseEntityBlock implements IBlockTextOverlay
         if(!pLevel.isClientSide()) {
             BlockEntity block = pLevel.getBlockEntity(pPos);
             if(block instanceof SoulsBeeStatueEntity soulsBeeStatueEntity) {
+                ModMessages.sendToPlayer(new OpenLevelUpScreenS2CPacket(), (ServerPlayer) pPlayer);
                 pPlayer.sendSystemMessage(Component.literal(String.valueOf(soulsBeeStatueEntity.activated)));
                 soulsBeeStatueEntity.activated = true;
                 pPlayer.getCapability(PlayerLevelProvider.PLAYER_LEVEL).ifPresent(playerLevel -> {

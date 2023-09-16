@@ -61,6 +61,11 @@ public class ModMessages {
                 .encoder(CakePlateSyncS2CPacket::toBytes)
                 .consumerMainThread(CakePlateSyncS2CPacket::handle)
                 .add();
+        net.messageBuilder(OpenLevelUpScreenS2CPacket.class, id(), NetworkDirection.PLAY_TO_CLIENT)
+                .decoder(OpenLevelUpScreenS2CPacket::new)
+                .encoder(OpenLevelUpScreenS2CPacket::toBytes)
+                .consumerMainThread(OpenLevelUpScreenS2CPacket::handle)
+                .add();
     }
 
     public static <MSG> void sendToServer(MSG message) {
