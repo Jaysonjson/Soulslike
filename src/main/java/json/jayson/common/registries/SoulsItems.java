@@ -6,6 +6,7 @@ import json.jayson.common.objects.items.BeeTears;
 import json.jayson.common.objects.items.ItemWithDescription;
 import json.jayson.common.objects.items.ThighHighs;
 import json.jayson.common.objects.items.gecko.WandItem;
+import json.jayson.common.objects.items.staff.LoveStaff;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.*;
@@ -52,6 +53,9 @@ public class SoulsItems {
     SCROLL = registerItem("scroll", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
     OAK_BARK = registerItem("oak_bark", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
     OAK_WAND = registerItem("oak_wand", () -> new WandItem(new Item.Properties()), SoulsCreativeTabs.WEAPON_TAB),
+
+    LOVE_STAFF = registerItem("love_staff", () -> new LoveStaff(new Item.Properties().defaultDurability(100)), SoulsCreativeTabs.WEAPON_TAB),
+
 
     THIGH_HIGHS = registerItem("thigh_highs", () -> new ThighHighs(new Item.Properties()))
 
