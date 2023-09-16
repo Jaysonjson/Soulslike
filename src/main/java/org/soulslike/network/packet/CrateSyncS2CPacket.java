@@ -15,10 +15,10 @@ public class CrateSyncS2CPacket {
 
     private final int slot;
 
-    public CrateSyncS2CPacket(ItemStack itemStackHandler, BlockPos pos, int clear) {
+    public CrateSyncS2CPacket(ItemStack itemStackHandler, BlockPos pos, int slot) {
         this.itemStack = itemStackHandler;
         this.pos = pos;
-        this.slot = clear;
+        this.slot = slot;
     }
 
     public CrateSyncS2CPacket(FriendlyByteBuf buf) {
@@ -37,6 +37,7 @@ public class CrateSyncS2CPacket {
         NetworkEvent.Context context = supplier.get();
         context.enqueueWork(() -> {
             if(Minecraft.getInstance().level.getBlockEntity(pos) instanceof GenericCrateEntity blockEntity) {
+                System.out.println(itemStack.getItem().toString());
                 blockEntity.setItem(slot, itemStack);
             }
         });

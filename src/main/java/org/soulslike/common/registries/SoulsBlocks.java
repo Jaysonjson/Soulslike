@@ -29,14 +29,14 @@ public class SoulsBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Soulslike.MODID);
 
     public static final SoulRegistryBlockItem<Block>
-            BEE_STATUE = registerBlock("bee_statue", () -> new SoulsBeeStatue(BlockBehaviour.Properties.of().strength(99999f).noOcclusion()), SoulsCreativeTabs.BLOCK_TAB),
-            FOX_ALTAR = registerBlock("fox_altar", () -> new SoulsFoxAltar(BlockBehaviour.Properties.of().strength(6f).noOcclusion()), SoulsCreativeTabs.BLOCK_TAB),
+            BEE_STATUE = registerBlock("bee_statue", () -> new SoulsBeeStatue(BlockBehaviour.Properties.of().strength(99999f).noOcclusion()), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
+            FOX_ALTAR = registerBlock("fox_altar", () -> new SoulsFoxAltar(BlockBehaviour.Properties.of().strength(6f).noOcclusion()), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
             DARKENED_NETHER_BRICKS = registerBlock("darkened_nether_bricks", () -> new Block(BlockBehaviour.Properties.of().strength(3f)), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
             MUD_VASE = registerBlock("mud_vase", () -> new GenericVase(BlockBehaviour.Properties.of().strength(1f).noOcclusion().dynamicShape().offsetType(BlockBehaviour.OffsetType.XZ)), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
             NETHER_BRICKS_VASE = registerBlock("nether_bricks_vase", () -> new GenericVase(BlockBehaviour.Properties.of().strength(1f).noOcclusion().dynamicShape().offsetType(BlockBehaviour.OffsetType.XZ)), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
     STONE_VASE = registerBlock("stone_vase", () -> new GenericVase(BlockBehaviour.Properties.of().strength(1f).noOcclusion().dynamicShape().offsetType(BlockBehaviour.OffsetType.XZ)), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
     QUARTZ_VASE = registerBlock("quartz_vase", () -> new GenericVase(BlockBehaviour.Properties.of().strength(1f).noOcclusion().dynamicShape().offsetType(BlockBehaviour.OffsetType.XZ)), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
-    TITANITOL_BLOCK = registerBlock("titanitol_block", () -> new Block(BlockBehaviour.Properties.of().strength(3f)), SoulsCreativeTabs.BLOCK_TAB),
+    TITANITOL_BLOCK = registerBlock("titanitol_block", () -> new Block(BlockBehaviour.Properties.of().strength(3f)), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
     FIRE_ALTAR = registerBlock("fire_altar", () -> new FireAltar(BlockBehaviour.Properties.of().strength(3f).lightLevel(state -> state.getValue(FireAltar.UNLIGHTED) ? 1 : 13).noOcclusion()), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
     OAK_CRATE = registerBlock("oak_crate", () -> new GenericCrate(BlockBehaviour.Properties.of().strength(3f).noOcclusion()), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
     SPRUCE_CRATE = registerBlock("spruce_crate", () -> new GenericCrate(BlockBehaviour.Properties.of().strength(3f).noOcclusion()), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
@@ -69,7 +69,7 @@ public class SoulsBlocks {
             ;
 
 
-    public static final SoulRegistryBlockItem<SoulsLiquidBlock> BLOOD_BLOCK = registerBlock("blood_block", () -> new SoulsLiquidBlock(SoulsFluids.SOURCE_BLOOD, BlockBehaviour.Properties.copy(Blocks.WATER)), SoulsCreativeTabs.OTHER_TAB);
+    public static final SoulRegistryBlockItem<SoulsLiquidBlock> BLOOD_BLOCK = registerBlock("blood_block", () -> new SoulsLiquidBlock(SoulsFluids.SOURCE_BLOOD, BlockBehaviour.Properties.copy(Blocks.WATER)));
 
 
     private static <T extends Block> SoulRegistryBlockItem<T> registerBlock(String name, Supplier<T> block, RegistryObject<CreativeModeTab> tabProvider) {
@@ -77,6 +77,10 @@ public class SoulsBlocks {
         RegistryObject<Item> itemRegistry = SoulsItems.ITEMS.register(name, () -> new BlockItem(blockRegistry.get(), new Item.Properties()));
         SoulsItems.creativeTabs.put(itemRegistry, tabProvider);
         return new SoulRegistryBlockItem<>(itemRegistry, blockRegistry);
+    }
+
+    private static <T extends Block> SoulRegistryBlockItem<T> registerBlock(String name, Supplier<T> block) {
+        return registerBlock(name, block, null);
     }
 
     public static void register(IEventBus eventBus) {

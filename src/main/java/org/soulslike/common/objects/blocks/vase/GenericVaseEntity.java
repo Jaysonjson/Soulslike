@@ -61,8 +61,7 @@ public class GenericVaseEntity extends RandomizableContainerBlockEntity {
         if (!this.trySaveLootTable(p_187489_)) {
             ContainerHelper.saveAllItems(p_187489_, this.items);
         }
-        ArrayList<ItemStack> itemStackArrayList = new ArrayList();
-        itemStackArrayList.addAll(items);
+        //ArrayList<ItemStack> itemStackArrayList = new ArrayList(items);
     }
 
 

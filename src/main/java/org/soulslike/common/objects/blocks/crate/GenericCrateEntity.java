@@ -3,14 +3,18 @@ package org.soulslike.common.objects.blocks.crate;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.Connection;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.world.ContainerHelper;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ChestMenu;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.entity.RandomizableContainerBlockEntity;
+import net.minecraft.world.level.block.entity.ShulkerBoxBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import org.soulslike.network.packet.ModMessages;
 import org.soulslike.network.packet.CrateSyncS2CPacket;
@@ -23,6 +27,7 @@ public class GenericCrateEntity extends RandomizableContainerBlockEntity {
         super(SoulsBlockEntities.GENERIC_CRATE.get(), p_155630_, p_155631_);
     }
 
+    @Override
     public void load(CompoundTag p_155349_) {
         super.load(p_155349_);
         this.items = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
@@ -32,6 +37,7 @@ public class GenericCrateEntity extends RandomizableContainerBlockEntity {
 
     }
 
+    @Override
     protected void saveAdditional(CompoundTag p_187489_) {
         super.saveAdditional(p_187489_);
         if (!this.trySaveLootTable(p_187489_)) {
@@ -67,22 +73,11 @@ public class GenericCrateEntity extends RandomizableContainerBlockEntity {
     }
 
     public void sync() {
-        int i = 0;
+       /* int i = 0;
         for (ItemStack item : getItems()) {
-            ModMessages.sendToClients(new CrateSyncS2CPacket(item, getBlockPos(), i));
+            if(item.getItem() != Items.AIR) ModMessages.sendToClients(new CrateSyncS2CPacket(item, getBlockPos(), i));
             ++i;
-        }
+        }*/
     }
 
-    @Override
-    public void startOpen(Player p_18955_) {
-        super.startOpen(p_18955_);
-        sync();
-    }
-
-    @Override
-    public void stopOpen(Player p_18954_) {
-        super.stopOpen(p_18954_);
-        sync();
-    }
 }

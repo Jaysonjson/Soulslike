@@ -78,6 +78,8 @@ public class ClientEvents {
             } else {
                 BlockTextOverlay.TEXTS.clear();
             }
+        } else {
+            BlockTextOverlay.TEXTS.clear();
         }
 
         /*if(entity instanceof PlayerSoulsEntity playerSoulsEntity) {

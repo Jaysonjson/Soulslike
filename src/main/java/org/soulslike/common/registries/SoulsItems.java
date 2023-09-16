@@ -48,7 +48,7 @@ public class SoulsItems {
     //public static final RegistryObject<Item> RUBY = registerItem("ruby", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB);
     FEATHER_STAFF = registerItem("feather_staff", () -> new FeatherStaff(new Item.Properties().defaultDurability(450), 120), SoulsCreativeTabs.WEAPON_TAB),
     FEATHER_WAND = registerItem("feather_wand", () -> new FeatherStaff(new Item.Properties().defaultDurability(325), 200), SoulsCreativeTabs.WEAPON_TAB),
-    BLOOD_BUCKET = registerItem("blood_bucket", () -> new BucketItem(SoulsFluids.SOURCE_BLOOD, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)), SoulsCreativeTabs.OTHER_TAB),
+    BLOOD_BUCKET = registerItem("blood_bucket", () -> new BucketItem(SoulsFluids.SOURCE_BLOOD, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1))),
     SCROLL = registerItem("scroll", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
     OAK_BARK = registerItem("oak_bark", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
     OAK_WAND = registerItem("oak_wand", () -> new WandItem(new Item.Properties()), SoulsCreativeTabs.WEAPON_TAB),
@@ -91,6 +91,10 @@ public class SoulsItems {
         return registryObject;
     }
 
+    private static <T extends Item> RegistryObject<T> registerItem(String name, Supplier<T> item) {
+        return registerItem(name, item, null);
+    }
+
     public static ArrayList<RegistryObject<Item>> ENTITY_SOULS = new ArrayList<>();
 
     public static void createEntitySouls() {
@@ -103,8 +107,10 @@ public class SoulsItems {
     @SubscribeEvent
     public static void addCreative(BuildCreativeModeTabContentsEvent event) {
         for (Map.Entry<RegistryObject<Item>, RegistryObject<CreativeModeTab>> entry : creativeTabs.entrySet()) {
-            if(entry.getValue().getKey()  == event.getTabKey()) {
-                event.accept(entry.getKey());
+            if(entry.getValue() != null) {
+                if (entry.getValue().getKey() == event.getTabKey()) {
+                    event.accept(entry.getKey());
+                }
             }
         }
     }
