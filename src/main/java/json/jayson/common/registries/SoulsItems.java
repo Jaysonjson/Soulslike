@@ -50,7 +50,8 @@ public class SoulsItems {
     CLOUD_WAND = registerItem("cloud_wand", () -> new CloudStaff(new Item.Properties().defaultDurability(325), 3, new Vec3(0.9, 0.9, 0.9)), SoulsCreativeTabs.WEAPON_TAB),
     ROSE_WAND = registerItem("rose_wand", () -> new RoseStaff(new Item.Properties().defaultDurability(325), 2), SoulsCreativeTabs.WEAPON_TAB),
     ROSE_STAFF = registerItem("rose_staff", () -> new RoseStaff(new Item.Properties().defaultDurability(450), 4), SoulsCreativeTabs.WEAPON_TAB),
-    //public static final RegistryObject<Item> RUBY = registerItem("ruby", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB);
+    RUBY = registerItem("ruby", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
+    RUBY_SHARD = registerItem("ruby_shard", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
     FEATHER_STAFF = registerItem("feather_staff", () -> new FeatherStaff(new Item.Properties().defaultDurability(450), 120), SoulsCreativeTabs.WEAPON_TAB),
     FEATHER_WAND = registerItem("feather_wand", () -> new FeatherStaff(new Item.Properties().defaultDurability(325), 200), SoulsCreativeTabs.WEAPON_TAB),
     BLOOD_BUCKET = registerItem("blood_bucket", () -> new BucketItem(SoulsFluids.SOURCE_BLOOD, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1))),

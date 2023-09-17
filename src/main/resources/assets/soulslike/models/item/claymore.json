@@ -4,6 +4,8 @@
 		"0": "soulslike:item/claymore/default",
 		"particle": "soulslike:item/claymore/default"
 	},
+	"loader": "forge:separate_transforms",
+	"gui_light": "front",
 	"elements": [
 		{
 			"from": [6, -11, 7],
@@ -149,43 +151,148 @@
 			}
 		}
 	],
-	"display": {
-		"thirdperson_righthand": {
-			"rotation": [0, 90, 0],
-			"translation": [0, 8.25, 0.75],
-			"scale": [0.75, 0.75, 0.75]
+	"base": {
+		"textures": {
+			"0": "soulslike:item/claymore/default",
+			"particle": "soulslike:item/claymore/default"
 		},
-		"thirdperson_lefthand": {
-			"rotation": [0, 90, 0],
-			"translation": [0, 8.25, 0.75],
-			"scale": [0.75, 0.75, 0.75]
-		},
-		"firstperson_righthand": {
-			"rotation": [0, -90, 25],
-			"translation": [1.13, 6.45, -1.12],
-			"scale": [0.68, 0.68, 0.68]
-		},
-		"firstperson_lefthand": {
-			"rotation": [0, -90, 25],
-			"translation": [1.13, 6.45, -1.12],
-			"scale": [0.68, 0.68, 0.68]
-		},
-		"ground": {
-			"translation": [0, 3, 0],
-			"scale": [0.25, 0.25, 0.25]
-		},
+		"display": {
+			"thirdperson_righthand": {
+				"rotation": [
+					0,
+					90,
+					0
+				],
+				"translation": [
+					0,
+					8.25,
+					0.75
+				],
+				"scale": [
+					0.75,
+					0.75,
+					0.75
+				]
+			},
+			"thirdperson_lefthand": {
+				"rotation": [
+					0,
+					90,
+					0
+				],
+				"translation": [
+					0,
+					8.25,
+					0.75
+				],
+				"scale": [
+					0.75,
+					0.75,
+					0.75
+				]
+			},
+			"firstperson_righthand": {
+				"rotation": [
+					0,
+					-90,
+					25
+				],
+				"translation": [
+					1.13,
+					6.45,
+					-1.12
+				],
+				"scale": [
+					0.68,
+					0.68,
+					0.68
+				]
+			},
+			"firstperson_lefthand": {
+				"rotation": [
+					0,
+					-90,
+					25
+				],
+				"translation": [
+					1.13,
+					6.45,
+					-1.12
+				],
+				"scale": [
+					0.68,
+					0.68,
+					0.68
+				]
+			},
+			"ground": {
+				"translation": [
+					0,
+					3,
+					0
+				],
+				"scale": [
+					0.25,
+					0.25,
+					0.25
+				]
+			},
+			"gui": {
+				"rotation": [
+					0,
+					180,
+					43
+				],
+				"translation": [
+					0.25,
+					0.5,
+					0
+				],
+				"scale": [
+					0.525,
+					0.525,
+					0.525
+				]
+			},
+			"head": {
+				"rotation": [
+					180,
+					0,
+					0
+				],
+				"translation": [
+					1,
+					7,
+					0
+				]
+			},
+			"fixed": {
+				"translation": [
+					0.5,
+					0.5,
+					0
+				],
+				"scale": [
+					0.5,
+					0.5,
+					0.5
+				]
+			}
+		}
+	},
+	"perspectives": {
 		"gui": {
-			"rotation": [0, 180, 43],
-			"translation": [0.25, 0.5, 0],
-			"scale": [0.525, 0.525, 0.525]
-		},
-		"head": {
-			"rotation": [180, 0, 0],
-			"translation": [1, 7, 0]
+			"parent": "item/generated",
+			"textures": {
+				"layer0": "soulslike:item/claymore/claymore"
+			},
+			"gui_light": "front"
 		},
 		"fixed": {
-			"translation": [0.5, 0.5, 0],
-			"scale": [0.5, 0.5, 0.5]
+			"parent": "item/generated",
+			"textures": {
+				"layer0": "soulslike:item/claymore/claymore"
+			}
 		}
 	}
 }
