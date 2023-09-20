@@ -8,6 +8,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerBlock;
+import net.minecraft.world.level.block.SeaPickleBlock;
+import net.minecraft.world.level.block.SeagrassBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -66,6 +68,8 @@ public class SoulsBlocks {
     BIRCH_CRAFTING_TABLE = registerBlock("birch_crafting_table", () -> new SoulsCraftingTable(BlockBehaviour.Properties.copy(Blocks.CRAFTING_TABLE)), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
     JUNGLE_CRAFTING_TABLE = registerBlock("jungle_crafting_table", () -> new SoulsCraftingTable(BlockBehaviour.Properties.copy(Blocks.CRAFTING_TABLE)), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
     DARK_OAK_CRAFTING_TABLE = registerBlock("dark_oak_crafting_table", () -> new SoulsCraftingTable(BlockBehaviour.Properties.copy(Blocks.CRAFTING_TABLE)), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
+    SAPPHIRE_SEAGRASS = registerBlock("sapphire_seagrass", () -> new SeagrassBlock(BlockBehaviour.Properties.copy(Blocks.SEAGRASS)), SoulsCreativeTabs.OTHER_TAB),
+    SAPPHIRE_SEA_PICKLE = registerBlock("sapphire_sea_pickle", () -> new SeaPickleBlock(BlockBehaviour.Properties.copy(Blocks.SEA_PICKLE)), SoulsCreativeTabs.OTHER_TAB),
     RUBY_ROSE = registerBlock("ruby_rose", () -> new FlowerBlock(MobEffects.NIGHT_VISION, 5, BlockBehaviour.Properties.copy(Blocks.POPPY)), SoulsCreativeTabs.OTHER_TAB)
             ;
 

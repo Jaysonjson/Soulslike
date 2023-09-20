@@ -47,12 +47,12 @@ public class Soulslike {
         SoulsCreativeTabs.register(modEventBus);
         SoulsLootCodecs.register(modEventBus);
         SoulsEntities.register(modEventBus);
+        SoulsFeatures.registerBus(modEventBus);
     }
 
     @SubscribeEvent
     @OnlyIn(Dist.CLIENT)
     public void registerItemColors(RegisterColorHandlersEvent.Item event) {
-        System.out.println("REGISTER ITEM COLORS");
         event.register(new RandomItemColor(), SoulsItems.THIGH_HIGHS.get());
     }
 
