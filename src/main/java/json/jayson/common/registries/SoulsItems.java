@@ -35,7 +35,7 @@ public class SoulsItems {
 
     public static final RegistryObject<Item>
     DWARF_COAL = registerItem("dwarf_coal", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
-    BEE_TEARS = registerItem("bee_tears", () -> new BeeTears(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
+    BEE_TEARS = registerItem("bee_tears", () -> new BeeTears(new Item.Properties().stacksTo(1)), SoulsCreativeTabs.OTHER_TAB),
     UNKNOWN_SOUL = registerItem("unknown_soul", () -> new SoulItem(new Item.Properties(), 50, "item.soulslike.unknown_soul.description"), SoulsCreativeTabs.OTHER_TAB),
     SOUL_OF_A_GIANT = registerItem("soul_of_a_giant", () -> new SoulItem(new Item.Properties(), 375, "item.soulslike.soul_of_a_giant.description"), SoulsCreativeTabs.OTHER_TAB),
 
@@ -52,6 +52,8 @@ public class SoulsItems {
     ROSE_STAFF = registerItem("rose_staff", () -> new RoseStaff(new Item.Properties().defaultDurability(450), 4), SoulsCreativeTabs.WEAPON_TAB),
     RUBY = registerItem("ruby", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
     RUBY_SHARD = registerItem("ruby_shard", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
+    SAPPHIRE = registerItem("sapphire", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
+    SAPPHIRE_SHARD = registerItem("sapphire_shard", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
     FEATHER_STAFF = registerItem("feather_staff", () -> new FeatherStaff(new Item.Properties().defaultDurability(450), 120), SoulsCreativeTabs.WEAPON_TAB),
     FEATHER_WAND = registerItem("feather_wand", () -> new FeatherStaff(new Item.Properties().defaultDurability(325), 200), SoulsCreativeTabs.WEAPON_TAB),
     BLOOD_BUCKET = registerItem("blood_bucket", () -> new BucketItem(SoulsFluids.SOURCE_BLOOD, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1))),

@@ -69,7 +69,7 @@ public class ModBlockDataGeneration {
         add(SoulsBlocks.BURNING_COAL, ToolTypes.DEFAULT_PICKAXE, LootTables.DROP_SELF, BlockStateType.SIMPLE_BLOCK_WITH_ITEM);
         add(SoulsBlocks.STEEL_BLOCK, ToolTypes.DEFAULT_PICKAXE, LootTables.DROP_SELF, BlockStateType.SIMPLE_BLOCK_WITH_ITEM);
         add(SoulsBlocks.CHERRY_CRATE, ToolTypes.DEFAULT_AXE, LootTables.DROP_SELF, BlockStateType.SIMPLE_ITEM);
-        add(SoulsBlocks.PILLORY, ToolTypes.DEFAULT_AXE, LootTables.DROP_SELF, BlockStateType.SIMPLE_ITEM);
+        //add(SoulsBlocks.PILLORY, ToolTypes.DEFAULT_AXE, LootTables.DROP_SELF, BlockStateType.SIMPLE_ITEM);
         add(SoulsBlocks.HARDENED_BLAZE_PIECE, ToolTypes.NONE, LootTables.DROP_OTHER(SoulsItems.HARDENED_BLAZE.get()), BlockStateType.SIMPLE_ITEM);
         add(SoulsBlocks.CHERRY_CRAFTING_TABLE, ToolTypes.DEFAULT_AXE, LootTables.DROP_SELF, BlockStateType.SIMPLE_ITEM);
         add(SoulsBlocks.ACACIA_CRAFTING_TABLE, ToolTypes.DEFAULT_AXE, LootTables.DROP_SELF, BlockStateType.SIMPLE_ITEM);
@@ -81,7 +81,7 @@ public class ModBlockDataGeneration {
         add(SoulsBlocks.BIRCH_CRAFTING_TABLE, ToolTypes.DEFAULT_AXE, LootTables.DROP_SELF, BlockStateType.SIMPLE_ITEM);
         add(SoulsBlocks.JUNGLE_CRAFTING_TABLE, ToolTypes.DEFAULT_AXE, LootTables.DROP_SELF, BlockStateType.SIMPLE_ITEM);
         add(SoulsBlocks.DARK_OAK_CRAFTING_TABLE, ToolTypes.DEFAULT_AXE, LootTables.DROP_SELF, BlockStateType.SIMPLE_ITEM);
-        add(SoulsBlocks.RUBY_ROSE, ToolTypes.NONE, LootTables.DROP_SELF, BlockStateType.NONE);
+        add(SoulsBlocks.RUBY_ROSE, ToolTypes.NONE, LootTables.DROP_OTHER(SoulsItems.RUBY_SHARD.get()), BlockStateType.NONE);
     }
 
     public static void add(SoulRegistryBlockItem<Block> block, IToolType toolType, ILootTable lootTable) {

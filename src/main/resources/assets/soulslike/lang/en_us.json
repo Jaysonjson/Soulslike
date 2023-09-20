@@ -35,6 +35,9 @@
   "item.soulslike.ruby_shard": "Ruby Shard",
   "block.soulslike.ruby_rose": "Ruby Rose",
 
+  "item.soulslike.sapphire": "Sapphire",
+  "item.soulslike.sapphire_shard": "Sapphire Shard",
+
   "item.soulslike.oak_wand": "Oak Wand",
   "item.soulslike.oak_bark": "Oak Bark",
   "item.soulslike.scroll": "Scroll",
@@ -48,6 +51,7 @@
   "item.soulslike.rose_staff": "Rose Staff",
   "item.soulslike.feather_wand": "Feather Wand",
   "item.soulslike.feather_staff": "Feather Staff",
+  "item.soulslike.love_staff": "Love Staff",
 
   "block.soulslike.bee_statue": "Bee Statue",
   "block.soulslike.darkened_nether_bricks": "Darkened Nether Bricks",

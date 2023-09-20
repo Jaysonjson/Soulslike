@@ -30,7 +30,7 @@ import static net.minecraft.client.gui.screens.inventory.AbstractContainerScreen
 
 public class LevelUpScreen extends Screen {
     public static final ResourceLocation BACKGROUND = new ResourceLocation(Soulslike.MODID, "textures/gui/container/level_up.png");
-    int level_increase = 12;
+    int level_increase = 1;
     public LevelUpScreen() {
         super(Component.literal("Test"));
     }

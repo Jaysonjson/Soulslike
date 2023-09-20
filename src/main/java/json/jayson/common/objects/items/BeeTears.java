@@ -71,4 +71,9 @@ public class BeeTears extends Item {
         components.add(Component.literal("Charges: " + itemStack.getTag().getInt(NBT_CHARGES)));
         super.appendHoverText(itemStack, level, components, tooltipFlag);
     }
+
+    @Override
+    public boolean isFoil(ItemStack p_41453_) {
+        return true;
+    }
 }

@@ -28,7 +28,8 @@ import java.util.function.Supplier;
 public class SoulsBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Soulslike.MODID);
 
-    public static final SoulRegistryBlockItem<Block>
+    @SuppressWarnings("deprecation")
+	public static final SoulRegistryBlockItem<Block>
             BEE_STATUE = registerBlock("bee_statue", () -> new SoulsBeeStatue(BlockBehaviour.Properties.of().strength(99999f).noOcclusion()), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
             FOX_ALTAR = registerBlock("fox_altar", () -> new SoulsFoxAltar(BlockBehaviour.Properties.of().strength(6f).noOcclusion()), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
             DARKENED_NETHER_BRICKS = registerBlock("darkened_nether_bricks", () -> new Block(BlockBehaviour.Properties.of().strength(3f)), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
@@ -53,7 +54,7 @@ public class SoulsBlocks {
     QUARTZ_CAKE_PLATE = registerBlock("quartz_cake_plate", () -> new CakePlate(BlockBehaviour.Properties.of().strength(3f).noOcclusion()), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
     BURNING_COAL = registerBlock("burning_coal", () -> new Block(BlockBehaviour.Properties.of().strength(3f)), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
     STEEL_BLOCK = registerBlock("steel_block", () -> new Block(BlockBehaviour.Properties.of().strength(3f)), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
-    PILLORY = registerBlock("pillory", () -> new Block(BlockBehaviour.Properties.of().strength(3f).noOcclusion()), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
+    //PILLORY = registerBlock("pillory", () -> new Block(BlockBehaviour.Properties.of().strength(3f).noOcclusion()), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
     HARDENED_BLAZE_PIECE = registerBlock("hardened_blaze_piece", () -> new HardenedBlazePiece(BlockBehaviour.Properties.of().noOcclusion().dynamicShape().offsetType(BlockBehaviour.OffsetType.XZ)), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
     CHERRY_CRAFTING_TABLE = registerBlock("cherry_crafting_table", () -> new SoulsCraftingTable(BlockBehaviour.Properties.copy(Blocks.CRAFTING_TABLE)), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
     ACACIA_CRAFTING_TABLE = registerBlock("acacia_crafting_table", () -> new SoulsCraftingTable(BlockBehaviour.Properties.copy(Blocks.CRAFTING_TABLE)), SoulsCreativeTabs.BUILDING_BLOCK_TAB),

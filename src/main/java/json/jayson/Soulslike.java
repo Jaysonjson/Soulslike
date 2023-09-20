@@ -38,7 +38,7 @@ public class Soulslike {
         MinecraftForge.EVENT_BUS.register(new ModEvents());
         MinecraftForge.EVENT_BUS.register(new ClientEvents());
         MinecraftForge.EVENT_BUS.register(new ClientEvents.ClientModBusEvents());
-
+        modEventBus.addListener(ClientEvents::entityAttributCreation);
         SoulsItems.register(modEventBus);
         SoulsBlocks.register(modEventBus);
         SoulsBlockEntities.register(modEventBus);

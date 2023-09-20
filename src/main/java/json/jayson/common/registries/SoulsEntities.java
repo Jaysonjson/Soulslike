@@ -1,6 +1,7 @@
 package json.jayson.common.registries;
 
 import json.jayson.Soulslike;
+import json.jayson.common.objects.entities.FireFlyEntity;
 import json.jayson.common.objects.entities.PlayerSoulsEntity;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
@@ -19,6 +20,12 @@ public class SoulsEntities {
             () -> EntityType.Builder.<PlayerSoulsEntity>of(PlayerSoulsEntity::new, MobCategory.MISC)
                     .sized(1.0f, 1.0f)
                     .build(new ResourceLocation(Soulslike.MODID, "player_souls").toString())
+    );
+
+    public static final RegistryObject<EntityType<FireFlyEntity>> FIRE_FLY = ENTITIES.register("fire_fly",
+            () -> EntityType.Builder.<FireFlyEntity>of(FireFlyEntity::new, MobCategory.MISC)
+                    .sized(1.0f, 1.0f)
+                    .build(new ResourceLocation(Soulslike.MODID, "fire_fly").toString())
     );
 
     public static void register(IEventBus eventBus) {

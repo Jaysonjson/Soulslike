@@ -1,16 +1,19 @@
 package json.jayson.common;
 
 import json.jayson.Soulslike;
+import json.jayson.common.registries.SoulsItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.EntityJoinLevelEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
+import net.minecraftforge.event.entity.player.EntityItemPickupEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.LogicalSide;
@@ -65,6 +68,16 @@ public class ModEvents {
                 player.getCapability(PlayerLevelProvider.PLAYER_LEVEL).ifPresent(playerLevel -> {
                     playerLevel.setPlayerAttributes(player);
                 });
+            }
+        }
+    }
+
+    @SubscribeEvent
+    public static void onItemPickup(EntityItemPickupEvent event) {
+        Player player = event.getEntity();
+        if(event.getItem().getItem().getItem().equals(SoulsItems.BEE_TEARS.get())) {
+            if (player.getInventory().contains(event.getItem().getItem())) {
+                event.setCanceled(true);
             }
         }
     }

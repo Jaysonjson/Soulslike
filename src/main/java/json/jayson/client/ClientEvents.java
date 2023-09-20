@@ -3,6 +3,9 @@ package json.jayson.client;
 
 import json.jayson.Soulslike;
 import json.jayson.client.overlay.block_overlay.BlockTextOverlay;
+import json.jayson.client.renderer.FireFlyEntityRenderer;
+import json.jayson.common.objects.entities.FireFlyEntity;
+import json.jayson.common.registries.SoulsBlocks;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
@@ -14,6 +17,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.MovementInputUpdateEvent;
 import net.minecraftforge.client.event.RegisterGuiOverlaysEvent;
+import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -29,7 +33,7 @@ import json.jayson.common.registries.SoulsBlockEntities;
 import json.jayson.common.registries.SoulsEntities;
 import json.jayson.common.registries.SoulsFluids;
 
-@Mod.EventBusSubscriber(modid = Soulslike.MODID, value = Dist.CLIENT)
+@Mod.EventBusSubscriber(modid = Soulslike.MODID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class ClientEvents {
 
     @Mod.EventBusSubscriber(modid = Soulslike.MODID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -46,7 +50,6 @@ public class ClientEvents {
         public static void onClientSetup(FMLClientSetupEvent event) {
             ItemBlockRenderTypes.setRenderLayer(SoulsFluids.SOURCE_BLOOD.get(), RenderType.translucent());
             ItemBlockRenderTypes.setRenderLayer(SoulsFluids.FLOWING_BLOOD.get(), RenderType.translucent());
-            //ItemBlockRenderTypes.setRenderLayer(SoulsBlocks.RUBY_ROSE.getBlock(), RenderType.translucent());
             //ItemBlockRenderTypes.setRenderLayer(SoulsBlocks.MANGROVE_CRAFTING_TABLE.getBlock(), RenderType.translucent());
         }
         @SubscribeEvent
@@ -55,7 +58,14 @@ public class ClientEvents {
             event.registerBlockEntityRenderer(SoulsBlockEntities.CAKE_PLATE.get(), CakePlateEntityRenderer::new);
             event.registerBlockEntityRenderer(SoulsBlockEntities.FIRE_ALTAR.get(), FireAltarEntityRenderer::new);
             event.registerEntityRenderer(SoulsEntities.PLAYER_SOULS.get(), PlayerSoulsEntityRenderer::new);
+            event.registerEntityRenderer(SoulsEntities.FIRE_FLY.get(), FireFlyEntityRenderer::new);
         }
+    }
+
+    @SubscribeEvent
+    public static void entityAttributCreation(EntityAttributeCreationEvent event) {
+        System.out.println("ENTITY ATTRIBUTE");
+        event.put(SoulsEntities.FIRE_FLY.get(), FireFlyEntity.createAttributes().build());
     }
 
     @SubscribeEvent

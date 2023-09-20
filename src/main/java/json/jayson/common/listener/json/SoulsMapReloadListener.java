@@ -21,7 +21,6 @@ public class SoulsMapReloadListener extends SimpleJsonResourceReloadListener {
     @Override
     protected void apply(Map<ResourceLocation, JsonElement> jsonElementMap, ResourceManager resourceManager, ProfilerFiller profilerFiller) {
         for(Map.Entry<ResourceLocation, JsonElement> entry : jsonElementMap.entrySet()) {
-            ResourceLocation resourcelocation = entry.getKey();
             SoulsMap item = Soulslike.GSON.fromJson(entry.getValue(), SoulsMap.class);
             if(acceptProtocol(item)) Data.SOULS_MAP.putAll(item.SOULS_MAP);
         }
