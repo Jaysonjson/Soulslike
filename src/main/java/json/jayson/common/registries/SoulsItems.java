@@ -64,8 +64,12 @@ public class SoulsItems {
     LOVE_STAFF = registerItem("love_staff", () -> new LoveStaff(new Item.Properties().defaultDurability(100)), SoulsCreativeTabs.WEAPON_TAB),
 
 
-    THIGH_HIGHS = registerItem("thigh_highs", () -> new ThighHighs(new Item.Properties()))
-
+    THIGH_HIGHS = registerItem("thigh_highs", () -> new ThighHighs(new Item.Properties())),
+    BRYN = registerItem("bryn", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
+    CALIDA = registerItem("calida", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
+    PURA = registerItem("pura", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
+    MORTIS = registerItem("mortis", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
+    VITA = registerItem("vita", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB)
     ;
 
     public static final RegistryObject<SwordItem>
@@ -78,6 +82,14 @@ public class SoulsItems {
     BIG_NETHERITE_SWORD = registerSword("big_netherite_sword", Tiers.NETHERITE, 9, -3.5f),
     BIG_SCRAPPED_SWORD = registerSword("big_scrapped_sword", SoulsTier.SCRAPPED, 10, -3.5f),
     BIG_TITANITOL_SWORD = registerSword("big_titanitol_sword", SoulsTier.BLAZE, 8, -3.5f),
+
+    RAPIER = registerSword("rapier", Tiers.IRON, 8, -3.5f),
+    CUTLASS = registerSword("cutlass", Tiers.IRON, 8, -3.5f),
+    GOLDEN_RAPIER = registerSword("golden_rapier", Tiers.IRON, 8, -3.5f),
+    DIAMOND_RAPIER = registerSword("diamond_rapier", Tiers.IRON, 8, -3.5f),
+    DIAMOND_CUTLASS = registerSword("diamond_cutlass", Tiers.IRON, 8, -3.5f),
+    NETHERITE_RAPIER = registerSword("netherite_rapier", Tiers.IRON, 8, -3.5f),
+    NETHERITE_CUTLASS = registerSword("netherite_cutlass", Tiers.IRON, 8, -3.5f),
 
     CLAYMORE = registerSword("claymore", Tiers.IRON, 10, -3.5f),
 

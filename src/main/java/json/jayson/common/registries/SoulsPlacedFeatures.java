@@ -22,7 +22,7 @@ public static final ResourceKey<PlacedFeature> SAPPHIRE_SEAGRASS_KEY = createKey
 	
 	public static void bootstrap(BootstapContext<PlacedFeature> context) {
 		HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
-		register(context, SAPPHIRE_SEAGRASS_KEY, configuredFeatures.getOrThrow(SoulsConfiguredFeatures.SAPPHIRE_SEAGRASS_KEY), List.of(InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_TOP_SOLID, CountPlacement.of(32), BiomeFilter.biome()));
+		register(context, SAPPHIRE_SEAGRASS_KEY, configuredFeatures.getOrThrow(SoulsConfiguredFeatures.SAPPHIRE_SEAGRASS_KEY), List.of(InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_TOP_SOLID, CountPlacement.of(1), BiomeFilter.biome()));
 	}
 
 	

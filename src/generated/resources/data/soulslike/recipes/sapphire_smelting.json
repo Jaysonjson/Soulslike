@@ -4,7 +4,7 @@
   "cookingtime": 500,
   "experience": 5.0,
   "ingredient": {
-    "item": "soulslike:ruby_shard"
+    "item": "soulslike:sapphire_shard"
   },
-  "result": "soulslike:ruby"
+  "result": "soulslike:sapphire"
 }

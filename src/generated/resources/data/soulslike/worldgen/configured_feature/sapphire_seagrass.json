@@ -1,6 +1,6 @@
 {
   "type": "soulslike:sapphire_seagrass",
   "config": {
-    "probability": 0.5
+    "probability": 0.005
   }
 }

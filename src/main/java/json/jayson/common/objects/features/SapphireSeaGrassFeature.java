@@ -33,7 +33,9 @@ public class SapphireSeaGrassFeature extends Feature<ProbabilityFeatureConfigura
         if (worldgenlevel.getBlockState(blockpos1).is(Blocks.WATER)) {
             BlockState blockstate = SoulsBlocks.SAPPHIRE_SEAGRASS.getBlock().defaultBlockState();
             if (blockstate.canSurvive(worldgenlevel, blockpos1)) {
+                if(p_160318_.config().probability + 0.1 > randomsource.nextDouble()) {
                     worldgenlevel.setBlock(blockpos1, blockstate, 2);
+                }
                 flag = true;
             }
         }

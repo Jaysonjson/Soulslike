@@ -19,7 +19,7 @@ public class SoulsConfiguredFeatures {
 	
 	public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
 		//register(context, SAPPHIRE_SEAGRASS_KEY, Feature.SEAGRASS, new ProbabilityFeatureConfiguration(1F));
-		register(context, SAPPHIRE_SEAGRASS_KEY, SoulsFeatures.SAPPHIRE_SEAGRASS.get(), new ProbabilityFeatureConfiguration(0.5f));
+		register(context, SAPPHIRE_SEAGRASS_KEY, SoulsFeatures.SAPPHIRE_SEAGRASS.get(), new ProbabilityFeatureConfiguration(0.005f));
 	}
 	
 	
