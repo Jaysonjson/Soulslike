@@ -86,7 +86,7 @@ public class ModRecipeProvider extends SoulsRecipeBuilder {
 
 
         blasting(p_251297_, SoulsItems.HARDENED_BLAZE.get(), Items.BLAZE_POWDER, 0.8f, 150);
-        blasting(p_251297_, SoulsItems.RUBY_SHARD.get(), SoulsItems.RUBY.get(), 5f, 500);
-        blasting(p_251297_, SoulsItems.SAPPHIRE_SHARD.get(), SoulsItems.SAPPHIRE.get(), 5f, 500);
+        //blasting(p_251297_, SoulsItems.RUBY_SHARD.get(), SoulsItems.RUBY.get(), 5f, 500);
+        //blasting(p_251297_, SoulsItems.SAPPHIRE_SHARD.get(), SoulsItems.SAPPHIRE.get(), 5f, 500);
     }
 }

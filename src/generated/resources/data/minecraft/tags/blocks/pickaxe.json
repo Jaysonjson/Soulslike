@@ -10,6 +10,7 @@
     "soulslike:cake_plate",
     "soulslike:quartz_cake_plate",
     "soulslike:burning_coal",
-    "soulslike:steel_block"
+    "soulslike:steel_block",
+    "soulslike:soul_entity_spawner"
   ]
 }

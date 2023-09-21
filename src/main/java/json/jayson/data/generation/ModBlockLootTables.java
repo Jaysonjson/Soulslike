@@ -1,5 +1,6 @@
 package json.jayson.data.generation;
 
+import json.jayson.common.registries.SoulsBlocks;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.level.block.Block;
@@ -17,14 +18,20 @@ public class ModBlockLootTables extends BlockLootSubProvider {
     @Override
     protected void generate() {
         for (ModBlockDataGeneration.ModBlockDataGenHolder modBlockDataGenHolder : ModBlockDataGeneration.blocks) {
+            Block block1;
+            if(modBlockDataGenHolder.block != null) {
+                block1 = modBlockDataGenHolder.block.getBlock();
+            } else {
+                block1 = modBlockDataGenHolder.createBlock;
+            }
             if(modBlockDataGenHolder.lootTable.dropSelf()) {
-                dropSelf(modBlockDataGenHolder.block.getBlock());
+                dropSelf(block1);
             }
             if(modBlockDataGenHolder.lootTable.dropOther() != null) {
-                dropOther(modBlockDataGenHolder.block.getBlock(), modBlockDataGenHolder.lootTable.dropOther());
+                dropOther(block1, modBlockDataGenHolder.lootTable.dropOther());
             }
             if(modBlockDataGenHolder.lootTable.dropWhenSilktouch()) {
-                dropWhenSilkTouch(modBlockDataGenHolder.block.getBlock());
+                dropWhenSilkTouch(block1);
             }
         }
     }
@@ -33,11 +40,17 @@ public class ModBlockLootTables extends BlockLootSubProvider {
     protected @NotNull Iterable<Block> getKnownBlocks() {
         ArrayList<Block> blocks = new ArrayList<>();
         for (ModBlockDataGeneration.ModBlockDataGenHolder block : ModBlockDataGeneration.blocks) {
+            Block block1;
+            if(block.block != null) {
+                block1 = block.block.getBlock();
+            } else {
+                block1 = block.createBlock;
+            }
             if(block.lootTable.dropSelf()) {
-                blocks.add(block.block.getBlock());
+                blocks.add(block1);
             }
             if(block.lootTable.dropOther() != null) {
-                blocks.add(block.block.getBlock());
+                blocks.add(block1);
             }
         }
         return blocks;

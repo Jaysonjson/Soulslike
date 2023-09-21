@@ -1,0 +1,15 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "item": "soulslike:sapphire_shard"
+    }
+  ],
+  "results": [
+    {
+      "count": 1,
+      "item": "soulslike:sapphire"
+    }
+  ]
+}

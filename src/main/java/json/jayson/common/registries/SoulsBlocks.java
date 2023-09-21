@@ -1,6 +1,14 @@
 package json.jayson.common.registries;
 
+import com.simibubi.create.content.kinetics.BlockStressDefaults;
+import com.simibubi.create.content.kinetics.mixer.MechanicalMixerBlock;
+import com.simibubi.create.content.processing.AssemblyOperatorBlockItem;
+import com.simibubi.create.foundation.data.AssetLookup;
+import com.simibubi.create.foundation.data.SharedProperties;
+import com.tterrag.registrate.util.entry.BlockEntry;
 import json.jayson.Soulslike;
+import json.jayson.common.objects.blocks.soul_entity_spawner.SoulEntitySpawnerBlock;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -11,6 +19,7 @@ import net.minecraft.world.level.block.FlowerBlock;
 import net.minecraft.world.level.block.SeaPickleBlock;
 import net.minecraft.world.level.block.SeagrassBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.MapColor;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -26,6 +35,11 @@ import json.jayson.common.objects.blocks.bee_statue.SoulsBeeStatue;
 import json.jayson.common.objects.blocks.fox_altar.SoulsFoxAltar;
 
 import java.util.function.Supplier;
+
+import static com.simibubi.create.Create.REGISTRATE;
+import static com.simibubi.create.foundation.data.ModelGen.customItemModel;
+import static com.simibubi.create.foundation.data.TagGen.axeOrPickaxe;
+import static json.jayson.Soulslike.SOULS_REGISTRATE;
 
 public class SoulsBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Soulslike.MODID);
@@ -68,14 +82,25 @@ public class SoulsBlocks {
     BIRCH_CRAFTING_TABLE = registerBlock("birch_crafting_table", () -> new SoulsCraftingTable(BlockBehaviour.Properties.copy(Blocks.CRAFTING_TABLE)), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
     JUNGLE_CRAFTING_TABLE = registerBlock("jungle_crafting_table", () -> new SoulsCraftingTable(BlockBehaviour.Properties.copy(Blocks.CRAFTING_TABLE)), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
     DARK_OAK_CRAFTING_TABLE = registerBlock("dark_oak_crafting_table", () -> new SoulsCraftingTable(BlockBehaviour.Properties.copy(Blocks.CRAFTING_TABLE)), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
-    SAPPHIRE_SEAGRASS = registerBlock("sapphire_seagrass", () -> new SeagrassBlock(BlockBehaviour.Properties.copy(Blocks.SEAGRASS)), SoulsCreativeTabs.OTHER_TAB),
-    SAPPHIRE_SEA_PICKLE = registerBlock("sapphire_sea_pickle", () -> new SeaPickleBlock(BlockBehaviour.Properties.copy(Blocks.SEA_PICKLE)), SoulsCreativeTabs.OTHER_TAB),
-    RUBY_ROSE = registerBlock("ruby_rose", () -> new FlowerBlock(MobEffects.NIGHT_VISION, 5, BlockBehaviour.Properties.copy(Blocks.POPPY)), SoulsCreativeTabs.OTHER_TAB),
+    SAPPHIRE_SEAGRASS = registerBlock("sapphire_seagrass", () -> new SeagrassBlock(BlockBehaviour.Properties.copy(Blocks.SEAGRASS)), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
+    SAPPHIRE_SEA_PICKLE = registerBlock("sapphire_sea_pickle", () -> new SeaPickleBlock(BlockBehaviour.Properties.copy(Blocks.SEA_PICKLE)), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
+    RUBY_ROSE = registerBlock("ruby_rose", () -> new FlowerBlock(MobEffects.NIGHT_VISION, 5, BlockBehaviour.Properties.copy(Blocks.POPPY)), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
     RUBY_BLOCK = registerBlock("ruby_block", () -> new Block(BlockBehaviour.Properties.of().strength(3f)), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
     SAPPHIRE_BLOCK = registerBlock("sapphire_block", () -> new Block(BlockBehaviour.Properties.of().strength(3f)), SoulsCreativeTabs.BUILDING_BLOCK_TAB)
 
     ;
 
+    public static final BlockEntry<SoulEntitySpawnerBlock> SOUL_ENTITY_SPAWNER =
+            SOULS_REGISTRATE.block("soul_entity_spawner", SoulEntitySpawnerBlock::new)
+                    .initialProperties(SharedProperties::stone)
+                    .properties(p -> p.mapColor(MapColor.STONE))
+                    .properties(BlockBehaviour.Properties::noOcclusion)
+                    .transform(axeOrPickaxe())
+                    .blockstate((c, p) -> p.simpleBlock(c.getEntry(), AssetLookup.partialBaseModel(c, p)))
+                    .transform(BlockStressDefaults.setImpact(64.0))
+                    .item(AssemblyOperatorBlockItem::new)
+                    .transform(customItemModel())
+                    .register();
 
     public static final SoulRegistryBlockItem<SoulsLiquidBlock> BLOOD_BLOCK = registerBlock("blood_block", () -> new SoulsLiquidBlock(SoulsFluids.SOURCE_BLOOD, BlockBehaviour.Properties.copy(Blocks.WATER)));
 

@@ -3,6 +3,7 @@ package json.jayson;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.mojang.logging.LogUtils;
+import com.simibubi.create.foundation.data.CreateRegistrate;
 import json.jayson.common.objects.items.RandomItemColor;
 import json.jayson.common.registries.*;
 import net.minecraft.world.level.GameRules;
@@ -29,8 +30,10 @@ public class Soulslike {
     public static final String MODID = "soulslike";
     private static final Logger LOGGER = LogUtils.getLogger();
     public static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
+    public static final CreateRegistrate SOULS_REGISTRATE = CreateRegistrate.create(MODID);
     public Soulslike() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        SOULS_REGISTRATE.registerEventListeners(modEventBus);
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(SoulsItems::addCreative);
         modEventBus.addListener(this::registerItemColors);

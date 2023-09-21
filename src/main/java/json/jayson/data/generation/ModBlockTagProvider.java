@@ -37,7 +37,13 @@ public class ModBlockTagProvider extends BlockTagsProvider {
     protected void addTags(HolderLookup.Provider provider) {
         for (ModBlockDataGeneration.ModBlockDataGenHolder block : ModBlockDataGeneration.blocks) {
             if(block.toolType.toolTag() != null) {
-                this.tag(block.toolType.toolTag()).replace(false).add(block.block.getBlock());
+                Block block1;
+                if(block.block != null) {
+                    block1 = block.block.getBlock();
+                } else {
+                    block1 = block.createBlock;
+                }
+                this.tag(block.toolType.toolTag()).replace(false).add(block1);
             }
         }
 

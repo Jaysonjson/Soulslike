@@ -1,0 +1,15 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "item": "soulslike:ruby_shard"
+    }
+  ],
+  "results": [
+    {
+      "count": 1,
+      "item": "soulslike:ruby"
+    }
+  ]
+}

@@ -1,6 +1,8 @@
 
 package json.jayson.data.generation;
 
+import com.tterrag.registrate.util.entry.BlockEntry;
+import json.jayson.common.objects.blocks.soul_entity_spawner.SoulEntitySpawnerBlock;
 import json.jayson.data.generation.interfaces.ILootTable;
 import json.jayson.data.generation.interfaces.IToolType;
 import json.jayson.data.generation.lists.LootTables;
@@ -31,6 +33,7 @@ public class ModBlockDataGeneration {
         public final ILootTable lootTable;
 
         public final SoulRegistryBlockItem<Block> block;
+        public Block createBlock;
 
         public final ModBlockDataModel blockDataModel;
 
@@ -39,6 +42,14 @@ public class ModBlockDataGeneration {
             this.lootTable = lootTable;
             this.block = block;
             this.blockDataModel = blockDataModel;
+        }
+
+        ModBlockDataGenHolder(Block block, IToolType toolType, ILootTable lootTable, ModBlockDataModel blockDataModel) {
+            this.toolType = toolType;
+            this.lootTable = lootTable;
+            this.createBlock = block;
+            this.blockDataModel = blockDataModel;
+            this.block = null;
         }
     }
 
@@ -82,6 +93,20 @@ public class ModBlockDataGeneration {
         add(SoulsBlocks.JUNGLE_CRAFTING_TABLE, ToolTypes.DEFAULT_AXE, LootTables.DROP_SELF, BlockStateType.SIMPLE_ITEM);
         add(SoulsBlocks.DARK_OAK_CRAFTING_TABLE, ToolTypes.DEFAULT_AXE, LootTables.DROP_SELF, BlockStateType.SIMPLE_ITEM);
         add(SoulsBlocks.RUBY_ROSE, ToolTypes.NONE, LootTables.DROP_OTHER(SoulsItems.RUBY_SHARD.get()), BlockStateType.NONE);
+        add(SoulsBlocks.SOUL_ENTITY_SPAWNER.get(), ToolTypes.DEFAULT_PICKAXE, LootTables.DROP_SELF, BlockStateType.NONE);
+    }
+
+    public static void add(Block block, IToolType toolType, ILootTable lootTable) {
+        add(block, toolType, lootTable, new ModBlockDataModel(null, BlockStateType.NONE));
+    }
+
+    public static void add(Block block, IToolType toolType, ILootTable lootTable, ModBlockDataModel blockDataModel) {
+        blocks.add(new ModBlockDataGenHolder(block, toolType, lootTable, blockDataModel));
+    }
+
+
+    public static void add(Block block, IToolType toolType, ILootTable lootTable, BlockStateType blockStateType) {
+        blocks.add(new ModBlockDataGenHolder(block, toolType, lootTable, new ModBlockDataModel(null, blockStateType)));
     }
 
     public static void add(SoulRegistryBlockItem<Block> block, IToolType toolType, ILootTable lootTable) {

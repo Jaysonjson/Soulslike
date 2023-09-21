@@ -1,0 +1,18 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "soulslike:sapphire"
+    }
+  ],
+  "processingTime": 350,
+  "results": [
+    {
+      "item": "soulslike:sapphire_shard"
+    },
+    {
+      "chance": 0.125,
+      "item": "create:experience_nugget"
+    }
+  ]
+}

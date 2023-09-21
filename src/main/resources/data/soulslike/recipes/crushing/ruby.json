@@ -1,0 +1,18 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "soulslike:ruby"
+    }
+  ],
+  "processingTime": 350,
+  "results": [
+    {
+      "item": "soulslike:ruby_shard"
+    },
+    {
+      "chance": 0.125,
+      "item": "create:experience_nugget"
+    }
+  ]
+}

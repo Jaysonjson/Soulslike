@@ -31,6 +31,10 @@ public class SoulsCreativeTabs {
     public static RegistryObject<CreativeModeTab> BUILDING_BLOCK_TAB = TABS.register("building_block_tab", () -> CreativeModeTab.builder()
             .icon(() -> SoulsBlocks.MUD_VASE.getItem().getDefaultInstance()).title(Component.translatable("creativemodetab.block_tab")).withTabsBefore(CreativeModeTabs.SPAWN_EGGS).build());
 
+    public static RegistryObject<CreativeModeTab> SOULS_TAB = TABS.register("souls_tab", () -> CreativeModeTab.builder()
+            .icon(() -> SoulsItems.EXPLORERS_SOUL.get().getDefaultInstance()).title(Component.translatable("creativemodetab.souls_tab")).withTabsBefore(CreativeModeTabs.SPAWN_EGGS).build());
+
+    
     public static void register(IEventBus eventBus) {
         TABS.register(eventBus);
     }
