@@ -69,7 +69,9 @@ public class SoulsItems {
     CALIDA = registerItem("calida", () -> new Item(new Item.Properties())),
     PURA = registerItem("pura", () -> new Item(new Item.Properties())),
     MORTIS = registerItem("mortis", () -> new Item(new Item.Properties())),
-    VITA = registerItem("vita", () -> new Item(new Item.Properties()))
+    VITA = registerItem("vita", () -> new Item(new Item.Properties())),
+    RUBY_DUST = registerItem("ruby_dust", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
+    SAPPHIRE_DUST = registerItem("sapphire_dust", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB)
     ;
 
     public static final RegistryObject<SwordItem>

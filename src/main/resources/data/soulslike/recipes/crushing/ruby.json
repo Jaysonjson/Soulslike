@@ -8,11 +8,19 @@
   "processingTime": 350,
   "results": [
     {
-      "item": "soulslike:ruby_shard"
+      "item": "soulslike:ruby_dust"
     },
     {
       "chance": 0.125,
       "item": "create:experience_nugget"
+    },
+    {
+      "chance": 0.725,
+      "item": "soulslike:ruby_dust"
+    },
+    {
+      "chance": 0.325,
+      "item": "soulslike:ruby_dust"
     }
   ]
 }

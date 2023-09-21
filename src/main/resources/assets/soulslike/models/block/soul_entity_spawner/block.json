@@ -2,6 +2,7 @@
 	"credit": "Made with Blockbench",
 	"parent": "block/block",
 	"ambientocclusion": false,
+	"render_type": "cutout_mipped",
 	"textures": {
 		"2": "block/spruce_log_top",
 		"4": "create:block/mixer_base_side",
