@@ -28,7 +28,7 @@ public class DataGenerators {
         generator.addProvider(true, new ModRecipeProvider(packOutput));
         generator.addProvider(true, new ModItemTagProvider(packOutput, event.getLookupProvider(), blockTagProvider.contentsGetter(), existingFileHelper));
         generator.addProvider(event.includeServer(), new ModWorldGenProvider(packOutput, event.getLookupProvider()));
-
+        generator.addProvider(event.includeServer(), new ModPoiTypeTagsProvider(packOutput, event.getLookupProvider(), existingFileHelper));
        /* try {
             Path source = Paths.get("src/generated/resources/data/minecraft/tags/blocks/pickaxe.json");
             Path dest = Paths.get("src/generated/resources/data/minecraft/tags/blocks/mineable/pickaxe.json");

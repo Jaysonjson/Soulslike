@@ -35,6 +35,20 @@
   "item.soulslike.ruby_shard": "Ruby Shard",
   "block.soulslike.ruby_rose": "Ruby Rose",
 
+  "item.soulslike.vita": "Vita",
+  "item.soulslike.bryn": "Bryn",
+  "item.soulslike.calida": "Calida",
+  "item.soulslike.mortis": "Mortis",
+  "item.soulslike.pura": "Pura",
+
+  "item.soulslike.diamond_cutlass": "Diamond Cutlass",
+  "item.soulslike.diamond_rapier": "Diamond Rapier",
+  "item.soulslike.netherite_cutlass": "Netherite Cutlass",
+  "item.soulslike.netherite_rapier": "Netherite Rapier",
+  "item.soulslike.cutlass": "Cutlass",
+  "item.soulslike.golden_rapier": "Golden Rapier",
+  "item.soulslike.rapier": "Rapier",
+
   "item.soulslike.sapphire": "Sapphire",
   "item.soulslike.sapphire_shard": "Sapphire Shard",
 
@@ -72,6 +86,8 @@
   "block.soulslike.jungle_crafting_table": "Jungle Crafting Table",
   "block.soulslike.dark_oak_crafting_table": "Dark Oak Crafting Table",
   "block.minecraft.crafting_table": "Oak Crafting Table",
+  "block.soulslike.sapphire_sea_pickle": "Sapphire Sea Pickle",
+  "block.soulslike.sapphire_seagrass": "Sapphire Seagrass",
 
   "block.soulslike.oak_crate": "Oak Crate",
   "block.soulslike.spruce_crate": "Spruce Crate",
@@ -95,5 +111,6 @@
   "creativemodetab.building_block_tab": "Soulslike Building Blocks",
   "creativemodetab.weapon_tab": "Soulslike Weapons/Tools",
   "item.soulslike.unknown_soul.description": "Use to gain a minimal amount of Souls",
-  "item.soulslike.soul_of_a_giant.description": "Use to gain a great amount of Souls"
+  "item.soulslike.soul_of_a_giant.description": "Use to gain a great amount of Souls",
+  "entity.minecraft.villager.soulslike.gemcutter": "Gem Cutter"
 }

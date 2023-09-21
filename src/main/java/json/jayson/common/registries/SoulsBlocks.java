@@ -70,8 +70,11 @@ public class SoulsBlocks {
     DARK_OAK_CRAFTING_TABLE = registerBlock("dark_oak_crafting_table", () -> new SoulsCraftingTable(BlockBehaviour.Properties.copy(Blocks.CRAFTING_TABLE)), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
     SAPPHIRE_SEAGRASS = registerBlock("sapphire_seagrass", () -> new SeagrassBlock(BlockBehaviour.Properties.copy(Blocks.SEAGRASS)), SoulsCreativeTabs.OTHER_TAB),
     SAPPHIRE_SEA_PICKLE = registerBlock("sapphire_sea_pickle", () -> new SeaPickleBlock(BlockBehaviour.Properties.copy(Blocks.SEA_PICKLE)), SoulsCreativeTabs.OTHER_TAB),
-    RUBY_ROSE = registerBlock("ruby_rose", () -> new FlowerBlock(MobEffects.NIGHT_VISION, 5, BlockBehaviour.Properties.copy(Blocks.POPPY)), SoulsCreativeTabs.OTHER_TAB)
-            ;
+    RUBY_ROSE = registerBlock("ruby_rose", () -> new FlowerBlock(MobEffects.NIGHT_VISION, 5, BlockBehaviour.Properties.copy(Blocks.POPPY)), SoulsCreativeTabs.OTHER_TAB),
+    RUBY_BLOCK = registerBlock("ruby_block", () -> new Block(BlockBehaviour.Properties.of().strength(3f)), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
+    SAPPHIRE_BLOCK = registerBlock("sapphire_block", () -> new Block(BlockBehaviour.Properties.of().strength(3f)), SoulsCreativeTabs.BUILDING_BLOCK_TAB)
+
+    ;
 
 
     public static final SoulRegistryBlockItem<SoulsLiquidBlock> BLOOD_BLOCK = registerBlock("blood_block", () -> new SoulsLiquidBlock(SoulsFluids.SOURCE_BLOOD, BlockBehaviour.Properties.copy(Blocks.WATER)));

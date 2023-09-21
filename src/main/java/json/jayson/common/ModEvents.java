@@ -1,20 +1,29 @@
 package json.jayson.common;
 
+import java.util.List;
+
+import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import json.jayson.Soulslike;
 import json.jayson.common.registries.SoulsItems;
+import json.jayson.common.registries.SoulsVillagers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.trading.MerchantOffer;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.EntityJoinLevelEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.player.EntityItemPickupEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
+import net.minecraftforge.event.village.VillagerTradesEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.LogicalSide;
 import net.minecraftforge.fml.common.Mod;
@@ -124,6 +133,17 @@ public class ModEvents {
         player.getCapability(PlayerSoulsProvider.PLAYER_SOULS).ifPresent(oldStore -> {
             oldStore.sync((ServerPlayer) player);
         });
+    }
+    
+    @SubscribeEvent
+    public static void addCustomTrades(VillagerTradesEvent event) {
+    	if(event.getType() == SoulsVillagers.GEM_CUTTER.get()) {
+    		Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
+    		trades.get(1).add((trader, random) -> new MerchantOffer(new ItemStack(Items.EMERALD, random.nextInt(4, 8)), new ItemStack(SoulsItems.RUBY_SHARD.get(), 4), 2, 8, 0.02f));
+    		trades.get(1).add((trader, random) -> new MerchantOffer(new ItemStack(Items.EMERALD, random.nextInt(4, 8)), new ItemStack(SoulsItems.SAPPHIRE_SHARD.get(), 4), 2, 8, 0.02f));
+    		trades.get(2).add((trader, random) -> new MerchantOffer(new ItemStack(Items.EMERALD, random.nextInt(4, 9)), new ItemStack(SoulsItems.RUBY.get(), 3), 2, 8, 0.05f));
+    		trades.get(2).add((trader, random) -> new MerchantOffer(new ItemStack(Items.EMERALD, random.nextInt(4, 9)), new ItemStack(SoulsItems.SAPPHIRE.get(), 3), 2, 8, 0.05f));
+    	}
     }
 }
 
