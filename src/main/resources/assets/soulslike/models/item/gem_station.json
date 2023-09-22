@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "soulslike:block/gem_station/gem_station_bottom",
+    "east": "soulslike:block/gem_station/gem_station_side",
+    "north": "soulslike:block/gem_station/gem_station_front",
+    "particle": "soulslike:block/gem_station/gem_station_front",
+    "south": "soulslike:block/gem_station/gem_station_side",
+    "up": "soulslike:block/gem_station/gem_station_top",
+    "west": "soulslike:block/gem_station/gem_station_front"
+  }
+}

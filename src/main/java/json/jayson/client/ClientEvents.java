@@ -1,8 +1,18 @@
 package json.jayson.client;
 
 
+import com.mojang.blaze3d.systems.RenderSystem;
+import com.mojang.blaze3d.vertex.PoseStack;
+import com.simibubi.create.CreateClient;
+import com.simibubi.create.content.contraptions.minecart.CouplingRenderer;
+import com.simibubi.create.content.trains.entity.CarriageCouplingRenderer;
+import com.simibubi.create.content.trains.track.TrackBlockOutline;
+import com.simibubi.create.content.trains.track.TrackTargetingClient;
+import com.simibubi.create.foundation.render.SuperRenderTypeBuffer;
+import com.simibubi.create.foundation.utility.AnimationTickHolder;
 import json.jayson.Soulslike;
 import json.jayson.client.overlay.block_overlay.BlockTextOverlay;
+import json.jayson.client.renderer.BlockOutlineHelper;
 import json.jayson.client.renderer.FireFlyEntityRenderer;
 import json.jayson.common.objects.entities.FireFlyEntity;
 import json.jayson.common.registries.SoulsBlocks;
@@ -14,10 +24,12 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.MovementInputUpdateEvent;
 import net.minecraftforge.client.event.RegisterGuiOverlaysEvent;
+import net.minecraftforge.client.event.RenderLevelStageEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -62,6 +74,26 @@ public class ClientEvents {
             event.registerEntityRenderer(SoulsEntities.PLAYER_SOULS.get(), PlayerSoulsEntityRenderer::new);
             event.registerEntityRenderer(SoulsEntities.FIRE_FLY.get(), FireFlyEntityRenderer::new);
         }
+    }
+
+    public static BlockOutlineHelper BLOCK_OUTLINE = new BlockOutlineHelper();
+
+    @SubscribeEvent
+    public static void onRenderWorld(RenderLevelStageEvent event) {
+        if (event.getStage() != RenderLevelStageEvent.Stage.AFTER_PARTICLES)
+            return;
+
+        PoseStack ms = event.getPoseStack();
+        ms.pushPose();
+        SuperRenderTypeBuffer buffer = SuperRenderTypeBuffer.getInstance();
+        float partialTicks = AnimationTickHolder.getPartialTicks();
+        Vec3 camera = Minecraft.getInstance().gameRenderer.getMainCamera()
+                .getPosition();
+        BLOCK_OUTLINE.render(ms, buffer, camera, partialTicks);
+
+        buffer.draw();
+        RenderSystem.enableCull();
+        ms.popPose();
     }
 
     @SubscribeEvent

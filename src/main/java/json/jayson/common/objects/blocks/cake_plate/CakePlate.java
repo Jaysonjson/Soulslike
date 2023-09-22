@@ -7,6 +7,7 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.BlockGetter;
@@ -33,8 +34,7 @@ public class CakePlate extends BaseEntityBlock {
         return RenderShape.MODEL;
     }
 
-    @Override
-    public VoxelShape getShape(BlockState p_60555_, BlockGetter p_60556_, BlockPos p_60557_, CollisionContext p_60558_) {
+    public VoxelShape SHAPE() {
         VoxelShape SHAPE = Shapes.empty();
         SHAPE = Shapes.join(SHAPE, Block.box(12, 4, 4, 13, 5, 12), BooleanOp.OR);
         SHAPE = Shapes.join(SHAPE, Block.box(6, 1, 6, 10, 3, 10), BooleanOp.OR);
@@ -44,6 +44,11 @@ public class CakePlate extends BaseEntityBlock {
         SHAPE = Shapes.join(SHAPE, Block.box(3, 4, 12, 13, 5, 13), BooleanOp.OR);
         SHAPE = Shapes.join(SHAPE, Block.box(3, 4, 4, 4, 5, 12), BooleanOp.OR);
         return SHAPE;
+    }
+
+    @Override
+    public VoxelShape getShape(BlockState p_60555_, BlockGetter p_60556_, BlockPos p_60557_, CollisionContext p_60558_) {
+        return SHAPE();
     }
 
     @Override

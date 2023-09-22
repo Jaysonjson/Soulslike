@@ -17,7 +17,7 @@ public class SoulsVillagers {
     
     public static final RegistryObject<PoiType>
     GEM_POI = POI_TYPES.register("gem_poi", () -> new PoiType(
-    		ImmutableSet.copyOf(SoulsBlocks.RUBY_BLOCK.getBlock().getStateDefinition().getPossibleStates()), 1, 1));
+    		ImmutableSet.copyOf(SoulsBlocks.GEM_STATION.getBlock().getStateDefinition().getPossibleStates()), 1, 1));
     
     public static final RegistryObject<VillagerProfession> 
     GEM_CUTTER =  VILLAGER_PROFESSIONS.register("gemcutter", () -> 

@@ -43,17 +43,17 @@ public class ModRecipeProvider extends SoulsRecipeBuilder {
         daggerRecipe(p_251297_, SoulsItems.BLAZE_DAGGER.get(), SoulsItems.HARDENED_BLAZE.get());
         netheriteSmithing(p_251297_, SoulsItems.DIAMOND_DAGGER.get(), RecipeCategory.COMBAT, SoulsItems.NETHERITE_DAGGER.get());
 
-        crateRecipe(p_251297_, SoulsBlocks.ACACIA_CRATE.getItem(), Blocks.ACACIA_PLANKS.asItem(), Blocks.ACACIA_SLAB.asItem());
-        crateRecipe(p_251297_, SoulsBlocks.OAK_LOG_CRATE.getItem(), Blocks.OAK_PLANKS.asItem(), Blocks.OAK_LOG.asItem());
-        crateRecipe(p_251297_, SoulsBlocks.CRIMSON_CRATE.getItem(), Blocks.CRIMSON_PLANKS.asItem(), Blocks.CRIMSON_SLAB.asItem());
-        crateRecipe(p_251297_, SoulsBlocks.OAK_CRATE.getItem(), Blocks.OAK_PLANKS.asItem(), Blocks.OAK_SLAB.asItem());
-        crateRecipe(p_251297_, SoulsBlocks.WARPED_CRATE.getItem(), Blocks.WARPED_PLANKS.asItem(), Blocks.WARPED_SLAB.asItem());
-        crateRecipe(p_251297_, SoulsBlocks.BIRCH_CRATE.getItem(), Blocks.BIRCH_PLANKS.asItem(), Blocks.BIRCH_SLAB.asItem());
-        crateRecipe(p_251297_, SoulsBlocks.MANGROVE_CRATE.getItem(), Blocks.MANGROVE_PLANKS.asItem(), Blocks.MANGROVE_SLAB.asItem());
-        crateRecipe(p_251297_, SoulsBlocks.CHERRY_CRATE.getItem(), Blocks.CHERRY_PLANKS.asItem(), Blocks.CHERRY_SLAB.asItem());
-        crateRecipe(p_251297_, SoulsBlocks.SPRUCE_CRATE.getItem(), Blocks.SPRUCE_PLANKS.asItem(), Blocks.SPRUCE_SLAB.asItem());
-        crateRecipe(p_251297_, SoulsBlocks.JUNGLE_CRATE.getItem(), Blocks.JUNGLE_PLANKS.asItem(), Blocks.JUNGLE_SLAB.asItem());
-        crateRecipe(p_251297_, SoulsBlocks.DARK_OAK_CRATE.getItem(), Blocks.DARK_OAK_PLANKS.asItem(), Blocks.DARK_OAK_SLAB.asItem());
+        //crateRecipe(p_251297_, SoulsBlocks.ACACIA_CRATE.getItem(), Blocks.ACACIA_PLANKS.asItem(), Blocks.ACACIA_SLAB.asItem());
+        //crateRecipe(p_251297_, SoulsBlocks.OAK_LOG_CRATE.getItem(), Blocks.OAK_PLANKS.asItem(), Blocks.OAK_LOG.asItem());
+        //crateRecipe(p_251297_, SoulsBlocks.CRIMSON_CRATE.getItem(), Blocks.CRIMSON_PLANKS.asItem(), Blocks.CRIMSON_SLAB.asItem());
+        //crateRecipe(p_251297_, SoulsBlocks.OAK_CRATE.getItem(), Blocks.OAK_PLANKS.asItem(), Blocks.OAK_SLAB.asItem());
+        //crateRecipe(p_251297_, SoulsBlocks.WARPED_CRATE.getItem(), Blocks.WARPED_PLANKS.asItem(), Blocks.WARPED_SLAB.asItem());
+        //crateRecipe(p_251297_, SoulsBlocks.BIRCH_CRATE.getItem(), Blocks.BIRCH_PLANKS.asItem(), Blocks.BIRCH_SLAB.asItem());
+        //crateRecipe(p_251297_, SoulsBlocks.MANGROVE_CRATE.getItem(), Blocks.MANGROVE_PLANKS.asItem(), Blocks.MANGROVE_SLAB.asItem());
+        //crateRecipe(p_251297_, SoulsBlocks.CHERRY_CRATE.getItem(), Blocks.CHERRY_PLANKS.asItem(), Blocks.CHERRY_SLAB.asItem());
+        //crateRecipe(p_251297_, SoulsBlocks.SPRUCE_CRATE.getItem(), Blocks.SPRUCE_PLANKS.asItem(), Blocks.SPRUCE_SLAB.asItem());
+        //crateRecipe(p_251297_, SoulsBlocks.JUNGLE_CRATE.getItem(), Blocks.JUNGLE_PLANKS.asItem(), Blocks.JUNGLE_SLAB.asItem());
+        //crateRecipe(p_251297_, SoulsBlocks.DARK_OAK_CRATE.getItem(), Blocks.DARK_OAK_PLANKS.asItem(), Blocks.DARK_OAK_SLAB.asItem());
 
         craftingTable(p_251297_, SoulsBlocks.CHERRY_CRAFTING_TABLE.getItem(), Blocks.CHERRY_PLANKS.asItem());
         craftingTable(p_251297_, SoulsBlocks.MANGROVE_CRAFTING_TABLE.getItem(), Blocks.MANGROVE_PLANKS.asItem());

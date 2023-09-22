@@ -39,13 +39,13 @@ public class SoulsBlockEntities {
             BLOCK_ENTITIES.register("generic_vase_entity", () ->
                     BlockEntityType.Builder.of(GenericVaseEntity::new,
                             SoulsBlocks.MUD_VASE.getBlock(), SoulsBlocks.NETHER_BRICKS_VASE.getBlock(), SoulsBlocks.STONE_VASE.getBlock(), SoulsBlocks.QUARTZ_VASE.getBlock()).build(null));
-    public static final RegistryObject<BlockEntityType<GenericCrateEntity>> GENERIC_CRATE =
+    /*public static final RegistryObject<BlockEntityType<GenericCrateEntity>> GENERIC_CRATE =
             BLOCK_ENTITIES.register("generic_crate_entity", () ->
                     BlockEntityType.Builder.of(GenericCrateEntity::new,
                             SoulsBlocks.OAK_CRATE.getBlock(), SoulsBlocks.BIRCH_CRATE.getBlock(), SoulsBlocks.JUNGLE_CRATE.getBlock(), SoulsBlocks.SPRUCE_CRATE.getBlock(),
                             SoulsBlocks.DARK_OAK_CRATE.getBlock(), SoulsBlocks.ACACIA_CRATE.getBlock(), SoulsBlocks.MANGROVE_CRATE.getBlock(), SoulsBlocks.CRIMSON_CRATE.getBlock(),
                             SoulsBlocks.WARPED_CRATE.getBlock(),
-                            SoulsBlocks.OAK_LOG_CRATE.getBlock()).build(null));
+                            SoulsBlocks.OAK_LOG_CRATE.getBlock()).build(null));*/
 
     public static final RegistryObject<BlockEntityType<CakePlateEntity>> CAKE_PLATE =
             BLOCK_ENTITIES.register("cake_plate", () ->

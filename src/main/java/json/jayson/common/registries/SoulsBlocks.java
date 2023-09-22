@@ -8,6 +8,7 @@ import com.simibubi.create.foundation.data.AssetLookup;
 import com.simibubi.create.foundation.data.SharedProperties;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import json.jayson.Soulslike;
+import json.jayson.common.objects.blocks.cake_plate.CakePlateBlockItem;
 import json.jayson.common.objects.blocks.soul_entity_spawner.SoulEntitySpawnerBlock;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.effect.MobEffects;
@@ -56,7 +57,7 @@ public class SoulsBlocks {
     QUARTZ_VASE = registerBlock("quartz_vase", () -> new GenericVase(BlockBehaviour.Properties.of().strength(1f).noOcclusion().dynamicShape().offsetType(BlockBehaviour.OffsetType.XZ)), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
     TITANITOL_BLOCK = registerBlock("titanitol_block", () -> new Block(BlockBehaviour.Properties.of().strength(3f)), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
     FIRE_ALTAR = registerBlock("fire_altar", () -> new FireAltar(BlockBehaviour.Properties.of().strength(3f).lightLevel(state -> state.getValue(FireAltar.UNLIGHTED) ? 1 : 13).noOcclusion()), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
-    OAK_CRATE = registerBlock("oak_crate", () -> new GenericCrate(BlockBehaviour.Properties.of().strength(3f).noOcclusion()), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
+   /* OAK_CRATE = registerBlock("oak_crate", () -> new GenericCrate(BlockBehaviour.Properties.of().strength(3f).noOcclusion()), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
     SPRUCE_CRATE = registerBlock("spruce_crate", () -> new GenericCrate(BlockBehaviour.Properties.of().strength(3f).noOcclusion()), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
     BIRCH_CRATE = registerBlock("birch_crate", () -> new GenericCrate(BlockBehaviour.Properties.of().strength(3f).noOcclusion()), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
     JUNGLE_CRATE = registerBlock("jungle_crate", () -> new GenericCrate(BlockBehaviour.Properties.of().strength(3f).noOcclusion()), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
@@ -66,11 +67,11 @@ public class SoulsBlocks {
     CRIMSON_CRATE = registerBlock("crimson_crate", () -> new GenericCrate(BlockBehaviour.Properties.of().strength(3f).noOcclusion()), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
     WARPED_CRATE = registerBlock("warped_crate", () -> new GenericCrate(BlockBehaviour.Properties.of().strength(3f).noOcclusion()), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
     CHERRY_CRATE = registerBlock("cherry_crate", () -> new GenericCrate(BlockBehaviour.Properties.of().strength(3f).noOcclusion()), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
-    OAK_LOG_CRATE = registerBlock("oak_log_crate", () -> new GenericCrate(BlockBehaviour.Properties.of().strength(3f).noOcclusion()), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
+    OAK_LOG_CRATE = registerBlock("oak_log_crate", () -> new GenericCrate(BlockBehaviour.Properties.of().strength(3f).noOcclusion()), SoulsCreativeTabs.BUILDING_BLOCK_TAB),*/
     CAKE_PLATE = registerBlock("cake_plate", () -> new CakePlate(BlockBehaviour.Properties.of().strength(3f).noOcclusion()), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
     QUARTZ_CAKE_PLATE = registerBlock("quartz_cake_plate", () -> new CakePlate(BlockBehaviour.Properties.of().strength(3f).noOcclusion()), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
     BURNING_COAL = registerBlock("burning_coal", () -> new Block(BlockBehaviour.Properties.of().strength(3f)), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
-    STEEL_BLOCK = registerBlock("steel_block", () -> new Block(BlockBehaviour.Properties.of().strength(3f)), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
+    //STEEL_BLOCK = registerBlock("steel_block", () -> new Block(BlockBehaviour.Properties.of().strength(3f)), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
     //PILLORY = registerBlock("pillory", () -> new Block(BlockBehaviour.Properties.of().strength(3f).noOcclusion()), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
     HARDENED_BLAZE_PIECE = registerBlock("hardened_blaze_piece", () -> new HardenedBlazePiece(BlockBehaviour.Properties.of().noOcclusion().dynamicShape().offsetType(BlockBehaviour.OffsetType.XZ)), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
     CHERRY_CRAFTING_TABLE = registerBlock("cherry_crafting_table", () -> new SoulsCraftingTable(BlockBehaviour.Properties.copy(Blocks.CRAFTING_TABLE)), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
@@ -89,7 +90,8 @@ public class SoulsBlocks {
     RUBY_BLOCK = registerBlock("ruby_block", () -> new Block(BlockBehaviour.Properties.of().strength(3f)), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
     RUBY_SHARD_BLOCK = registerBlock("ruby_shard_block", () -> new Block(BlockBehaviour.Properties.of().strength(3f)), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
     SAPPHIRE_SHARD_BLOCK = registerBlock("sapphire_shard_block", () -> new Block(BlockBehaviour.Properties.of().strength(3f)), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
-    SAPPHIRE_BLOCK = registerBlock("sapphire_block", () -> new Block(BlockBehaviour.Properties.of().strength(3f)), SoulsCreativeTabs.BUILDING_BLOCK_TAB)
+    SAPPHIRE_BLOCK = registerBlock("sapphire_block", () -> new Block(BlockBehaviour.Properties.of().strength(3f)), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
+    GEM_STATION = registerBlock("gem_station", () -> new Block(BlockBehaviour.Properties.of().strength(3f)), SoulsCreativeTabs.BUILDING_BLOCK_TAB)
 
     ;
 

@@ -17,7 +17,8 @@ public class GenericCrateEntity extends RandomizableContainerBlockEntity {
     private NonNullList<ItemStack> items = NonNullList.withSize(getContainerSize(), ItemStack.EMPTY);
 
     public GenericCrateEntity(BlockPos p_155630_, BlockState p_155631_) {
-        super(SoulsBlockEntities.GENERIC_CRATE.get(), p_155630_, p_155631_);
+        //super(SoulsBlockEntities.GENERIC_CRATE.get(), p_155630_, p_155631_);
+        super(null, p_155630_, p_155631_);
     }
 
     @Override

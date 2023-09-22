@@ -1,6 +1,8 @@
 package json.jayson.integration.create;
 
 import com.simibubi.create.AllBlocks;
+import com.simibubi.create.content.equipment.zapper.terrainzapper.WorldshaperItem;
+import com.simibubi.create.content.equipment.zapper.terrainzapper.WorldshaperRenderHandler;
 import com.simibubi.create.foundation.ponder.PonderRegistrationHelper;
 import com.simibubi.create.foundation.ponder.PonderRegistry;
 import com.simibubi.create.foundation.ponder.PonderStoryBoardEntry;
@@ -26,6 +28,7 @@ public class PonderIndex {
         addStoryBoard(SoulsItems.SAPPHIRE_SHARD.get(), "sapphire_seagrass/spawn", SapphireSeaGrassScene::spawn);
         addStoryBoard(SoulsBlocks.SAPPHIRE_SEAGRASS.getItem(), "sapphire_seagrass/spawn", SapphireSeaGrassScene::spawn);
         addStoryBoard(SoulsBlocks.CAKE_PLATE.getItem(), "cake_plate/intro", CakePlateScene::spawn);
+        addStoryBoard(SoulsBlocks.QUARTZ_CAKE_PLATE.getItem(), "cake_plate/intro", CakePlateScene::spawn);
         forComponents(SoulsBlocks.RUBY_ROSE.getItem())
                 .addStoryBoard("ruby_rose/spawn", RubyRoseScene::spawn)
                 .addStoryBoard("ruby_rose/temple_0", RubyRoseScene::spawn);

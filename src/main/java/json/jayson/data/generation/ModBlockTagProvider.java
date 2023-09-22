@@ -48,8 +48,8 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         }
 
         System.err.println("MANUALLY MOVE TAGS TO MINEABLE!");
-        addBlocks(SoulsTags.CRATE, SoulsBlocks.OAK_CRATE, SoulsBlocks.OAK_LOG_CRATE, SoulsBlocks.CRIMSON_CRATE, SoulsBlocks.DARK_OAK_CRATE, SoulsBlocks.MANGROVE_CRATE, SoulsBlocks.ACACIA_CRATE,
-                SoulsBlocks.BIRCH_CRATE, SoulsBlocks.JUNGLE_CRATE, SoulsBlocks.WARPED_CRATE, SoulsBlocks.SPRUCE_CRATE);
+        /*addBlocks(SoulsTags.CRATE, SoulsBlocks.OAK_CRATE, SoulsBlocks.OAK_LOG_CRATE, SoulsBlocks.CRIMSON_CRATE, SoulsBlocks.DARK_OAK_CRATE, SoulsBlocks.MANGROVE_CRATE, SoulsBlocks.ACACIA_CRATE,
+                SoulsBlocks.BIRCH_CRATE, SoulsBlocks.JUNGLE_CRATE, SoulsBlocks.WARPED_CRATE, SoulsBlocks.SPRUCE_CRATE);*/
         addBlocks(SoulsTags.VASE, SoulsBlocks.MUD_VASE, SoulsBlocks.QUARTZ_VASE, SoulsBlocks.STONE_VASE, SoulsBlocks.NETHER_BRICKS_VASE);
         addBlocks(SoulsTags.CRAFTING_TABLES, SoulsBlocks.CHERRY_CRAFTING_TABLE, SoulsBlocks.BAMBOO_CRAFTING_TABLE, SoulsBlocks.ACACIA_CRAFTING_TABLE, SoulsBlocks.CRIMSON_CRAFTING_TABLE,
                 SoulsBlocks.BIRCH_CRAFTING_TABLE, SoulsBlocks.JUNGLE_CRAFTING_TABLE, SoulsBlocks.SPRUCE_CRAFTING_TABLE, SoulsBlocks.DARK_OAK_CRAFTING_TABLE, SoulsBlocks.MANGROVE_CRAFTING_TABLE,

@@ -57,7 +57,7 @@ public class ModBlockDataGeneration {
 
     public static void register() {
         add(SoulsBlocks.DARKENED_NETHER_BRICKS, ToolTypes.DEFAULT_PICKAXE, LootTables.DROP_SELF, BlockStateType.SIMPLE_BLOCK_WITH_ITEM);
-        add(SoulsBlocks.OAK_CRATE, ToolTypes.DEFAULT_AXE, LootTables.DROP_SELF, BlockStateType.SIMPLE_ITEM);
+       // add(SoulsBlocks.OAK_CRATE, ToolTypes.DEFAULT_AXE, LootTables.DROP_SELF, BlockStateType.SIMPLE_ITEM);
         add(SoulsBlocks.BEE_STATUE, ToolTypes.NONE, LootTables.DROP_SELF, BlockStateType.SIMPLE_ITEM);
         add(SoulsBlocks.FOX_ALTAR,ToolTypes.NONE, LootTables.DROP_SELF, BlockStateType.SIMPLE_ITEM);
         add(SoulsBlocks.MUD_VASE, ToolTypes.DEFAULT_PICKAXE, LootTables.DROP_SELF, BlockStateType.SIMPLE_ITEM);
@@ -66,20 +66,20 @@ public class ModBlockDataGeneration {
         add(SoulsBlocks.QUARTZ_VASE, ToolTypes.DEFAULT_PICKAXE, LootTables.DROP_SELF, BlockStateType.SIMPLE_ITEM);
         add(SoulsBlocks.TITANITOL_BLOCK, ToolTypes.DEFAULT_PICKAXE, LootTables.DROP_SELF, BlockStateType.SIMPLE_BLOCK_WITH_ITEM);
         add(SoulsBlocks.FIRE_ALTAR, ToolTypes.DEFAULT_PICKAXE, LootTables.DROP_SELF);
-        add(SoulsBlocks.SPRUCE_CRATE, ToolTypes.DEFAULT_AXE, LootTables.DROP_SELF, BlockStateType.SIMPLE_ITEM);
-        add(SoulsBlocks.BIRCH_CRATE, ToolTypes.DEFAULT_AXE, LootTables.DROP_SELF, BlockStateType.SIMPLE_ITEM);
-        add(SoulsBlocks.JUNGLE_CRATE, ToolTypes.DEFAULT_AXE, LootTables.DROP_SELF, BlockStateType.SIMPLE_ITEM);
-        add(SoulsBlocks.ACACIA_CRATE, ToolTypes.DEFAULT_AXE, LootTables.DROP_SELF, BlockStateType.SIMPLE_ITEM);
-        add(SoulsBlocks.DARK_OAK_CRATE, ToolTypes.DEFAULT_AXE, LootTables.DROP_SELF, BlockStateType.SIMPLE_ITEM);
-        add(SoulsBlocks.MANGROVE_CRATE, ToolTypes.DEFAULT_AXE, LootTables.DROP_SELF, BlockStateType.SIMPLE_ITEM);
-        add(SoulsBlocks.CRIMSON_CRATE, ToolTypes.DEFAULT_AXE, LootTables.DROP_SELF, BlockStateType.SIMPLE_ITEM);
-        add(SoulsBlocks.WARPED_CRATE, ToolTypes.DEFAULT_AXE, LootTables.DROP_SELF, BlockStateType.SIMPLE_ITEM);
-        add(SoulsBlocks.OAK_LOG_CRATE, ToolTypes.DEFAULT_AXE, LootTables.DROP_SELF, BlockStateType.SIMPLE_ITEM);
+        //add(SoulsBlocks.SPRUCE_CRATE, ToolTypes.DEFAULT_AXE, LootTables.DROP_SELF, BlockStateType.SIMPLE_ITEM);
+        //add(SoulsBlocks.BIRCH_CRATE, ToolTypes.DEFAULT_AXE, LootTables.DROP_SELF, BlockStateType.SIMPLE_ITEM);
+        //add(SoulsBlocks.JUNGLE_CRATE, ToolTypes.DEFAULT_AXE, LootTables.DROP_SELF, BlockStateType.SIMPLE_ITEM);
+        //add(SoulsBlocks.ACACIA_CRATE, ToolTypes.DEFAULT_AXE, LootTables.DROP_SELF, BlockStateType.SIMPLE_ITEM);
+        //add(SoulsBlocks.DARK_OAK_CRATE, ToolTypes.DEFAULT_AXE, LootTables.DROP_SELF, BlockStateType.SIMPLE_ITEM);
+        //add(SoulsBlocks.MANGROVE_CRATE, ToolTypes.DEFAULT_AXE, LootTables.DROP_SELF, BlockStateType.SIMPLE_ITEM);
+        //add(SoulsBlocks.CRIMSON_CRATE, ToolTypes.DEFAULT_AXE, LootTables.DROP_SELF, BlockStateType.SIMPLE_ITEM);
+        //add(SoulsBlocks.WARPED_CRATE, ToolTypes.DEFAULT_AXE, LootTables.DROP_SELF, BlockStateType.SIMPLE_ITEM);
+        //add(SoulsBlocks.OAK_LOG_CRATE, ToolTypes.DEFAULT_AXE, LootTables.DROP_SELF, BlockStateType.SIMPLE_ITEM);
         add(SoulsBlocks.CAKE_PLATE, ToolTypes.DEFAULT_PICKAXE, LootTables.DROP_SELF, BlockStateType.SIMPLE_ITEM);
         add(SoulsBlocks.QUARTZ_CAKE_PLATE, ToolTypes.DEFAULT_PICKAXE, LootTables.DROP_SELF, BlockStateType.SIMPLE_ITEM);
         add(SoulsBlocks.BURNING_COAL, ToolTypes.DEFAULT_PICKAXE, LootTables.DROP_SELF, BlockStateType.SIMPLE_BLOCK_WITH_ITEM);
-        add(SoulsBlocks.STEEL_BLOCK, ToolTypes.DEFAULT_PICKAXE, LootTables.DROP_SELF, BlockStateType.SIMPLE_BLOCK_WITH_ITEM);
-        add(SoulsBlocks.CHERRY_CRATE, ToolTypes.DEFAULT_AXE, LootTables.DROP_SELF, BlockStateType.SIMPLE_ITEM);
+        //add(SoulsBlocks.STEEL_BLOCK, ToolTypes.DEFAULT_PICKAXE, LootTables.DROP_SELF, BlockStateType.SIMPLE_BLOCK_WITH_ITEM);
+        //add(SoulsBlocks.CHERRY_CRATE, ToolTypes.DEFAULT_AXE, LootTables.DROP_SELF, BlockStateType.SIMPLE_ITEM);
         //add(SoulsBlocks.PILLORY, ToolTypes.DEFAULT_AXE, LootTables.DROP_SELF, BlockStateType.SIMPLE_ITEM);
         add(SoulsBlocks.HARDENED_BLAZE_PIECE, ToolTypes.NONE, LootTables.DROP_OTHER(SoulsItems.HARDENED_BLAZE.get()), BlockStateType.SIMPLE_ITEM);
         add(SoulsBlocks.CHERRY_CRAFTING_TABLE, ToolTypes.DEFAULT_AXE, LootTables.DROP_SELF, BlockStateType.SIMPLE_ITEM);
