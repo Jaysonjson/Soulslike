@@ -2,6 +2,8 @@ package json.jayson.integration.create.scenes;
 
 import com.simibubi.create.foundation.ponder.SceneBuilder;
 import com.simibubi.create.foundation.ponder.SceneBuildingUtil;
+import com.simibubi.create.foundation.ponder.element.InputWindowElement;
+import com.simibubi.create.foundation.utility.Pointing;
 import json.jayson.common.registries.SoulsItems;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.ItemStack;
@@ -36,6 +38,7 @@ public class RubyRoseScene {
                 .independent()
                 .pointAt(topCenter)
                 .placeNearTarget();
+        scene.overlay.showControls(new InputWindowElement(util.vector.centerOf(2, 1, 2), Pointing.DOWN).leftClick(), 30);
         scene.world.destroyBlock(util.grid.at(2, 1, 2));
         scene.world.createItemEntity(util.grid.at(2, 1, 2).getCenter(), util.vector.of(0, 0, 0), new ItemStack(SoulsItems.RUBY_SHARD.get()));
         scene.idle(100);

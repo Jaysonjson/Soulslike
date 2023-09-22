@@ -41,11 +41,13 @@ public class SapphireSeaGrassScene {
                 .placeNearTarget();
         scene.idle(100);
         scene.overlay.showText(80)
-                .text("Breaking this Seagrass will have a chance of 10% to drop a Sapphire Shard")
+                .text("Breaking this Seagrass will have a chance of 10 Percentage to drop a Sapphire Shard")
                 .attachKeyFrame()
                 .independent()
                 .pointAt(topCenter)
                 .placeNearTarget();
+        scene.overlay.showControls(new InputWindowElement(util.vector.centerOf(2, 1, 2), Pointing.DOWN).leftClick(), 30);
+
         scene.world.destroyBlock(util.grid.at(2, 1, 2));
         scene.world.createItemEntity(util.grid.at(2, 1, 2).getCenter(), util.vector.of(0, 0, 0), new ItemStack(SoulsItems.SAPPHIRE_SHARD.get()));
         scene.idle(100);
