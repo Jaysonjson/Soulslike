@@ -94,6 +94,11 @@ public class ModBlockDataGeneration {
         add(SoulsBlocks.DARK_OAK_CRAFTING_TABLE, ToolTypes.DEFAULT_AXE, LootTables.DROP_SELF, BlockStateType.SIMPLE_ITEM);
         add(SoulsBlocks.RUBY_ROSE, ToolTypes.NONE, LootTables.DROP_OTHER(SoulsItems.RUBY_SHARD.get()), BlockStateType.NONE);
         add(SoulsBlocks.SOUL_ENTITY_SPAWNER.get(), ToolTypes.DEFAULT_PICKAXE, LootTables.DROP_SELF, BlockStateType.NONE);
+        add(SoulsBlocks.RUBY_BLOCK, ToolTypes.DEFAULT_PICKAXE, LootTables.DROP_SELF, BlockStateType.SIMPLE_BLOCK_WITH_ITEM);
+        add(SoulsBlocks.SAPPHIRE_BLOCK, ToolTypes.DEFAULT_PICKAXE, LootTables.DROP_SELF, BlockStateType.SIMPLE_BLOCK_WITH_ITEM);
+        add(SoulsBlocks.RUBY_SHARD_BLOCK, ToolTypes.DEFAULT_PICKAXE, LootTables.DROP_SELF, BlockStateType.SIMPLE_BLOCK_WITH_ITEM);
+        add(SoulsBlocks.SAPPHIRE_SHARD_BLOCK, ToolTypes.DEFAULT_PICKAXE, LootTables.DROP_SELF, BlockStateType.SIMPLE_BLOCK_WITH_ITEM);
+
     }
 
     public static void add(Block block, IToolType toolType, ILootTable lootTable) {

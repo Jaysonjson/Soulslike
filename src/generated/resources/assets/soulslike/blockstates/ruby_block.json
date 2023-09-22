@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "soulslike:block/ruby_block"
+    }
+  }
+}

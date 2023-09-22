@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "soulslike:block/sapphire_shard_block"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "soulslike:ruby_shard_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "ruby_shard": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "soulslike:ruby_shard"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "ruby_shard",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "soulslike:ruby_shard_block"
+    ]
+  },
+  "sends_telemetry_event": false
+}

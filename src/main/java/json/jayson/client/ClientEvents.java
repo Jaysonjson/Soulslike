@@ -6,6 +6,7 @@ import json.jayson.client.overlay.block_overlay.BlockTextOverlay;
 import json.jayson.client.renderer.FireFlyEntityRenderer;
 import json.jayson.common.objects.entities.FireFlyEntity;
 import json.jayson.common.registries.SoulsBlocks;
+import json.jayson.integration.create.PonderIndex;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
@@ -50,6 +51,7 @@ public class ClientEvents {
         public static void onClientSetup(FMLClientSetupEvent event) {
             ItemBlockRenderTypes.setRenderLayer(SoulsFluids.SOURCE_BLOOD.get(), RenderType.translucent());
             ItemBlockRenderTypes.setRenderLayer(SoulsFluids.FLOWING_BLOOD.get(), RenderType.translucent());
+            PonderIndex.add();
             //ItemBlockRenderTypes.setRenderLayer(SoulsBlocks.MANGROVE_CRAFTING_TABLE.getBlock(), RenderType.translucent());
         }
         @SubscribeEvent

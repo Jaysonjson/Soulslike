@@ -1,5 +1,6 @@
 package json.jayson.common.objects.blocks.soul_entity_spawner;
 
+import com.simibubi.create.AllCreativeModeTabs;
 import com.simibubi.create.content.kinetics.base.KineticBlock;
 import com.simibubi.create.content.kinetics.simpleRelays.ICogWheel;
 import com.simibubi.create.foundation.block.IBE;
@@ -32,4 +33,5 @@ public class SoulEntitySpawnerBlock extends KineticBlock implements IBE<SoulEnti
     public BlockEntityType<? extends SoulEntitySpawnerBlockEntity> getBlockEntityType() {
         return SoulsBlockEntities.SOUL_ENTITY_SPAWNER.get();
     }
+
 }

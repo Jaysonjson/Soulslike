@@ -1,5 +1,6 @@
 package json.jayson.data.generation.builders;
 
+import json.jayson.SoulsTags;
 import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
@@ -9,6 +10,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import json.jayson.Soulslike;
 
@@ -62,6 +64,22 @@ public abstract class SoulsRecipeBuilder extends RecipeProvider implements ICond
                 .requires(table)
                 .unlockedBy(table.toString(), inventoryTrigger(ItemPredicate.Builder.item().of(table).build()))
                 .save(consumer, new ResourceLocation(Soulslike.MODID, table + "_to_vanilla"));*/
+    }
+
+    public void fullBlock(Consumer<FinishedRecipe> consumer, Item table, Item planks) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, table).
+                define('M', planks).
+                pattern("MMM").
+                pattern("MMM").
+                pattern("MMM").
+                unlockedBy(planks.toString(), inventoryTrigger(ItemPredicate.Builder.item().of(planks).build()))
+                .save(consumer);
+    }
+
+    public void single(Consumer<FinishedRecipe> consumer, Item table, Item planks) {
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, table).requires(table)
+                .unlockedBy(planks.toString(), inventoryTrigger(ItemPredicate.Builder.item().of(planks).build()))
+                .save(consumer);
     }
 
     public void bigSwordRecipe(Consumer<FinishedRecipe> consumer, Item sword, TagKey<Item> material) {

@@ -11,6 +11,10 @@
     "soulslike:quartz_cake_plate",
     "soulslike:burning_coal",
     "soulslike:steel_block",
-    "soulslike:soul_entity_spawner"
+    "soulslike:soul_entity_spawner",
+    "soulslike:ruby_block",
+    "soulslike:sapphire_block",
+    "soulslike:ruby_shard_block",
+    "soulslike:sapphire_shard_block"
   ]
 }

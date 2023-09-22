@@ -6,6 +6,7 @@ import com.mojang.logging.LogUtils;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import json.jayson.common.objects.items.RandomItemColor;
 import json.jayson.common.registries.*;
+import json.jayson.integration.create.PonderIndex;
 import net.minecraft.world.level.GameRules;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;

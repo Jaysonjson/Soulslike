@@ -1,5 +1,6 @@
 package json.jayson.common.registries;
 
+import com.simibubi.create.AllCreativeModeTabs;
 import com.simibubi.create.content.kinetics.BlockStressDefaults;
 import com.simibubi.create.content.kinetics.mixer.MechanicalMixerBlock;
 import com.simibubi.create.content.processing.AssemblyOperatorBlockItem;
@@ -43,7 +44,7 @@ import static json.jayson.Soulslike.SOULS_REGISTRATE;
 
 public class SoulsBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Soulslike.MODID);
-
+    static { REGISTRATE.useCreativeTab(SoulsCreativeTabs.BUILDING_BLOCK_TAB); }
     @SuppressWarnings("deprecation")
 	public static final SoulRegistryBlockItem<Block>
             BEE_STATUE = registerBlock("bee_statue", () -> new SoulsBeeStatue(BlockBehaviour.Properties.of().strength(99999f).noOcclusion()), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
@@ -86,6 +87,8 @@ public class SoulsBlocks {
     SAPPHIRE_SEA_PICKLE = registerBlock("sapphire_sea_pickle", () -> new SeaPickleBlock(BlockBehaviour.Properties.copy(Blocks.SEA_PICKLE)), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
     RUBY_ROSE = registerBlock("ruby_rose", () -> new FlowerBlock(MobEffects.NIGHT_VISION, 5, BlockBehaviour.Properties.copy(Blocks.POPPY)), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
     RUBY_BLOCK = registerBlock("ruby_block", () -> new Block(BlockBehaviour.Properties.of().strength(3f)), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
+    RUBY_SHARD_BLOCK = registerBlock("ruby_shard_block", () -> new Block(BlockBehaviour.Properties.of().strength(3f)), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
+    SAPPHIRE_SHARD_BLOCK = registerBlock("sapphire_shard_block", () -> new Block(BlockBehaviour.Properties.of().strength(3f)), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
     SAPPHIRE_BLOCK = registerBlock("sapphire_block", () -> new Block(BlockBehaviour.Properties.of().strength(3f)), SoulsCreativeTabs.BUILDING_BLOCK_TAB)
 
     ;

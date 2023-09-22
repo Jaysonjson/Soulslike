@@ -112,5 +112,16 @@
   "creativemodetab.weapon_tab": "Soulslike Weapons/Tools",
   "item.soulslike.unknown_soul.description": "Use to gain a minimal amount of Souls",
   "item.soulslike.soul_of_a_giant.description": "Use to gain a great amount of Souls",
-  "entity.minecraft.villager.soulslike.gemcutter": "Gem Cutter"
+  "entity.minecraft.villager.soulslike.gemcutter": "Gem Cutter",
+
+  "soulslike.ponder.sapphire_seagrass.header": "Getting Sapphire Shards",
+  "soulslike.ponder.sapphire_seagrass.text_1": "Sapphire Seagrass will spawn Randomly in Water",
+  "soulslike.ponder.sapphire_seagrass.text_2": "Breaking this Seagrass will have a chance of 10% to drop a Sapphire Shard",
+  "soulslike.ponder.cake_plate.header": "Using Cakeplates",
+  "soulslike.ponder.cake_plate.text_1": "Right Click an empty Cake Plate to place a Block on it",
+  "soulslike.ponder.cake_plate.text_2": "Right Click again to remove the Block",
+  "soulslike.ponder.cake_plate.text_3": "Breaking the Cake Plate will also drop the Block",
+  "soulslike.ponder.ruby_rose.header": "Getting Ruby Shards",
+  "soulslike.ponder.ruby_rose.text_1": "Ruby Roses will spawn Randomly in Structures on the Overworld",
+  "soulslike.ponder.ruby_rose.text_2": "Breaking this Ruby Rose will drop a Ruby Shard"
 }

@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "soulslike:sapphire"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "sapphire_block": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "soulslike:sapphire_block"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "sapphire_block",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "soulslike:sapphire"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -66,6 +66,17 @@ public class ModRecipeProvider extends SoulsRecipeBuilder {
         craftingTable(p_251297_, SoulsBlocks.JUNGLE_CRAFTING_TABLE.getItem(), Blocks.JUNGLE_PLANKS.asItem());
         craftingTable(p_251297_, SoulsBlocks.DARK_OAK_CRAFTING_TABLE.getItem(), Blocks.DARK_OAK_PLANKS.asItem());
 
+        fullBlock(p_251297_, SoulsBlocks.RUBY_BLOCK.getItem(), SoulsItems.RUBY.get());
+        fullBlock(p_251297_, SoulsBlocks.SAPPHIRE_BLOCK.getItem(), SoulsItems.SAPPHIRE.get());
+        fullBlock(p_251297_, SoulsBlocks.SAPPHIRE_SHARD_BLOCK.getItem(), SoulsItems.SAPPHIRE_SHARD.get());
+        fullBlock(p_251297_, SoulsBlocks.RUBY_SHARD_BLOCK.getItem(), SoulsItems.RUBY_SHARD.get());
+
+        single(p_251297_, SoulsItems.RUBY.get(), SoulsBlocks.RUBY_BLOCK.getItem());
+        single(p_251297_, SoulsItems.SAPPHIRE.get(), SoulsBlocks.SAPPHIRE_BLOCK.getItem());
+        single(p_251297_, SoulsItems.SAPPHIRE_SHARD.get(), SoulsBlocks.SAPPHIRE_SHARD_BLOCK.getItem());
+        single(p_251297_, SoulsItems.RUBY_SHARD.get(), SoulsBlocks.RUBY_SHARD_BLOCK.getItem());
+
+
         /*Override Vanilla */
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Blocks.CRAFTING_TABLE.asItem()).
                 define('M',  Blocks.OAK_PLANKS.asItem()).
