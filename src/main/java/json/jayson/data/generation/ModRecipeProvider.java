@@ -71,11 +71,10 @@ public class ModRecipeProvider extends SoulsRecipeBuilder {
         fullBlock(p_251297_, SoulsBlocks.SAPPHIRE_SHARD_BLOCK.getItem(), SoulsItems.SAPPHIRE_SHARD.get());
         fullBlock(p_251297_, SoulsBlocks.RUBY_SHARD_BLOCK.getItem(), SoulsItems.RUBY_SHARD.get());
 
-        single(p_251297_, SoulsItems.RUBY.get(), SoulsBlocks.RUBY_BLOCK.getItem());
-        single(p_251297_, SoulsItems.SAPPHIRE.get(), SoulsBlocks.SAPPHIRE_BLOCK.getItem());
-        single(p_251297_, SoulsItems.SAPPHIRE_SHARD.get(), SoulsBlocks.SAPPHIRE_SHARD_BLOCK.getItem());
-        single(p_251297_, SoulsItems.RUBY_SHARD.get(), SoulsBlocks.RUBY_SHARD_BLOCK.getItem());
-
+        single(p_251297_, SoulsBlocks.RUBY_BLOCK.getItem(), SoulsItems.RUBY.get(), 9);
+        single(p_251297_, SoulsBlocks.SAPPHIRE_BLOCK.getItem(), SoulsItems.SAPPHIRE.get(),9);
+        single(p_251297_, SoulsBlocks.SAPPHIRE_SHARD_BLOCK.getItem(), SoulsItems.SAPPHIRE_SHARD.get(), 9);
+        single(p_251297_, SoulsBlocks.RUBY_SHARD_BLOCK.getItem(), SoulsItems.RUBY_SHARD.get(), 9);
 
         /*Override Vanilla */
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Blocks.CRAFTING_TABLE.asItem()).

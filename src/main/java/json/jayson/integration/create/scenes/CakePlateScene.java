@@ -1,16 +1,13 @@
 package json.jayson.integration.create.scenes;
 
-import com.simibubi.create.content.contraptions.actors.harvester.HarvesterBlockEntity;
 import com.simibubi.create.foundation.ponder.ElementLink;
 import com.simibubi.create.foundation.ponder.SceneBuilder;
 import com.simibubi.create.foundation.ponder.SceneBuildingUtil;
 import com.simibubi.create.foundation.ponder.element.EntityElement;
 import com.simibubi.create.foundation.ponder.element.InputWindowElement;
 import com.simibubi.create.foundation.utility.Pointing;
-import com.simibubi.create.infrastructure.ponder.scenes.FunnelScenes;
-import com.simibubi.create.infrastructure.ponder.scenes.fluid.PipeScenes;
+
 import json.jayson.common.objects.blocks.cake_plate.CakePlateEntity;
-import json.jayson.common.registries.SoulsItems;
 import net.minecraft.core.Direction;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.ItemStack;

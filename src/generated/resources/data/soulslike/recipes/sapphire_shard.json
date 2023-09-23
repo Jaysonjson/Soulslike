@@ -3,10 +3,11 @@
   "category": "misc",
   "ingredients": [
     {
-      "item": "soulslike:sapphire_shard"
+      "item": "soulslike:sapphire_shard_block"
     }
   ],
   "result": {
+    "count": 9,
     "item": "soulslike:sapphire_shard"
   }
 }

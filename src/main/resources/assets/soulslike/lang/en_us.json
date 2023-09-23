@@ -67,6 +67,8 @@
   "item.soulslike.feather_staff": "Feather Staff",
   "item.soulslike.love_staff": "Love Staff",
 
+  "item.soulslike.polished_ruby": "Polished Ruby",
+
   "block.soulslike.bee_statue": "Bee Statue",
   "block.soulslike.darkened_nether_bricks": "Darkened Nether Bricks",
   "block.soulslike.mud_vase": "Mud Vase",
@@ -103,6 +105,12 @@
 
   "block.soulslike.cake_plate": "Cake Plate",
   "block.soulslike.quartz_cake_plate": "Quartz Cake Plate",
+  "block.soulslike.gem_station": "Gem Station",
+  "block.soulslike.hardened_blaze_piece": "Hardened Blaze Piece",
+  "block.soulslike.ruby_block": "Ruby Block",
+  "block.soulslike.ruby_shard_block": "Ruby Shard Block",
+  "block.soulslike.sapphire_block": "Sapphire Block",
+  "block.soulslike.sapphire_shard_block": "Sapphire Shard Block",
 
   "creativemodetab.coal_tab": "Soulslike Coals",
   "creativemodetab.soul_tab": "Soulslike Souls",
@@ -123,5 +131,9 @@
   "soulslike.ponder.cake_plate.text_3": "Breaking the Cake Plate will also drop the Block",
   "soulslike.ponder.ruby_rose.header": "Getting Ruby Shards",
   "soulslike.ponder.ruby_rose.text_1": "Ruby Roses will spawn Randomly in Structures on the Overworld",
-  "soulslike.ponder.ruby_rose.text_2": "Breaking this Ruby Rose will drop a Ruby Shard"
+  "soulslike.ponder.ruby_rose.text_2": "Breaking this Ruby Rose will drop a Ruby Shard",
+
+  "soulslike.ponder.gem_station_villager.header": "Getting a Gem Cutter Villager",
+  "soulslike.ponder.gem_station_villager.text_1": "A Gem Station will turn a Villager into a Gem Cutter",
+  "soulslike.ponder.gem_station_villager.text_2": "This Gem Cutter will now trade you Gems"
 }

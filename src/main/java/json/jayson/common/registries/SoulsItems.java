@@ -71,8 +71,9 @@ public class SoulsItems {
     MORTIS = registerItem("mortis", () -> new Item(new Item.Properties())),
     VITA = registerItem("vita", () -> new Item(new Item.Properties())),
     RUBY_DUST = registerItem("ruby_dust", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
-    SAPPHIRE_DUST = registerItem("sapphire_dust", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB)
-    ;
+    SAPPHIRE_DUST = registerItem("sapphire_dust", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
+    POLISHED_RUBY = registerItem("polished_ruby", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB)
+                    ;
 
     public static final RegistryObject<SwordItem>
     BIG_IRON_SWORD = registerSword("big_iron_sword", Tiers.IRON, 8, -3.5f),

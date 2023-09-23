@@ -26,6 +26,8 @@ import json.jayson.common.objects.fluids.SoulsFluidTypes;
 import json.jayson.common.registries.*;
 import json.jayson.network.packet.ModMessages;
 
+import static com.simibubi.create.Create.REGISTRATE;
+
 @Mod(Soulslike.MODID)
 public class Soulslike {
     public static final String MODID = "soulslike";
@@ -34,6 +36,7 @@ public class Soulslike {
     public static final CreateRegistrate SOULS_REGISTRATE = CreateRegistrate.create(MODID);
     public Soulslike() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        SOULS_REGISTRATE.setCreativeTab(SoulsCreativeTabs.BUILDING_BLOCK_TAB);
         SOULS_REGISTRATE.registerEventListeners(modEventBus);
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(SoulsItems::addCreative);

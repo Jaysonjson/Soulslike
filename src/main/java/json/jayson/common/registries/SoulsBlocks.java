@@ -45,7 +45,7 @@ import static json.jayson.Soulslike.SOULS_REGISTRATE;
 
 public class SoulsBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Soulslike.MODID);
-    static { REGISTRATE.useCreativeTab(SoulsCreativeTabs.BUILDING_BLOCK_TAB); }
+    static { SOULS_REGISTRATE.setCreativeTab(SoulsCreativeTabs.BUILDING_BLOCK_TAB); }
     @SuppressWarnings("deprecation")
 	public static final SoulRegistryBlockItem<Block>
             BEE_STATUE = registerBlock("bee_statue", () -> new SoulsBeeStatue(BlockBehaviour.Properties.of().strength(99999f).noOcclusion()), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
@@ -102,7 +102,7 @@ public class SoulsBlocks {
                     .properties(BlockBehaviour.Properties::noOcclusion)
                     .transform(axeOrPickaxe())
                     .blockstate((c, p) -> p.simpleBlock(c.getEntry(), AssetLookup.partialBaseModel(c, p)))
-                    .transform(BlockStressDefaults.setImpact(64.0))
+                    .transform(BlockStressDefaults.setImpact(128.0))
                     .item(AssemblyOperatorBlockItem::new)
                     .transform(customItemModel())
                     .register();

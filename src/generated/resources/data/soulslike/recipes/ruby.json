@@ -3,10 +3,11 @@
   "category": "misc",
   "ingredients": [
     {
-      "item": "soulslike:ruby"
+      "item": "soulslike:ruby_block"
     }
   ],
   "result": {
+    "count": 9,
     "item": "soulslike:ruby"
   }
 }

@@ -1,16 +1,5 @@
 {
   "values": [
-    "soulslike:oak_crate",
-    "soulslike:spruce_crate",
-    "soulslike:birch_crate",
-    "soulslike:jungle_crate",
-    "soulslike:acacia_crate",
-    "soulslike:dark_oak_crate",
-    "soulslike:mangrove_crate",
-    "soulslike:crimson_crate",
-    "soulslike:warped_crate",
-    "soulslike:oak_log_crate",
-    "soulslike:cherry_crate",
     "soulslike:cherry_crafting_table",
     "soulslike:acacia_crafting_table",
     "soulslike:mangrove_crafting_table",

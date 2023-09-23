@@ -74,7 +74,7 @@ public class FireFlyEntity extends Animal implements NeutralMob, FlyingAnimal {
             lights.add(blockPosition());
         }
         ++timer;
-        if(timer > 9) {
+        if(timer > 3) {
             if(!lights.isEmpty()) {
                 if(lights.get(0) != blockPosition()) {
                     level().setBlockAndUpdate(lights.get(0), Blocks.AIR.defaultBlockState());

@@ -1,7 +1,7 @@
 {
   "SOULS_MAP": {
     "entity.minecraft.tropical_fish": 1,
-    "entity.minecraft.slime": 45,
+    "entity.minecraft.slime": 2,
     "entity.minecraft.axolotl": 5,
     "entity.minecraft.zoglin": 15,
     "entity.minecraft.vindicator": 25,

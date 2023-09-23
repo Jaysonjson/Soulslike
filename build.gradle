@@ -14,7 +14,7 @@ base {
 }
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
-
+jarJar.enable()
 println "Java: ${System.getProperty 'java.version'}, JVM: ${System.getProperty 'java.vm.version'} (${System.getProperty 'java.vendor'}), Arch: ${System.getProperty 'os.arch'}"
 minecraft {
     mappings channel: mapping_channel, version: mapping_version
@@ -92,6 +92,12 @@ dependencies {
     implementation fg.deobf("com.jozufozu.flywheel:flywheel-forge-${flywheel_minecraft_version}:${flywheel_version}")
     implementation fg.deobf("com.tterrag.registrate:Registrate:${registrate_version}")
 
+    jarJar("com.tterrag.registrate:Registrate:${registrate_version}") {
+        jarJar.ranged(it, '[MC1.19.3-1.1.10,)')
+    }
+    jarJar("com.jozufozu.flywheel:flywheel-forge-${flywheel_minecraft_version}:${flywheel_version}") {
+        jarJar.ranged(it, '[0.6.10,0.6.11)')
+    }
     implementation fg.deobf("software.bernie.geckolib:geckolib-forge-${minecraft_version}:${geckolib_version}")
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 }
@@ -136,6 +142,11 @@ tasks.named('jar', Jar).configure {
 
     finalizedBy 'reobfJar'
 }
+
+reobf {
+    jarJar { }
+}
+tasks.jarJar.finalizedBy('reobfJarJar')
 
 publishing {
     publications {

@@ -1,20 +1,13 @@
 package json.jayson.integration.create.scenes;
 
-import com.simibubi.create.AllItems;
-import com.simibubi.create.foundation.ponder.*;
+import com.simibubi.create.foundation.ponder.SceneBuilder;
+import com.simibubi.create.foundation.ponder.SceneBuildingUtil;
 import com.simibubi.create.foundation.ponder.element.InputWindowElement;
-import com.simibubi.create.foundation.ponder.element.WorldSectionElement;
-import com.simibubi.create.foundation.utility.Iterate;
 import com.simibubi.create.foundation.utility.Pointing;
-import com.simibubi.create.infrastructure.ponder.PonderIndex;
-import com.simibubi.create.infrastructure.ponder.scenes.FunnelScenes;
+
 import json.jayson.common.registries.SoulsItems;
-import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.RedStoneWireBlock;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.phys.Vec3;
 
 public class SapphireSeaGrassScene {

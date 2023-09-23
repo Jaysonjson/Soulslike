@@ -76,9 +76,9 @@ public abstract class SoulsRecipeBuilder extends RecipeProvider implements ICond
                 .save(consumer);
     }
 
-    public void single(Consumer<FinishedRecipe> consumer, Item table, Item planks) {
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, table).requires(table)
-                .unlockedBy(planks.toString(), inventoryTrigger(ItemPredicate.Builder.item().of(planks).build()))
+    public void single(Consumer<FinishedRecipe> consumer, Item in, Item out, int count) {
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, out, count).requires(in)
+                .unlockedBy(in.toString(),inventoryTrigger(ItemPredicate.Builder.item().of(in).build()))
                 .save(consumer);
     }
 
