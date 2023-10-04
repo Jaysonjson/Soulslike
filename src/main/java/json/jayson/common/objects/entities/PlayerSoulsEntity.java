@@ -24,13 +24,21 @@ import json.jayson.client.overlay.EntityTextOverlay;
 import json.jayson.common.capabilities.PlayerSoulsProvider;
 import json.jayson.common.registries.SoulsEntities;
 
+import java.util.Objects;
+import java.util.Optional;
+import java.util.UUID;
+
 public class PlayerSoulsEntity extends Entity implements IEntityTextOverlay {
 
     long souls = 0;
     int time = 0;
 
+    UUID playerUUid = UUID.randomUUID();
+    String playerName = "Unknown";
+
     public static final EntityDataAccessor<Long> SOULS = SynchedEntityData.defineId(PlayerSoulsEntity.class, EntityDataSerializers.LONG);
     public static final EntityDataAccessor<String> PLAYER_NAME = SynchedEntityData.defineId(PlayerSoulsEntity.class, EntityDataSerializers.STRING);
+    public static final EntityDataAccessor<Optional<UUID>> PLAYER_UUID = SynchedEntityData.defineId(PlayerSoulsEntity.class, EntityDataSerializers.OPTIONAL_UUID);
 
 
     public PlayerSoulsEntity(EntityType<?> p_19870_, Level p_19871_) {
@@ -38,12 +46,15 @@ public class PlayerSoulsEntity extends Entity implements IEntityTextOverlay {
         setNoGravity(false);
     }
 
-    public PlayerSoulsEntity(Level level, double x, double y, double z, long souls, String playerName) {
+    public PlayerSoulsEntity(Level level, double x, double y, double z, long souls, Player playerName) {
         this(SoulsEntities.PLAYER_SOULS.get(), level);
         setPos(x, y, z);
         this.souls = souls;
+        this.playerName = playerName.getDisplayName().getString();
+        this.playerUUid = playerName.getUUID();
         getEntityData().set(SOULS, souls);
-        getEntityData().set(PLAYER_NAME, playerName);
+        getEntityData().set(PLAYER_NAME, playerName.getDisplayName().getString());
+        getEntityData().set(PLAYER_UUID, Optional.of(playerName.getUUID()));
         setNoGravity(false);
     }
 
@@ -54,7 +65,6 @@ public class PlayerSoulsEntity extends Entity implements IEntityTextOverlay {
 
     @Override
     public InteractionResult interact(Player player, InteractionHand interactionHand) {
-        System.out.println("INTERACT");
         player.getCapability(PlayerSoulsProvider.PLAYER_SOULS).ifPresent(playerSouls -> {
             playerSouls.increaseSouls(souls);
             if(player instanceof ServerPlayer serverPlayer) {
@@ -100,6 +110,7 @@ public class PlayerSoulsEntity extends Entity implements IEntityTextOverlay {
     protected void defineSynchedData() {
         getEntityData().define(SOULS, souls);
         getEntityData().define(PLAYER_NAME, "Unknown");
+        getEntityData().define(PLAYER_UUID, Optional.of(UUID.randomUUID()));
     }
 
     @Override
@@ -108,11 +119,23 @@ public class PlayerSoulsEntity extends Entity implements IEntityTextOverlay {
             souls = tag.getLong(SoulsNBTKeys.ENTITY_PLAYER_SOULS_CONTAINED_SOULS);
             getEntityData().set(SOULS, souls);
         }
+
+        if(tag.contains(SoulsNBTKeys.ENTITY_PLAYER_SOULS_CONTAINED_UUID)) {
+            //uuid = tag.getUUID(SoulsNBTKeys.ENTITY_PLAYER_SOULS_CONTAINED_UUID);
+            //getEntityData().set(PLAYER_UUID, Optional.of(uuid));
+        }
+
+        if(tag.contains(SoulsNBTKeys.ENTITY_PLAYER_SOULS_CONTAINED_NAME)) {
+            //playerName = tag.getString(SoulsNBTKeys.ENTITY_PLAYER_SOULS_CONTAINED_NAME);
+           // getEntityData().set(PLAYER_NAME, playerName);
+        }
     }
 
     @Override
     public void addAdditionalSaveData(CompoundTag tag) {
         tag.putLong(SoulsNBTKeys.ENTITY_PLAYER_SOULS_CONTAINED_SOULS, souls);
+        //tag.putUUID(SoulsNBTKeys.ENTITY_PLAYER_SOULS_CONTAINED_UUID, playerUUid);
+       // tag.putString(SoulsNBTKeys.ENTITY_PLAYER_SOULS_CONTAINED_NAME, playerName);
     }
 
     public long getSouls() {
@@ -128,5 +151,14 @@ public class PlayerSoulsEntity extends Entity implements IEntityTextOverlay {
         PlayerSoulsEntityEntries.Player player = new PlayerSoulsEntityEntries.Player();
         player.text = getEntityData().get(PlayerSoulsEntity.PLAYER_NAME) + "`s Souls";
         EntityTextOverlay.TEXTS.add(player);
+
+        if(getEntityData().get(PlayerSoulsEntity.PLAYER_UUID).isPresent()) {
+            PlayerSoulsEntityEntries.PlayerSkin playerSkin = new PlayerSoulsEntityEntries.PlayerSkin();
+            playerSkin.player = level().getPlayerByUUID(getEntityData().get(PlayerSoulsEntity.PLAYER_UUID).get());
+            EntityTextOverlay.TEXTS.add(playerSkin);
+            System.out.println("PLAYER PRESENT");
+        } else {
+            System.out.println("NOT PRESENT");
+        }
     }
 }

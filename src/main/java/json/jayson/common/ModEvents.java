@@ -109,7 +109,7 @@ public class ModEvents {
             if(!player.level().getGameRules().getBoolean(SoulsGameRules.RULE_KEEPSOULS)) {
                 player.getCapability(PlayerSoulsProvider.PLAYER_SOULS).ifPresent(playerSouls -> {
                     if(playerSouls.getSouls() > 0) {
-                        player.level().addFreshEntity(new PlayerSoulsEntity(player.level(), player.position().x, player.position().y + 1, player.position().z, playerSouls.getSouls(), player.getName().getString()));
+                        player.level().addFreshEntity(new PlayerSoulsEntity(player.level(), player.position().x, player.position().y + 1, player.position().z, playerSouls.getSouls(), player));
                     }
                 });
             }
