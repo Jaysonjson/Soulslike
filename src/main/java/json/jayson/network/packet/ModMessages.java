@@ -3,6 +3,8 @@ package json.jayson.network.packet;
 import json.jayson.Soulslike;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.fml.loading.FMLEnvironment;
 import net.minecraftforge.network.NetworkDirection;
 import net.minecraftforge.network.NetworkRegistry;
 import net.minecraftforge.network.PacketDistributor;
@@ -61,11 +63,11 @@ public class ModMessages {
                 .encoder(CakePlateSyncS2CPacket::toBytes)
                 .consumerMainThread(CakePlateSyncS2CPacket::handle)
                 .add();
-        net.messageBuilder(OpenLevelUpScreenS2CPacket.class, id(), NetworkDirection.PLAY_TO_CLIENT)
-                .decoder(OpenLevelUpScreenS2CPacket::new)
-                .encoder(OpenLevelUpScreenS2CPacket::toBytes)
-                .consumerMainThread(OpenLevelUpScreenS2CPacket::handle)
-                .add();
+            //net.messageBuilder(OpenLevelUpScreenS2CPacket.class, id(), NetworkDirection.PLAY_TO_CLIENT)
+              //      .decoder(OpenLevelUpScreenS2CPacket::new)
+               //     .encoder(OpenLevelUpScreenS2CPacket::toBytes)
+               //     .consumerMainThread(OpenLevelUpScreenS2CPacket::handle)
+               //     .add();
     }
 
     public static <MSG> void sendToServer(MSG message) {

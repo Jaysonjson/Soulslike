@@ -26,6 +26,8 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.api.distmarker.OnlyIns;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.MovementInputUpdateEvent;
 import net.minecraftforge.client.event.RegisterGuiOverlaysEvent;
@@ -47,6 +49,7 @@ import json.jayson.common.registries.SoulsEntities;
 import json.jayson.common.registries.SoulsFluids;
 
 @Mod.EventBusSubscriber(modid = Soulslike.MODID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.FORGE)
+@OnlyIn(Dist.CLIENT)
 public class ClientEvents {
 
     @Mod.EventBusSubscriber(modid = Soulslike.MODID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD)

@@ -18,6 +18,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.fml.loading.FMLEnvironment;
 import org.slf4j.Logger;
 import json.jayson.client.ClientEvents;
 import json.jayson.common.ModEvents;
@@ -40,12 +41,15 @@ public class Soulslike {
         SOULS_REGISTRATE.registerEventListeners(modEventBus);
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(SoulsItems::addCreative);
-        modEventBus.addListener(this::registerItemColors);
+        //modEventBus.addListener(this::registerItemColors);
         MinecraftForge.EVENT_BUS.register(this);
         MinecraftForge.EVENT_BUS.register(new ModEvents());
-        MinecraftForge.EVENT_BUS.register(new ClientEvents());
-        MinecraftForge.EVENT_BUS.register(new ClientEvents.ClientModBusEvents());
-        modEventBus.addListener(ClientEvents::entityAttributCreation);
+        if (FMLEnvironment.dist == Dist.CLIENT) {
+            MinecraftForge.EVENT_BUS.register(new ClientEvents());
+            MinecraftForge.EVENT_BUS.register(new ClientEvents.ClientModBusEvents());
+            modEventBus.addListener(ClientEvents::entityAttributCreation);
+            modEventBus.addListener(this::registerItemColors);
+        }
         SoulsItems.register(modEventBus);
         SoulsBlocks.register(modEventBus);
         SoulsBlockEntities.register(modEventBus);

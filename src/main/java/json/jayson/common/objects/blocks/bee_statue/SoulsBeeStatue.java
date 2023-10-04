@@ -23,6 +23,11 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.fml.loading.FMLEnvironment;
+import net.minecraftforge.network.NetworkEvent;
+import net.minecraftforge.network.NetworkHooks;
+import software.bernie.shadowed.eliotlash.mclib.math.functions.limit.Min;
 
 public class SoulsBeeStatue extends BaseEntityBlock implements IBlockTextOverlay {
     public SoulsBeeStatue(Properties p_49224_) {
@@ -45,7 +50,7 @@ public class SoulsBeeStatue extends BaseEntityBlock implements IBlockTextOverlay
         if(!pLevel.isClientSide()) {
             BlockEntity block = pLevel.getBlockEntity(pPos);
             if(block instanceof SoulsBeeStatueEntity soulsBeeStatueEntity) {
-                ModMessages.sendToPlayer(new OpenLevelUpScreenS2CPacket(), (ServerPlayer) pPlayer);
+                //ModMessages.sendToPlayer(new OpenLevelUpScreenS2CPacket(), (ServerPlayer) pPlayer);
                 pPlayer.sendSystemMessage(Component.literal(String.valueOf(soulsBeeStatueEntity.activated)));
                 soulsBeeStatueEntity.activated = true;
                 pPlayer.getCapability(PlayerLevelProvider.PLAYER_LEVEL).ifPresent(playerLevel -> {
@@ -67,6 +72,10 @@ public class SoulsBeeStatue extends BaseEntityBlock implements IBlockTextOverlay
                         pPlayer.sendSystemMessage(Component.literal(beeStatue.toShortString()));
                     }
                 });
+            }
+        } else {
+            if (FMLEnvironment.dist == Dist.CLIENT) {
+                Minecraft.getInstance().setScreen(new LevelUpScreen());
             }
         }
         return InteractionResult.sidedSuccess(pLevel.isClientSide());
