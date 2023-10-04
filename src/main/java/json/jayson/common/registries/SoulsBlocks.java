@@ -9,6 +9,7 @@ import com.simibubi.create.foundation.data.SharedProperties;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import json.jayson.Soulslike;
 import json.jayson.common.objects.blocks.cake_plate.CakePlateBlockItem;
+import json.jayson.common.objects.blocks.soul_drain.SoulDrainBlock;
 import json.jayson.common.objects.blocks.soul_entity_spawner.SoulEntitySpawnerBlock;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.effect.MobEffects;
@@ -107,7 +108,20 @@ public class SoulsBlocks {
                     .transform(customItemModel())
                     .register();
 
-    public static final SoulRegistryBlockItem<SoulsLiquidBlock> BLOOD_BLOCK = registerBlock("blood_block", () -> new SoulsLiquidBlock(SoulsFluids.SOURCE_BLOOD, BlockBehaviour.Properties.copy(Blocks.WATER)));
+    public static final BlockEntry<SoulDrainBlock> SOUL_DRAIN =
+            SOULS_REGISTRATE.block("soul_drain", SoulDrainBlock::new)
+                    .initialProperties(SharedProperties::stone)
+                    .properties(p -> p.mapColor(MapColor.STONE))
+                    .properties(BlockBehaviour.Properties::noOcclusion)
+                    .transform(axeOrPickaxe())
+                    .blockstate((c, p) -> p.simpleBlock(c.getEntry(), AssetLookup.partialBaseModel(c, p)))
+                    .transform(BlockStressDefaults.setImpact(1.0))
+                    .item(AssemblyOperatorBlockItem::new)
+                    .transform(customItemModel())
+                    .register();
+
+    public static final SoulRegistryBlockItem<SoulsLiquidBlock> BLOOD_BLOCK = registerBlock("blood", () -> new SoulsLiquidBlock(SoulsFluids.SOURCE_BLOOD, BlockBehaviour.Properties.copy(Blocks.WATER)));
+    public static final SoulRegistryBlockItem<SoulsLiquidBlock> SOUL_BLOCK = registerBlock("soul", () -> new SoulsLiquidBlock(SoulsFluids.SOURCE_SOUL, BlockBehaviour.Properties.copy(Blocks.WATER)));
 
 
     private static <T extends Block> SoulRegistryBlockItem<T> registerBlock(String name, Supplier<T> block, RegistryObject<CreativeModeTab> tabProvider) {
@@ -122,6 +136,7 @@ public class SoulsBlocks {
     }
 
     public static void register(IEventBus eventBus) {
+        SOULS_REGISTRATE.setCreativeTab(SoulsCreativeTabs.BUILDING_BLOCK_TAB);
         BLOCKS.register(eventBus);
     }
 }

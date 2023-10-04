@@ -64,8 +64,10 @@ public class ClientEvents {
 
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-            ItemBlockRenderTypes.setRenderLayer(SoulsFluids.SOURCE_BLOOD.get(), RenderType.translucent());
-            ItemBlockRenderTypes.setRenderLayer(SoulsFluids.FLOWING_BLOOD.get(), RenderType.translucent());
+            //ItemBlockRenderTypes.setRenderLayer(SoulsFluids.SOURCE_BLOOD.get(), RenderType.translucent());
+            //ItemBlockRenderTypes.setRenderLayer(SoulsFluids.FLOWING_BLOOD.get(), RenderType.translucent());
+            //ItemBlockRenderTypes.setRenderLayer(SoulsFluids.SOURCE_SOUL.get(), RenderType.translucent());
+            //ItemBlockRenderTypes.setRenderLayer(SoulsFluids.FLOWING_SOUL.get(), RenderType.translucent());
             PonderIndex.add();
             //ItemBlockRenderTypes.setRenderLayer(SoulsBlocks.MANGROVE_CRAFTING_TABLE.getBlock(), RenderType.translucent());
         }

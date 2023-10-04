@@ -112,6 +112,8 @@
   "block.soulslike.sapphire_block": "Sapphire Block",
   "block.soulslike.sapphire_shard_block": "Sapphire Shard Block",
 
+  "fluid_type.soulslike.soul": "Souls",
+
   "creativemodetab.coal_tab": "Soulslike Coals",
   "creativemodetab.soul_tab": "Soulslike Souls",
   "creativemodetab.block_tab": "Soulslike Blocks",

@@ -57,6 +57,8 @@ public class SoulsItems {
     FEATHER_STAFF = registerItem("feather_staff", () -> new FeatherStaff(new Item.Properties().defaultDurability(450), 120), SoulsCreativeTabs.WEAPON_TAB),
     FEATHER_WAND = registerItem("feather_wand", () -> new FeatherStaff(new Item.Properties().defaultDurability(325), 200), SoulsCreativeTabs.WEAPON_TAB),
     BLOOD_BUCKET = registerItem("blood_bucket", () -> new BucketItem(SoulsFluids.SOURCE_BLOOD, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1))),
+    SOUL_BUCKET = registerItem("soul_bucket", () -> new BucketItem(SoulsFluids.SOURCE_SOUL, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1))),
+
     SCROLL = registerItem("scroll", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
     OAK_BARK = registerItem("oak_bark", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
     OAK_WAND = registerItem("oak_wand", () -> new WandItem(new Item.Properties()), SoulsCreativeTabs.WEAPON_TAB),

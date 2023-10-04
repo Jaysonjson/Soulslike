@@ -6,6 +6,8 @@ import com.simibubi.create.content.kinetics.mixer.MechanicalMixerRenderer;
 import com.simibubi.create.content.kinetics.mixer.MixerInstance;
 import com.tterrag.registrate.util.entry.BlockEntityEntry;
 import json.jayson.Soulslike;
+import json.jayson.common.objects.blocks.soul_drain.SoulDrainBlockEntity;
+import json.jayson.common.objects.blocks.soul_drain.SoulDrainRenderer;
 import json.jayson.common.objects.blocks.soul_entity_spawner.SoulEntitySpawnerBlockEntity;
 import json.jayson.common.objects.blocks.soul_entity_spawner.SoulEntitySpawnerBlockInstance;
 import json.jayson.common.objects.blocks.soul_entity_spawner.SoulEntitySpawnerBlockRenderer;
@@ -62,6 +64,12 @@ public class SoulsBlockEntities {
             .instance(() -> SoulEntitySpawnerBlockInstance::new)
             .validBlocks(SoulsBlocks.SOUL_ENTITY_SPAWNER)
             .renderer(() -> SoulEntitySpawnerBlockRenderer::new)
+            .register();
+
+    public static final BlockEntityEntry<SoulDrainBlockEntity> SOUL_DRAINER = SOULS_REGISTRATE
+            .blockEntity("soul_drain", SoulDrainBlockEntity::new)
+            .validBlocks(SoulsBlocks.SOUL_DRAIN)
+            .renderer(() -> SoulDrainRenderer::new)
             .register();
 
     public static void register(IEventBus eventBus) {
