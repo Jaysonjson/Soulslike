@@ -1,6 +1,8 @@
 package json.jayson.common.objects.blocks.soul_entity_spawner;
 
 import com.simibubi.create.AllCreativeModeTabs;
+import com.simibubi.create.content.fluids.spout.SpoutBlock;
+import com.simibubi.create.content.fluids.spout.SpoutBlockEntity;
 import com.simibubi.create.content.kinetics.base.KineticBlock;
 import com.simibubi.create.content.kinetics.simpleRelays.ICogWheel;
 import com.simibubi.create.foundation.block.IBE;

@@ -39,7 +39,7 @@ public class PlayerSoulsEntityEntries {
             if(player != null) {
                 int x = (screenWidth + 153) / 2;
                 int y = (screenHeight + 130) / 2;
-                renderEntityInInventoryFollowsMouse(guiGraphics, x, y, 20, x / 8, y / 8, player);
+                renderEntityInInventoryFollowsMouse(guiGraphics, x, y, 20, x / 16, y / 16, player);
             }
         }
 
