@@ -8,6 +8,7 @@ import json.jayson.common.objects.items.RandomItemColor;
 import json.jayson.common.registries.*;
 import json.jayson.integration.create.PonderIndex;
 import net.minecraft.world.level.GameRules;
+import net.minecraft.world.level.block.BarrierBlock;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.RegisterColorHandlersEvent;

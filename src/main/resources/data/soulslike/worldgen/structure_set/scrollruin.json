@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "soulslike:scrollruin",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 75675646,
+    "spacing": 120,
+    "separation": 35
+  }
+}
