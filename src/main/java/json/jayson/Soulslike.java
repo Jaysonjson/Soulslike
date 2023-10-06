@@ -5,6 +5,8 @@ import com.google.gson.GsonBuilder;
 import com.mojang.logging.LogUtils;
 import com.simibubi.create.content.fluids.drain.ItemDrainBlock;
 import com.simibubi.create.content.fluids.transfer.FillingRecipe;
+import com.simibubi.create.content.kinetics.motor.CreativeMotorBlock;
+import com.simibubi.create.content.kinetics.motor.CreativeMotorGenerator;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.data.recipe.FillingRecipeGen;
 import json.jayson.common.objects.items.RandomItemColor;

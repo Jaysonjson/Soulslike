@@ -1,0 +1,17 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "item": "soulslike:soul_ingot"
+    },
+    {
+      "item": "minecraft:glowstone_dust"
+    }
+  ],
+  "results": [
+    {
+      "item": "soulslike:vibrant_soul_alloy"
+    }
+  ]
+}

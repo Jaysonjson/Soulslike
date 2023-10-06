@@ -30,9 +30,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 
 public class SoulDrainBlockEntity extends SmartBlockEntity implements IHaveGoggleInformation {
-
-
-    public static final int FILLING_TIME = 20;
     public static final int cap = 1500;
 
     SmartFluidTankBehaviour internalTank;

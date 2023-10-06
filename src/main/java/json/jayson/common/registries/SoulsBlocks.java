@@ -2,17 +2,24 @@ package json.jayson.common.registries;
 
 import com.simibubi.create.AllCreativeModeTabs;
 import com.simibubi.create.AllSpriteShifts;
+import com.simibubi.create.AllTags;
 import com.simibubi.create.content.decoration.encasing.CasingBlock;
 import com.simibubi.create.content.kinetics.BlockStressDefaults;
 import com.simibubi.create.content.kinetics.belt.BeltBlockEntity;
 import com.simibubi.create.content.kinetics.mixer.MechanicalMixerBlock;
+import com.simibubi.create.content.kinetics.motor.CreativeMotorBlock;
+import com.simibubi.create.content.kinetics.motor.CreativeMotorGenerator;
 import com.simibubi.create.content.processing.AssemblyOperatorBlockItem;
 import com.simibubi.create.foundation.data.AssetLookup;
 import com.simibubi.create.foundation.data.BuilderTransformers;
 import com.simibubi.create.foundation.data.SharedProperties;
+import com.simibubi.create.foundation.utility.Couple;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import json.jayson.Soulslike;
+import json.jayson.common.objects.blocks.SoulCasingBlock;
 import json.jayson.common.objects.blocks.cake_plate.CakePlateBlockItem;
+import json.jayson.common.objects.blocks.simple_soul_generator.SoulGeneratorBlock;
+import json.jayson.common.objects.blocks.simple_soul_generator.SoulGeneratorState;
 import json.jayson.common.objects.blocks.soul_drain.SoulDrainBlock;
 import json.jayson.common.objects.blocks.soul_entity_spawner.SoulEntitySpawnerBlock;
 import net.minecraft.client.renderer.RenderType;
@@ -20,6 +27,7 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Rarity;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerBlock;
@@ -122,12 +130,25 @@ public class SoulsBlocks {
                     .simpleItem()
                     .register();
 
-    public static final BlockEntry<CasingBlock> SOUL_CASING = SOULS_REGISTRATE.block("soul_casing", CasingBlock::new)
+    public static final BlockEntry<SoulCasingBlock> SOUL_CASING = SOULS_REGISTRATE.block("soul_casing", SoulCasingBlock::new)
             .properties(p -> p.mapColor(MapColor.SNOW))
             .transform(BuilderTransformers.casing(() -> SoulsSpriteShifts.SOUL_CASING))
             .blockstate((c, p) -> p.simpleBlock(c.get(), AssetLookup.standardModel(c, p)))
             .simpleItem()
             .register();
+
+    public static final BlockEntry<SoulGeneratorBlock> SIMPLE_SOUL_GENERATOR =
+            SOULS_REGISTRATE.block("simple_soul_generator", SoulGeneratorBlock::new)
+                    .initialProperties(SharedProperties::stone)
+                    .properties(p -> p.mapColor(MapColor.SNOW).forceSolidOn())
+                    .transform(pickaxeOnly())
+                    .blockstate(new SoulGeneratorState()::generate)
+                    .transform(BlockStressDefaults.setCapacity(5124.0))
+                    .transform(BlockStressDefaults.setGeneratorSpeed(() -> Couple.create(64, 64)))
+                    .item()
+                    .properties(p -> p.rarity(Rarity.RARE))
+                    .transform(customItemModel())
+                    .register();
 
     public static final SoulRegistryBlockItem<SoulsLiquidBlock> BLOOD_BLOCK = registerBlock("blood", () -> new SoulsLiquidBlock(SoulsFluids.SOURCE_BLOOD, BlockBehaviour.Properties.copy(Blocks.WATER)));
     public static final SoulRegistryBlockItem<SoulsLiquidBlock> SOUL_BLOCK = registerBlock("soul", () -> new SoulsLiquidBlock(SoulsFluids.SOURCE_SOUL, BlockBehaviour.Properties.copy(Blocks.WATER)));

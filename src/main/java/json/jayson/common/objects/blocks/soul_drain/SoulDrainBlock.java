@@ -37,4 +37,9 @@ public class SoulDrainBlock extends Block implements IWrenchable, IBE<SoulDrainB
     public BlockEntityType<? extends SoulDrainBlockEntity> getBlockEntityType() {
         return SoulsBlockEntities.SOUL_DRAINER.get();
     }
+
+    @Override
+    public int getLightEmission(BlockState state, BlockGetter level, BlockPos pos) {
+        return 4;
+    }
 }
