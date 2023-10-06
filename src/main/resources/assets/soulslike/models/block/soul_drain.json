@@ -7,7 +7,7 @@
     "1": "soulslike:block/drain/soul_drain_top",
     "2": "soulslike:block/soul_casing",
     "3": "create:block/pump",
-    "particle": "create:block/item_drain_side"
+    "particle": "soulslike:block/drain/soul_drain_side"
   },
   "elements": [
     {

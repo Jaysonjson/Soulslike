@@ -77,14 +77,8 @@ public class SoulDrainScene {
         });
 
         scene.idle(7);
-        scene.world.modifyBlockEntity(drainPos, SoulDrainBlockEntity.class, be -> {
-            be.getBehaviour(SmartFluidTankBehaviour.TYPE)
-                    .allowInsertion();
-            be.getCapability(ForgeCapabilities.FLUID_HANDLER)
-                    .ifPresent(fh -> fh.fill(new FluidStack(SoulsFluids.SOURCE_SOUL.get(), 5000), IFluidHandler.FluidAction.EXECUTE));
-        });
+        refillDrain(scene, drainPos);
         scene.idle(30);
-        //scene.world.modifyEntity(playerLink, Entity::discard);
         scene.world.showSection(largeCog, Direction.UP);
         scene.idle(3);
         scene.world.showSection(kinetics, Direction.NORTH);
@@ -95,7 +89,7 @@ public class SoulDrainScene {
         scene.world.propagatePipeChange(util.grid.at(2, 1, 3));
         scene.world.propagatePipeChange(util.grid.at(2, 1, 4));
         scene.idle(20);
-
+        refillDrain(scene, drainPos);
         scene.overlay.showText(90)
                 .text("Pipe Networks can now pull the fluid from the drains' internal buffer")
                 .attachKeyFrame()
@@ -103,9 +97,20 @@ public class SoulDrainScene {
                 .pointAt(util.vector.topOf(util.grid.at(2, 1, 3)));
         scene.idle(50);
         scene.markAsFinished();
-        scene.world.modifyBlockEntity(util.grid.at(1, 1, 4), FluidTankBlockEntity.class, be -> be.getTankInventory()
-                .fill(new FluidStack(SoulsFluids.SOURCE_SOUL.get(), 10000), IFluidHandler.FluidAction.EXECUTE));
-        scene.idle(50);
+        refillDrain(scene, drainPos);
+        for (int i = 0; i < 15; i++) {
+            scene.idle(50);
+            refillDrain(scene, drainPos);
+        }
+    }
+
+    private static void refillDrain(SceneBuilder scene, BlockPos drainPos) {
+        scene.world.modifyBlockEntity(drainPos, SoulDrainBlockEntity.class, be -> {
+            be.getBehaviour(SmartFluidTankBehaviour.TYPE)
+                    .allowInsertion();
+            be.getCapability(ForgeCapabilities.FLUID_HANDLER)
+                    .ifPresent(fh -> fh.fill(new FluidStack(SoulsFluids.SOURCE_SOUL.get(), 5000), IFluidHandler.FluidAction.EXECUTE));
+        });
     }
 
 }
