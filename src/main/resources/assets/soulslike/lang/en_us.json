@@ -91,6 +91,9 @@
   "block.soulslike.sapphire_sea_pickle": "Sapphire Sea Pickle",
   "block.soulslike.sapphire_seagrass": "Sapphire Seagrass",
 
+  "block.soulslike.soul_drain": "Soul Drain",
+  "block.soulslike.soul_casing": "Soul Casing",
+
   "block.soulslike.oak_crate": "Oak Crate",
   "block.soulslike.spruce_crate": "Spruce Crate",
   "block.soulslike.birch_crate": "Birch Crate",
@@ -137,5 +140,9 @@
 
   "soulslike.ponder.gem_station_villager.header": "Getting a Gem Cutter Villager",
   "soulslike.ponder.gem_station_villager.text_1": "A Gem Station will turn a Villager into a Gem Cutter",
-  "soulslike.ponder.gem_station_villager.text_2": "This Gem Cutter will now trade you Gems"
+  "soulslike.ponder.gem_station_villager.text_2": "This Gem Cutter will now trade you Gems",
+
+  "soulslike.ponder.soul_drain.header": "Getting liquified Souls",
+  "soulslike.ponder.soul_drain.text_1": "Soul Drains can extract Souls from Players",
+  "soulslike.ponder.soul_drain.text_2": "Pipe Networks can now pull the fluid from the drains' internal buffer"
 }

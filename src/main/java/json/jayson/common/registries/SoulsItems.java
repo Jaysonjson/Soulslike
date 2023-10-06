@@ -141,6 +141,11 @@ public class SoulsItems {
                 }
             }
         }
+        if(event.getTab() == SoulsCreativeTabs.BUILDING_BLOCK_TAB.get()) {
+            event.accept(SoulsBlocks.SOUL_CASING.get());
+            event.accept(SoulsBlocks.SOUL_DRAIN.get());
+            event.accept(SoulsBlocks.SOUL_ENTITY_SPAWNER.get());
+        }
     }
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

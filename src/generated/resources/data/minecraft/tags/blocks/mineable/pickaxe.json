@@ -1,5 +1,6 @@
 {
   "values": [
-    "soulslike:soul_entity_spawner"
+    "soulslike:soul_entity_spawner",
+    "soulslike:soul_drain"
   ]
 }

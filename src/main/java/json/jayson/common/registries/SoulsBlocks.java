@@ -1,10 +1,14 @@
 package json.jayson.common.registries;
 
 import com.simibubi.create.AllCreativeModeTabs;
+import com.simibubi.create.AllSpriteShifts;
+import com.simibubi.create.content.decoration.encasing.CasingBlock;
 import com.simibubi.create.content.kinetics.BlockStressDefaults;
+import com.simibubi.create.content.kinetics.belt.BeltBlockEntity;
 import com.simibubi.create.content.kinetics.mixer.MechanicalMixerBlock;
 import com.simibubi.create.content.processing.AssemblyOperatorBlockItem;
 import com.simibubi.create.foundation.data.AssetLookup;
+import com.simibubi.create.foundation.data.BuilderTransformers;
 import com.simibubi.create.foundation.data.SharedProperties;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import json.jayson.Soulslike;
@@ -42,6 +46,7 @@ import java.util.function.Supplier;
 import static com.simibubi.create.Create.REGISTRATE;
 import static com.simibubi.create.foundation.data.ModelGen.customItemModel;
 import static com.simibubi.create.foundation.data.TagGen.axeOrPickaxe;
+import static com.simibubi.create.foundation.data.TagGen.pickaxeOnly;
 import static json.jayson.Soulslike.SOULS_REGISTRATE;
 
 public class SoulsBlocks {
@@ -110,15 +115,19 @@ public class SoulsBlocks {
 
     public static final BlockEntry<SoulDrainBlock> SOUL_DRAIN =
             SOULS_REGISTRATE.block("soul_drain", SoulDrainBlock::new)
-                    .initialProperties(SharedProperties::stone)
-                    .properties(p -> p.mapColor(MapColor.STONE))
+                    .initialProperties(SharedProperties::copperMetal)
+                    .transform(pickaxeOnly())
                     .properties(BlockBehaviour.Properties::noOcclusion)
-                    .transform(axeOrPickaxe())
-                    .blockstate((c, p) -> p.simpleBlock(c.getEntry(), AssetLookup.partialBaseModel(c, p)))
-                    .transform(BlockStressDefaults.setImpact(1.0))
-                    .item(AssemblyOperatorBlockItem::new)
-                    .transform(customItemModel())
+                    .blockstate((c, p) -> p.simpleBlock(c.get(), AssetLookup.standardModel(c, p)))
+                    .simpleItem()
                     .register();
+
+    public static final BlockEntry<CasingBlock> SOUL_CASING = SOULS_REGISTRATE.block("soul_casing", CasingBlock::new)
+            .properties(p -> p.mapColor(MapColor.SNOW))
+            .transform(BuilderTransformers.casing(() -> SoulsSpriteShifts.SOUL_CASING))
+            .blockstate((c, p) -> p.simpleBlock(c.get(), AssetLookup.standardModel(c, p)))
+            .simpleItem()
+            .register();
 
     public static final SoulRegistryBlockItem<SoulsLiquidBlock> BLOOD_BLOCK = registerBlock("blood", () -> new SoulsLiquidBlock(SoulsFluids.SOURCE_BLOOD, BlockBehaviour.Properties.copy(Blocks.WATER)));
     public static final SoulRegistryBlockItem<SoulsLiquidBlock> SOUL_BLOCK = registerBlock("soul", () -> new SoulsLiquidBlock(SoulsFluids.SOURCE_SOUL, BlockBehaviour.Properties.copy(Blocks.WATER)));

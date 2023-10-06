@@ -10,10 +10,7 @@ import com.simibubi.create.foundation.ponder.PonderTag;
 import json.jayson.Soulslike;
 import json.jayson.common.registries.SoulsBlocks;
 import json.jayson.common.registries.SoulsItems;
-import json.jayson.integration.create.scenes.CakePlateScene;
-import json.jayson.integration.create.scenes.GemStationScene;
-import json.jayson.integration.create.scenes.RubyRoseScene;
-import json.jayson.integration.create.scenes.SapphireSeaGrassScene;
+import json.jayson.integration.create.scenes.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.ItemLike;
 
@@ -27,6 +24,7 @@ public class PonderIndex {
         addStoryBoard(SoulsBlocks.CAKE_PLATE.getItem(), "cake_plate/intro", CakePlateScene::spawn);
         addStoryBoard(SoulsBlocks.QUARTZ_CAKE_PLATE.getItem(), "cake_plate/intro", CakePlateScene::spawn);
         addStoryBoard(SoulsBlocks.GEM_STATION.getItem(), "gem_station/gemcutter_villager", GemStationScene::villager);
+        addStoryBoard(SoulsBlocks.SOUL_DRAIN.get(), "soul_drain", SoulDrainScene::intro);
         forComponents(SoulsBlocks.RUBY_ROSE.getItem())
                 .addStoryBoard("ruby_rose/spawn", RubyRoseScene::spawn)
                 .addStoryBoard("ruby_rose/temple_0", RubyRoseScene::spawn)
