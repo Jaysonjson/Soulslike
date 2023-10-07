@@ -4,6 +4,7 @@ import java.util.List;
 
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import json.jayson.Soulslike;
+import json.jayson.common.capabilities.providers.EntitySoulsProvider;
 import json.jayson.common.registries.SoulsItems;
 import json.jayson.common.registries.SoulsVillagers;
 import net.minecraft.core.BlockPos;
@@ -11,7 +12,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -27,8 +28,8 @@ import net.minecraftforge.event.village.VillagerTradesEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.LogicalSide;
 import net.minecraftforge.fml.common.Mod;
-import json.jayson.common.capabilities.PlayerLevelProvider;
-import json.jayson.common.capabilities.PlayerSoulsProvider;
+import json.jayson.common.capabilities.providers.PlayerLevelProvider;
+import json.jayson.common.capabilities.providers.PlayerSoulsProvider;
 import json.jayson.common.objects.entities.PlayerSoulsEntity;
 import json.jayson.common.registries.SoulsGameRules;
 import json.jayson.helpers.SoulsUtil;
@@ -37,14 +38,27 @@ import json.jayson.helpers.SoulsUtil;
 public class ModEvents {
     @SubscribeEvent
     public static void onAttachCapabilitiesPlayer(AttachCapabilitiesEvent<Entity> event) {
+        Entity entity = event.getObject();
         if(event.getObject() instanceof Player player) {
             if(!player.getCapability(PlayerSoulsProvider.PLAYER_SOULS).isPresent()) {
-                event.addCapability(new ResourceLocation(Soulslike.MODID, "properties"), new PlayerSoulsProvider());
+                event.addCapability(new ResourceLocation(Soulslike.MODID, "souls"), new PlayerSoulsProvider());
             }
             if(!player.getCapability(PlayerLevelProvider.PLAYER_LEVEL).isPresent()) {
                 event.addCapability(new ResourceLocation(Soulslike.MODID, "levelcap"), new PlayerLevelProvider());
             }
         }
+        if(SoulsUtil.entitySoulsExist(entity)) {
+            if(!entity.getCapability(EntitySoulsProvider.ENTITY_SOULS).isPresent()) {
+                event.addCapability(new ResourceLocation(Soulslike.MODID, "entity_souls"), new EntitySoulsProvider());
+            }
+        }
+    }
+
+    @SubscribeEvent
+    public static void onEntitySpawn(EntityJoinLevelEvent event) {
+       event.getEntity().getCapability(EntitySoulsProvider.ENTITY_SOULS).ifPresent(entitySouls -> {
+           entitySouls.setSouls(SoulsUtil.getEntitySouls(event.getEntity()));
+       });
     }
 
     @SubscribeEvent
@@ -95,8 +109,10 @@ public class ModEvents {
     public static void onEntityDeath(LivingDeathEvent event) {
         if(event.getSource().getEntity() instanceof Player player) {
             player.getCapability(PlayerSoulsProvider.PLAYER_SOULS).ifPresent(playerSouls -> {
-                playerSouls.increaseSouls(SoulsUtil.getEntitySouls(event.getEntity()));
-                playerSouls.sync((ServerPlayer) player);
+                event.getEntity().getCapability(EntitySoulsProvider.ENTITY_SOULS).ifPresent(entitySouls -> {
+                    playerSouls.increaseSouls(entitySouls.getSouls());
+                    playerSouls.sync((ServerPlayer) player);
+                });
             });
         }
 

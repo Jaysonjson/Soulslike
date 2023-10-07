@@ -2,15 +2,12 @@ package json.jayson.common.objects.blocks.bee_statue;
 
 import json.jayson.client.screens.LevelUpScreen;
 import json.jayson.common.capabilities.PlayerLevel;
-import json.jayson.common.capabilities.PlayerLevelProvider;
-import json.jayson.common.capabilities.PlayerSoulsProvider;
+import json.jayson.common.capabilities.providers.PlayerLevelProvider;
+import json.jayson.common.capabilities.providers.PlayerSoulsProvider;
 import json.jayson.common.objects.blocks.IBlockTextOverlay;
-import json.jayson.network.packet.ModMessages;
-import json.jayson.network.packet.OpenLevelUpScreenS2CPacket;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
@@ -25,9 +22,6 @@ import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.fml.loading.FMLEnvironment;
-import net.minecraftforge.network.NetworkEvent;
-import net.minecraftforge.network.NetworkHooks;
-import software.bernie.shadowed.eliotlash.mclib.math.functions.limit.Min;
 
 public class SoulsBeeStatue extends BaseEntityBlock implements IBlockTextOverlay {
     public SoulsBeeStatue(Properties p_49224_) {

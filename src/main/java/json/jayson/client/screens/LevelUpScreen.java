@@ -1,35 +1,23 @@
 package json.jayson.client.screens;
 
-import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.platform.Lighting;
 import com.mojang.blaze3d.systems.RenderSystem;
 import json.jayson.Soulslike;
 import json.jayson.client.data.ClientPlayerData;
 import json.jayson.client.data.ClientSoulsData;
 import json.jayson.common.capabilities.PlayerLevel;
-import json.jayson.common.capabilities.PlayerLevelProvider;
-import json.jayson.common.capabilities.PlayerSoulsProvider;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.Screen;
-import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
-import net.minecraft.client.gui.screens.inventory.InventoryScreen;
 import net.minecraft.client.renderer.entity.EntityRenderDispatcher;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.commands.GiveCommand;
-import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.player.Inventory;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.inventory.AbstractContainerMenu;
 import org.jetbrains.annotations.NotNull;
 import org.joml.Matrix4f;
 import org.joml.Quaternionf;
 
 import javax.annotation.Nullable;
-
-import static net.minecraft.client.gui.screens.inventory.AbstractContainerScreen.INVENTORY_LOCATION;
 
 public class LevelUpScreen extends Screen {
     public static final ResourceLocation BACKGROUND = new ResourceLocation(Soulslike.MODID, "textures/gui/container/level_up.png");

@@ -16,15 +16,13 @@ import net.minecraft.world.entity.MoverType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import json.jayson.client.overlay.EntityTextOverlay;
-import json.jayson.common.capabilities.PlayerSoulsProvider;
+import json.jayson.common.capabilities.providers.PlayerSoulsProvider;
 import json.jayson.common.registries.SoulsEntities;
 
-import java.util.Objects;
 import java.util.Optional;
 import java.util.UUID;
 

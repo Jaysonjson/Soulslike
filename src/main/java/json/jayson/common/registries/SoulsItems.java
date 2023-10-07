@@ -76,7 +76,8 @@ public class SoulsItems {
     SAPPHIRE_DUST = registerItem("sapphire_dust", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
     POLISHED_RUBY = registerItem("polished_ruby", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
    SOUL_INGOT = registerItem("soul_ingot", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
-   VIBRANT_SOUL_ALLOY = registerItem("vibrant_soul_alloy", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB)
+   VIBRANT_SOUL_ALLOY = registerItem("vibrant_soul_alloy", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
+    BOTTLE_OF_SOULS = registerItem("bottle_of_souls", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB)
 
                     ;
 

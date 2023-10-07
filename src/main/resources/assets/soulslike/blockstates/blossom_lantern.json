@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "soulslike:block/blossom_lantern"
+    },
+    "hanging=true": {
+      "model": "soulslike:block/blossom_lantern_hanging"
+    }
+  }
+}

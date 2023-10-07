@@ -28,11 +28,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.FlowerBlock;
-import net.minecraft.world.level.block.SeaPickleBlock;
-import net.minecraft.world.level.block.SeagrassBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -105,7 +101,8 @@ public class SoulsBlocks {
     RUBY_SHARD_BLOCK = registerBlock("ruby_shard_block", () -> new Block(BlockBehaviour.Properties.of().strength(3f)), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
     SAPPHIRE_SHARD_BLOCK = registerBlock("sapphire_shard_block", () -> new Block(BlockBehaviour.Properties.of().strength(3f)), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
     SAPPHIRE_BLOCK = registerBlock("sapphire_block", () -> new Block(BlockBehaviour.Properties.of().strength(3f)), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
-    GEM_STATION = registerBlock("gem_station", () -> new Block(BlockBehaviour.Properties.of().strength(3f)), SoulsCreativeTabs.BUILDING_BLOCK_TAB)
+    GEM_STATION = registerBlock("gem_station", () -> new Block(BlockBehaviour.Properties.of().strength(3f)), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
+    BLOSSOM_LANTERN = registerBlock("blossom_lantern", () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN).strength(3f)), SoulsCreativeTabs.BUILDING_BLOCK_TAB)
 
     ;
 
