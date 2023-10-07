@@ -3,7 +3,7 @@
   "heatRequirement": "heated",
   "ingredients": [
     {
-      "amount": 500,
+      "amount": 750,
       "fluid": "soulslike:soul"
     },
     {

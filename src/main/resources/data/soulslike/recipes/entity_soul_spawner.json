@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "#C#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "soulslike:vibrant_soul_sheet"
+    },
+    "C": {
+      "item": "soulslike:soul_spawner_core"
+    }
+  },
+  "result": {
+    "item": "soulslike:soul_entity_spawner",
+    "count": 1
+  }
+}

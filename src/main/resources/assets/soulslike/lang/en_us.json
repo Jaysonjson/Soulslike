@@ -71,6 +71,14 @@
 
   "item.soulslike.soul_ingot": "Soul Ingot",
   "item.soulslike.vibrant_soul_alloy": "Vibrant Soul Alloy",
+  "item.soulslike.vibrant_soul_sheet": "Vibrant Soul Sheet",
+
+  "item.soulslike.bottle_of_souls": "Bottle o Souls",
+
+
+  "item.soulslike.soul_spawner_core": "Soul Spawner Core",
+
+  "block.soulslike.soul_entity_spawner": "Soul Entity Spawner",
 
 
   "block.soulslike.bee_statue": "Bee Statue",
@@ -151,5 +159,7 @@
 
   "soulslike.ponder.soul_drain.header": "Getting liquified Souls",
   "soulslike.ponder.soul_drain.text_1": "Soul Drains can extract Souls from Players",
-  "soulslike.ponder.soul_drain.text_2": "Pipe Networks can now pull the fluid from the drains' internal buffer"
+  "soulslike.ponder.soul_drain.text_2": "Pipe Networks can now pull the fluid from the drains' internal buffer",
+  "soulslike.ponder.soul_drain.text_3": "Soul Drains can also extract Souls from Entities",
+  "soulslike.ponder.soul_drain.text_4": "If the Entity runs out of Souls, it dies"
 }

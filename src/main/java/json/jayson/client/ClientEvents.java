@@ -14,12 +14,15 @@ import json.jayson.Soulslike;
 import json.jayson.client.overlay.block_overlay.BlockTextOverlay;
 import json.jayson.client.renderer.BlockOutlineHelper;
 import json.jayson.client.renderer.FireFlyEntityRenderer;
+import json.jayson.client.renderer.SoulOrbRenderer;
 import json.jayson.common.objects.entities.FireFlyEntity;
+import json.jayson.common.objects.entities.SoulOrbEntity;
 import json.jayson.common.registries.SoulsBlocks;
 import json.jayson.integration.create.PonderIndex;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.block.Block;
@@ -78,6 +81,8 @@ public class ClientEvents {
             event.registerBlockEntityRenderer(SoulsBlockEntities.FIRE_ALTAR.get(), FireAltarEntityRenderer::new);
             event.registerEntityRenderer(SoulsEntities.PLAYER_SOULS.get(), PlayerSoulsEntityRenderer::new);
             event.registerEntityRenderer(SoulsEntities.FIRE_FLY.get(), FireFlyEntityRenderer::new);
+            event.registerEntityRenderer(SoulsEntities.SOUL_ORB.get(), SoulOrbRenderer::new);
+            event.registerEntityRenderer(SoulsEntities.SOUL_BOTTLE.get(), ThrownItemRenderer::new);
         }
     }
 

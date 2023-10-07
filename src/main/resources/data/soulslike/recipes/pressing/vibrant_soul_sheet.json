@@ -1,0 +1,13 @@
+{
+  "type": "create:pressing",
+  "ingredients": [
+    {
+      "item": "soulslike:vibrant_soul_alloy"
+    }
+  ],
+  "results": [
+    {
+      "item": "soulslike:vibrant_soul_sheet"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "type": "create:mechanical_crafting",
+  "acceptMirrored": false,
+  "key": {
+    "S": {
+      "item": "soulslike:vibrant_soul_sheet"
+    },
+    "L": {
+      "item": "create:fluid_tank"
+    },
+    "H": {
+      "item": "minecraft:iron_bars"
+    }
+  },
+  "pattern": [
+    " SSS ",
+    "SHHHS",
+    "SHLHS",
+    "SHHHS",
+    " SSS "
+  ],
+  "result": {
+    "item": "soulslike:soul_spawner_core"
+  }
+}

@@ -2,9 +2,7 @@ package json.jayson.common.registries;
 
 import json.jayson.Soulslike;
 import json.jayson.common.Data;
-import json.jayson.common.objects.items.BeeTears;
-import json.jayson.common.objects.items.ItemWithDescription;
-import json.jayson.common.objects.items.ThighHighs;
+import json.jayson.common.objects.items.*;
 import json.jayson.common.objects.items.gecko.WandItem;
 import json.jayson.common.objects.items.staff.LoveStaff;
 import net.minecraft.ChatFormatting;
@@ -17,7 +15,6 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import json.jayson.common.objects.items.SoulItem;
 import json.jayson.common.objects.items.staff.CloudStaff;
 import json.jayson.common.objects.items.staff.FeatherStaff;
 import json.jayson.common.objects.items.staff.RoseStaff;
@@ -77,8 +74,9 @@ public class SoulsItems {
     POLISHED_RUBY = registerItem("polished_ruby", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
    SOUL_INGOT = registerItem("soul_ingot", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
    VIBRANT_SOUL_ALLOY = registerItem("vibrant_soul_alloy", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
-    BOTTLE_OF_SOULS = registerItem("bottle_of_souls", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB)
-
+    BOTTLE_OF_SOULS = registerItem("bottle_of_souls", () -> new BottleOfSoulsItem(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
+    VIBRANT_SOUL_SHEET = registerItem("vibrant_soul_sheet", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
+    SOUL_SPAWNER_CORE = registerItem("soul_spawner_core", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB)
                     ;
 
     public static final RegistryObject<SwordItem>

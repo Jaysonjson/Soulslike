@@ -22,6 +22,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.monster.Husk;
 import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -90,18 +91,50 @@ public class SoulDrainScene {
         scene.world.propagatePipeChange(util.grid.at(2, 1, 4));
         scene.idle(20);
         refillDrain(scene, drainPos);
-        scene.overlay.showText(90)
+        scene.overlay.showText(50)
                 .text("Pipe Networks can now pull the fluid from the drains' internal buffer")
                 .attachKeyFrame()
                 .placeNearTarget()
                 .pointAt(util.vector.topOf(util.grid.at(2, 1, 3)));
-        scene.idle(50);
-        scene.markAsFinished();
-        refillDrain(scene, drainPos);
-        for (int i = 0; i < 15; i++) {
-            scene.idle(50);
+        scene.idle(90);
+        scene.world.modifyEntity(playerLink, Entity::discard);
+        scene.idle(20);
+        ElementLink<EntityElement> huskLink = scene.world.createEntity(w -> {
+            Husk player = EntityType.HUSK.create(w);
+            Vec3 p = util.vector.topOf(util.grid.at(2, 1, 2));
+            player.setPos(p.x, p.y, p.z);
+            player.xo = p.x;
+            player.yo = p.y;
+            player.zo = p.z;
+            player.yRotO = 210;
+            player.setYRot(210);
+            player.yHeadRotO = 210;
+            player.yHeadRot = 210;
+            return player;
+        });
+        scene.overlay.showText(40)
+                .text("Soul Drains can also extract Souls from Entities")
+                .attachKeyFrame()
+                .placeNearTarget()
+                .pointAt(drainPos.above().getCenter());
+        for (int i = 0; i < 5; i++) {
+            scene.idle(10);
             refillDrain(scene, drainPos);
         }
+        scene.idle(40);
+        scene.overlay.showText(40)
+                .text("If the Entity runs out of Souls, it dies")
+                .attachKeyFrame()
+                .placeNearTarget()
+                .pointAt(drainPos.above().getCenter());
+        scene.world.modifyEntity(huskLink, Entity::discard);
+        scene.idle(10);
+        scene.markAsFinished();
+        refillDrain(scene, drainPos);
+        /*for (int i = 0; i < 15; i++) {
+            scene.idle(50);
+            refillDrain(scene, drainPos);
+        }*/
     }
 
     private static void refillDrain(SceneBuilder scene, BlockPos drainPos) {
