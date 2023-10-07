@@ -14,7 +14,9 @@ import com.simibubi.create.content.kinetics.gearbox.GearboxBlock;
 import com.simibubi.create.content.kinetics.press.MechanicalPressBlockEntity;
 import com.simibubi.create.content.kinetics.simpleRelays.ICogWheel;
 import com.simibubi.create.foundation.block.IBE;
+import json.jayson.common.objects.items.SoulVialItem;
 import json.jayson.common.registries.SoulsBlockEntities;
+import json.jayson.common.registries.SoulsItems;
 import json.jayson.helpers.SoulsUtil;
 import json.jayson.network.packet.CakePlateSyncS2CPacket;
 import json.jayson.network.packet.ModMessages;
@@ -25,6 +27,7 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
@@ -52,9 +55,17 @@ public class SoulEntitySpawnerBlock extends HorizontalKineticBlock implements IB
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult p_60508_) {
         if(!level.isClientSide) {
             if(level.getBlockEntity(p_60508_.getBlockPos()) instanceof SoulEntitySpawnerBlockEntity te) {
-                te.setEntity(EntityType.ZOMBIE.getDescriptionId());
-                te.setChanged();
-                ModMessages.sendToClients(new SoulEntitySpawnerSyncS2CPacket(p_60508_.getBlockPos(), te.getEntity()));
+                ItemStack itemStack = player.getItemInHand(hand);
+                if(itemStack.is(SoulsItems.SOUL_VIAL.get())) {
+                    if(itemStack.getTag().getInt("amount") >= SoulVialItem.MAX) {
+                        System.out.println("NYET");
+                        te.setEntity(itemStack.getTag().getString("entity"));
+                        te.setChanged();
+                        itemStack.setCount(0);
+                        player.setItemInHand(hand, itemStack);
+                        ModMessages.sendToClients(new SoulEntitySpawnerSyncS2CPacket(p_60508_.getBlockPos(), te.getEntity()));
+                    }
+                }
             }
         }
         return super.use(state, level, pos, player, hand, p_60508_);

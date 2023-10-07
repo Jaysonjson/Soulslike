@@ -76,7 +76,9 @@ public class SoulsItems {
    VIBRANT_SOUL_ALLOY = registerItem("vibrant_soul_alloy", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
     BOTTLE_OF_SOULS = registerItem("bottle_of_souls", () -> new BottleOfSoulsItem(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
     VIBRANT_SOUL_SHEET = registerItem("vibrant_soul_sheet", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
-    SOUL_SPAWNER_CORE = registerItem("soul_spawner_core", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB)
+    SOUL_SPAWNER_CORE = registerItem("soul_spawner_core", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
+    SOUL_VIAL = registerItem("soul_vial", () -> new SoulVialItem(new Item.Properties().stacksTo(1)), SoulsCreativeTabs.OTHER_TAB)
+
                     ;
 
     public static final RegistryObject<SwordItem>

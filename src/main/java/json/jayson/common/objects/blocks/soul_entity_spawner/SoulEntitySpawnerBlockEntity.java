@@ -81,14 +81,14 @@ public class SoulEntitySpawnerBlockEntity extends KineticBlockEntity implements 
             if(fluid == SoulsFluids.SOURCE_SOUL.get()) {
                 if(fluidAmount > getRequiredSouls() - 1) {
                     ++idle;
-                    if (idle > this.getLevel().random.nextInt(60, 1000)) {
+                    if (idle > this.getLevel().random.nextInt(60, 300)) {
                         idle = 0;
                         if (typeCache != null) {
                             Entity createdEntity = typeCache.create(level);
 
-                            double x = (double)worldPosition.getX() + (this.getLevel().random.nextDouble() - this.getLevel().random.nextDouble()) * 5.5d;
+                            double x = (double)worldPosition.getX() + (this.getLevel().random.nextDouble() - this.getLevel().random.nextDouble()) * 2.5d;
                             double y = (double)(worldPosition.getY() + this.getLevel().random.nextInt(2) - 1);
-                            double z = (double)worldPosition.getZ() + (this.getLevel().random.nextDouble() - this.getLevel().random.nextDouble()) * 5.5d;
+                            double z = (double)worldPosition.getZ() + (this.getLevel().random.nextDouble() - this.getLevel().random.nextDouble()) * 2.5d;
 
                             createdEntity.teleportTo(x, y, z);
                             level.addFreshEntity(createdEntity);
@@ -107,7 +107,7 @@ public class SoulEntitySpawnerBlockEntity extends KineticBlockEntity implements 
     }
 
     public int getRequiredSouls() {
-        return (int) (soulsCache * 1.3);
+        return (int) (soulsCache * 2.3);
     }
 
     @Override
@@ -130,9 +130,11 @@ public class SoulEntitySpawnerBlockEntity extends KineticBlockEntity implements 
     public boolean addToGoggleTooltip(List<Component> tooltip, boolean isPlayerSneaking) {
         containedFluidTooltip(tooltip, isPlayerSneaking,
                 getCapability(ForgeCapabilities.FLUID_HANDLER));
-        tooltip.add(Component.literal("    Entity Info:"));
-        tooltip.add(Component.literal("     " + Component.translatable(entity).getString()).withStyle(ChatFormatting.GRAY));
-        tooltip.add(Component.literal("     Required Souls: " + getRequiredSouls()).withStyle(ChatFormatting.GRAY));
+        if(!entity.isEmpty()) {
+            tooltip.add(Component.literal("    Entity Info:"));
+            tooltip.add(Component.literal("     " + Component.translatable(entity).getString()).withStyle(ChatFormatting.GRAY));
+            tooltip.add(Component.literal("     Required Souls: " + getRequiredSouls()).withStyle(ChatFormatting.GRAY));
+        }
         return true;
     }
 }

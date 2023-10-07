@@ -5,9 +5,11 @@ import java.util.List;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import json.jayson.Soulslike;
 import json.jayson.common.capabilities.providers.EntitySoulsProvider;
+import json.jayson.common.objects.items.SoulVialItem;
 import json.jayson.common.registries.SoulsItems;
 import json.jayson.common.registries.SoulsVillagers;
 import net.minecraft.core.BlockPos;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
@@ -56,9 +58,9 @@ public class ModEvents {
 
     @SubscribeEvent
     public static void onEntitySpawn(EntityJoinLevelEvent event) {
-       event.getEntity().getCapability(EntitySoulsProvider.ENTITY_SOULS).ifPresent(entitySouls -> {
-           entitySouls.setSouls(SoulsUtil.getEntitySouls(event.getEntity()));
-       });
+        event.getEntity().getCapability(EntitySoulsProvider.ENTITY_SOULS).ifPresent(entitySouls -> {
+            entitySouls.setSouls(SoulsUtil.getEntitySouls(event.getEntity()));
+        });
     }
 
     @SubscribeEvent
@@ -114,6 +116,28 @@ public class ModEvents {
                     playerSouls.sync((ServerPlayer) player);
                 });
             });
+            if(SoulsUtil.entitySoulsExist(event.getEntity())) {
+                for (ItemStack item : player.getInventory().items) {
+                    if (item.is(SoulsItems.SOUL_VIAL.get())) {
+                        CompoundTag tag = item.getTag();
+                        if (tag.contains("entity")) {
+                            if (tag.getInt("amount") >= SoulVialItem.MAX) {
+                                continue;
+                            }
+                            if (tag.getString("entity").isEmpty()) {
+                                tag.putString("entity", event.getEntity().getType().getDescriptionId());
+                                //if(tag.getInt("amount") >= SoulVialItem.MAX) {
+                                //}
+                            }
+                            if (tag.getString("entity").equals(event.getEntity().getType().getDescriptionId())) {
+                                tag.putInt("amount", tag.getInt("amount") + 1);
+                            }
+                            item.setTag(tag);
+                            break;
+                        }
+                    }
+                }
+            }
         }
 
         if(event.getSource().getEntity() instanceof Player attacker && event.getEntity() instanceof Player victim) {
@@ -150,16 +174,16 @@ public class ModEvents {
             oldStore.sync((ServerPlayer) player);
         });
     }
-    
+
     @SubscribeEvent
     public static void addCustomTrades(VillagerTradesEvent event) {
-    	if(event.getType() == SoulsVillagers.GEM_CUTTER.get()) {
-    		Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
-    		trades.get(1).add((trader, random) -> new MerchantOffer(new ItemStack(Items.EMERALD, random.nextInt(4, 8)), new ItemStack(SoulsItems.RUBY_SHARD.get(), 4), 2, 8, 0.02f));
-    		trades.get(1).add((trader, random) -> new MerchantOffer(new ItemStack(Items.EMERALD, random.nextInt(4, 8)), new ItemStack(SoulsItems.SAPPHIRE_SHARD.get(), 4), 2, 8, 0.02f));
-    		trades.get(2).add((trader, random) -> new MerchantOffer(new ItemStack(Items.EMERALD, random.nextInt(4, 9)), new ItemStack(SoulsItems.RUBY.get(), 3), 2, 8, 0.05f));
-    		trades.get(2).add((trader, random) -> new MerchantOffer(new ItemStack(Items.EMERALD, random.nextInt(4, 9)), new ItemStack(SoulsItems.SAPPHIRE.get(), 3), 2, 8, 0.05f));
-    	}
+        if(event.getType() == SoulsVillagers.GEM_CUTTER.get()) {
+            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
+            trades.get(1).add((trader, random) -> new MerchantOffer(new ItemStack(Items.EMERALD, random.nextInt(4, 8)), new ItemStack(SoulsItems.RUBY_SHARD.get(), 4), 2, 8, 0.02f));
+            trades.get(1).add((trader, random) -> new MerchantOffer(new ItemStack(Items.EMERALD, random.nextInt(4, 8)), new ItemStack(SoulsItems.SAPPHIRE_SHARD.get(), 4), 2, 8, 0.02f));
+            trades.get(2).add((trader, random) -> new MerchantOffer(new ItemStack(Items.EMERALD, random.nextInt(4, 9)), new ItemStack(SoulsItems.RUBY.get(), 3), 2, 8, 0.05f));
+            trades.get(2).add((trader, random) -> new MerchantOffer(new ItemStack(Items.EMERALD, random.nextInt(4, 9)), new ItemStack(SoulsItems.SAPPHIRE.get(), 3), 2, 8, 0.05f));
+        }
     }
 }
 
