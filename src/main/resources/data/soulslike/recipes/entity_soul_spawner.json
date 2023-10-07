@@ -1,16 +1,22 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "###",
-    "#C#",
-    "###"
+    " A ",
+    "BCB",
+    " # "
   ],
   "key": {
     "#": {
-      "item": "soulslike:vibrant_soul_sheet"
+      "item": "create:fluid_pipe"
     },
     "C": {
       "item": "soulslike:soul_spawner_core"
+    },
+    "A": {
+      "item": "create:shaft"
+    },
+    "B": {
+      "item": "soulslike:soul_casing"
     }
   },
   "result": {

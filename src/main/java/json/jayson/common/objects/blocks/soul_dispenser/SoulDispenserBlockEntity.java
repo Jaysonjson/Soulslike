@@ -2,6 +2,7 @@ package json.jayson.common.objects.blocks.soul_dispenser;
 
 import com.simibubi.create.content.equipment.goggles.IHaveGoggleInformation;
 import com.simibubi.create.foundation.advancement.AllAdvancements;
+import com.simibubi.create.foundation.block.WrenchableDirectionalBlock;
 import com.simibubi.create.foundation.blockEntity.SmartBlockEntity;
 import com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour;
 import com.simibubi.create.foundation.blockEntity.behaviour.fluid.SmartFluidTankBehaviour;
@@ -16,6 +17,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.block.DirectionalBlock;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Fluid;
@@ -32,7 +34,7 @@ import java.util.concurrent.atomic.AtomicLong;
 
 public class SoulDispenserBlockEntity extends SmartBlockEntity implements IHaveGoggleInformation {
     public static final int cap = 500;
-
+    public boolean powered = false;
     SmartFluidTankBehaviour internalTank;
     public SoulDispenserBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state) {
         super(type, pos, state);
@@ -49,16 +51,19 @@ public class SoulDispenserBlockEntity extends SmartBlockEntity implements IHaveG
     @Override
     public void tick() {
         super.tick();
+        if(!powered) return;
         if(level instanceof ServerLevel serverLevel) {
             int fluidAmount = getCapability(ForgeCapabilities.FLUID_HANDLER).resolve().get().getFluidInTank(0).getAmount();
             Fluid fluid = getCapability(ForgeCapabilities.FLUID_HANDLER).resolve().get().getFluidInTank(0).getFluid();
             if(fluid == SoulsFluids.SOURCE_SOUL.get()) {
+                BlockPos pos = worldPosition;
+                pos.offset(level.getBlockState(pos).getValue(WrenchableDirectionalBlock.FACING).getNormal());
                 if(fluidAmount > 0) {
-                    if (fluidAmount > 9) {
-                        internalTank.getPrimaryHandler().drain(10, IFluidHandler.FluidAction.EXECUTE);
-                        SoulOrbEntity.award(serverLevel, new Vec3(worldPosition.getX(), worldPosition.getY(), worldPosition.getZ()), 10);
+                    if (fluidAmount > 1) {
+                        internalTank.getPrimaryHandler().drain(2, IFluidHandler.FluidAction.EXECUTE);
+                        SoulOrbEntity.award(serverLevel, new Vec3(pos.getX(), pos.getY(), pos.getZ()), 2);
                     } else {
-                        SoulOrbEntity.award(serverLevel, new Vec3(worldPosition.getX(), worldPosition.getY(), worldPosition.getZ()), fluidAmount);
+                        SoulOrbEntity.award(serverLevel, new Vec3(pos.getX(), pos.getY(), pos.getZ()), fluidAmount);
                         internalTank.getPrimaryHandler().drain(fluidAmount, IFluidHandler.FluidAction.EXECUTE);
                     }
                 }

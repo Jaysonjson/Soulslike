@@ -12,7 +12,9 @@ import com.simibubi.create.foundation.advancement.AllAdvancements;
 import com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour;
 import com.simibubi.create.foundation.blockEntity.behaviour.fluid.SmartFluidTankBehaviour;
 import com.simibubi.create.foundation.fluid.FluidHelper;
+import com.simibubi.create.foundation.utility.Lang;
 import com.simibubi.create.foundation.utility.NBTHelper;
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
@@ -62,7 +64,10 @@ public class SoulEntitySpawnerBlockEntity extends KineticBlockEntity implements 
 
     @Override
     public boolean addToGoggleTooltip(List<Component> tooltip, boolean isPlayerSneaking) {
-        return containedFluidTooltip(tooltip, isPlayerSneaking,
+        containedFluidTooltip(tooltip, isPlayerSneaking,
                 getCapability(ForgeCapabilities.FLUID_HANDLER));
+        tooltip.add(Component.literal("    Entity Info:"));
+        tooltip.add(Component.literal("     NONE").withStyle(ChatFormatting.GRAY));
+        return true;
     }
 }

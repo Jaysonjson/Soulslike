@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " B ",
+    " # ",
+    " C "
+  ],
+  "key": {
+    "#": {
+      "item": "soulslike:soul_casing"
+    },
+    "B": {
+      "item": "create:nozzle"
+    },
+    "C": {
+      "item": "create:fluid_pipe"
+    }
+  },
+  "result": {
+    "item": "soulslike:soul_dispenser",
+    "count": 1
+  }
+}

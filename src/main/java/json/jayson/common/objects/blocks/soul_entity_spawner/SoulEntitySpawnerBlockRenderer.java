@@ -7,6 +7,8 @@ import com.simibubi.create.AllPartialModels;
 import com.simibubi.create.content.kinetics.base.KineticBlockEntityRenderer;
 import com.simibubi.create.content.kinetics.mixer.MechanicalMixerBlockEntity;
 import com.simibubi.create.content.kinetics.mixer.MechanicalMixerRenderer;
+import com.simibubi.create.content.kinetics.press.MechanicalPressBlockEntity;
+import com.simibubi.create.content.kinetics.press.MechanicalPressRenderer;
 import com.simibubi.create.foundation.blockEntity.behaviour.fluid.SmartFluidTankBehaviour;
 import com.simibubi.create.foundation.fluid.FluidRenderer;
 import com.simibubi.create.foundation.render.CachedBufferer;
@@ -65,13 +67,19 @@ public class SoulEntitySpawnerBlockRenderer extends KineticBlockEntityRenderer<S
             ms.popPose();
         }
 
-        if (Backend.canUseInstancing(be.getLevel())) return;
+        //if (Backend.canUseInstancing(be.getLevel())) return;
 
-        BlockState blockState = be.getBlockState();
+        /*BlockState blockState = be.getBlockState();
 
         VertexConsumer vb = buffer.getBuffer(RenderType.solid());
 
         SuperByteBuffer superBuffer = CachedBufferer.partial(AllPartialModels.SHAFTLESS_COGWHEEL, blockState);
-        standardKineticRotationTransform(superBuffer, be, light).renderInto(ms, vb);
+        standardKineticRotationTransform(superBuffer, be, light).renderInto(ms, vb);*/
     }
+
+   // @Override
+    //protected BlockState getRenderedBlockState(SoulEntitySpawnerBlockEntity be) {
+        //return shaft(getRotationAxisOf(be));
+    //}
+
 }
