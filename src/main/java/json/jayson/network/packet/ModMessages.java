@@ -68,6 +68,11 @@ public class ModMessages {
                //     .encoder(OpenLevelUpScreenS2CPacket::toBytes)
                //     .consumerMainThread(OpenLevelUpScreenS2CPacket::handle)
                //     .add();
+        net.messageBuilder(SoulEntitySpawnerSyncS2CPacket.class, id(), NetworkDirection.PLAY_TO_CLIENT)
+                .decoder(SoulEntitySpawnerSyncS2CPacket::new)
+                .encoder(SoulEntitySpawnerSyncS2CPacket::toBytes)
+                .consumerMainThread(SoulEntitySpawnerSyncS2CPacket::handle)
+                .add();
     }
 
     public static <MSG> void sendToServer(MSG message) {
