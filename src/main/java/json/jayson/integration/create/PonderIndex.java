@@ -28,6 +28,7 @@ public class PonderIndex {
         addStoryBoard(SoulsBlocks.SOUL_DRAIN.get(), "soul_drain", SoulDrainScene::intro);
         addStoryBoard(SoulsBlocks.SOUL_BLOCK.getItem(), "soul_drain", SoulDrainScene::intro);
         addStoryBoard(SoulsItems.SOUL_BUCKET.get(), "soul_drain", SoulDrainScene::intro);
+        addStoryBoard(SoulsBlocks.SOUL_ENTITY_SPAWNER.get(), "soul_spawner", SoulSpawnerScene::intro);
         forComponents(SoulsBlocks.RUBY_ROSE.getItem())
                 .addStoryBoard("ruby_rose/spawn", RubyRoseScene::spawn)
                 .addStoryBoard("ruby_rose/temple_0", RubyRoseScene::spawn)

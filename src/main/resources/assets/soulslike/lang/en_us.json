@@ -162,5 +162,14 @@
   "soulslike.ponder.soul_drain.text_1": "Soul Drains can extract Souls from Players",
   "soulslike.ponder.soul_drain.text_2": "Pipe Networks can now pull the fluid from the drains' internal buffer",
   "soulslike.ponder.soul_drain.text_3": "Soul Drains can also extract Souls from Entities",
-  "soulslike.ponder.soul_drain.text_4": "If the Entity runs out of Souls, it dies"
+  "soulslike.ponder.soul_drain.text_4": "If the Entity runs out of Souls, it dies",
+
+  "soulslike.ponder.soul_spawner.header": "Spawning Entities",
+  "soulslike.ponder.soul_spawner.text_1": "Soul Spawners can spawn Entities",
+  "soulslike.ponder.soul_spawner.text_2": "Right Click with a filled Soul Vial to set the Entity",
+  "soulslike.ponder.soul_spawner.text_3": "Soul Vials can be filled by killing Entities while having the Vial in the Inventory",
+  "soulslike.ponder.soul_spawner.text_4": "Soul Spawners require Rotational Force in the Bottom to work",
+  "soulslike.ponder.soul_spawner.text_5": "Soul Spawners also require the Souls fluid in the Top to work",
+  "soulslike.ponder.soul_spawner.text_6": "Now after some random Time, the set Entity will spawn"
+
 }
