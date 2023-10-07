@@ -20,6 +20,7 @@ import json.jayson.common.objects.blocks.SoulCasingBlock;
 import json.jayson.common.objects.blocks.cake_plate.CakePlateBlockItem;
 import json.jayson.common.objects.blocks.simple_soul_generator.SoulGeneratorBlock;
 import json.jayson.common.objects.blocks.simple_soul_generator.SoulGeneratorState;
+import json.jayson.common.objects.blocks.soul_dispenser.SoulDispenserBlock;
 import json.jayson.common.objects.blocks.soul_drain.SoulDrainBlock;
 import json.jayson.common.objects.blocks.soul_entity_spawner.SoulEntitySpawnerBlock;
 import net.minecraft.client.renderer.RenderType;
@@ -120,6 +121,15 @@ public class SoulsBlocks {
 
     public static final BlockEntry<SoulDrainBlock> SOUL_DRAIN =
             SOULS_REGISTRATE.block("soul_drain", SoulDrainBlock::new)
+                    .initialProperties(SharedProperties::copperMetal)
+                    .transform(pickaxeOnly())
+                    .properties(BlockBehaviour.Properties::noOcclusion)
+                    .blockstate((c, p) -> p.simpleBlock(c.get(), AssetLookup.standardModel(c, p)))
+                    .simpleItem()
+                    .register();
+
+    public static final BlockEntry<SoulDispenserBlock> SOUL_DISPENSER =
+            SOULS_REGISTRATE.block("soul_dispenser", SoulDispenserBlock::new)
                     .initialProperties(SharedProperties::copperMetal)
                     .transform(pickaxeOnly())
                     .properties(BlockBehaviour.Properties::noOcclusion)
