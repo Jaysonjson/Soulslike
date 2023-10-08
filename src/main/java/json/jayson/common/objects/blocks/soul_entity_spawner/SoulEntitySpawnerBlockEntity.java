@@ -102,7 +102,7 @@ public class SoulEntitySpawnerBlockEntity extends KineticBlockEntity implements 
     }
 
     public int getRequiredSouls() {
-        return (int) (soulsCache * 2.3);
+        return (int) (soulsCache * 3.4);
     }
 
     @Override
@@ -121,11 +121,11 @@ public class SoulEntitySpawnerBlockEntity extends KineticBlockEntity implements 
     }
 
     public int getWaitingTicksMax() {
-        return (int) (100000 / Math.abs(getSpeed()));
+        return (int) (75000 / Math.abs(getSpeed()));
     }
 
     public int getWaitingTicksMin() {
-        return (int) (50000 / Math.abs(getSpeed()));
+        return (int) (25000 / Math.abs(getSpeed()));
     }
 
 

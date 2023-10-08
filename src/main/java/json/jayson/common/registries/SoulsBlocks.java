@@ -115,7 +115,7 @@ public class SoulsBlocks {
                     .properties(BlockBehaviour.Properties::noOcclusion)
                     .transform(axeOrPickaxe())
                     .blockstate((c, p) -> p.simpleBlock(c.getEntry(), AssetLookup.partialBaseModel(c, p)))
-                    .transform(BlockStressDefaults.setImpact(64.0))
+                    .transform(BlockStressDefaults.setImpact(128.0))
                     .item()
                     .transform(customItemModel())
                     .register();
