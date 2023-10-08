@@ -150,6 +150,7 @@ public class SoulsItems {
             event.accept(SoulsBlocks.SOUL_DRAIN.get());
             event.accept(SoulsBlocks.SOUL_ENTITY_SPAWNER.get());
             event.accept(SoulsBlocks.SOUL_DISPENSER.get());
+            event.accept(SoulsBlocks.SOUL_CATCHER.get());
         }
     }
     public static void register(IEventBus eventBus) {

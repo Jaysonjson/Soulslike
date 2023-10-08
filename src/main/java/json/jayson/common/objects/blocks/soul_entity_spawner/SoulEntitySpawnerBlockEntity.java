@@ -59,11 +59,6 @@ public class SoulEntitySpawnerBlockEntity extends KineticBlockEntity implements 
         this.typeCache = SoulsUtil.getEntity(entity);
     }
 
-    private FluidStack getCurrentFluidInTank() {
-        return tank.getPrimaryHandler()
-                .getFluid();
-    }
-
     @Override
     public <T> LazyOptional<T> getCapability(Capability<T> cap, Direction side) {
         if (cap == ForgeCapabilities.FLUID_HANDLER && side != Direction.DOWN)
@@ -81,7 +76,7 @@ public class SoulEntitySpawnerBlockEntity extends KineticBlockEntity implements 
             if(fluid == SoulsFluids.SOURCE_SOUL.get()) {
                 if(fluidAmount > getRequiredSouls() - 1) {
                     ++idle;
-                    if (idle > this.getLevel().random.nextInt(60, 300)) {
+                    if (idle > this.getLevel().random.nextInt(getWaitingTicksMin(), getWaitingTicksMax())) {
                         idle = 0;
                         if (typeCache != null) {
                             Entity createdEntity = typeCache.create(level);
@@ -125,6 +120,14 @@ public class SoulEntitySpawnerBlockEntity extends KineticBlockEntity implements 
         }
     }
 
+    public int getWaitingTicksMax() {
+        return (int) (100000 / Math.abs(getSpeed()));
+    }
+
+    public int getWaitingTicksMin() {
+        return (int) (50000 / Math.abs(getSpeed()));
+    }
+
 
     @Override
     public boolean addToGoggleTooltip(List<Component> tooltip, boolean isPlayerSneaking) {
@@ -135,6 +138,10 @@ public class SoulEntitySpawnerBlockEntity extends KineticBlockEntity implements 
             tooltip.add(Component.literal("     " + Component.translatable(entity).getString()).withStyle(ChatFormatting.GRAY));
             tooltip.add(Component.literal("     Required Souls: " + getRequiredSouls()).withStyle(ChatFormatting.GRAY));
         }
+        tooltip.add(Component.literal("    Spawner Info:"));
+        tooltip.add(Component.literal("     Max. Waiting Time: " + getWaitingTicksMax() / 20 + " Seconds").withStyle(ChatFormatting.GRAY));
+        tooltip.add(Component.literal("     Min. Waiting Time: " + getWaitingTicksMin() / 20 + " Seconds").withStyle(ChatFormatting.GRAY));
+        tooltip.add(Component.literal("     Average Time: " + (getWaitingTicksMin() / 20 + getWaitingTicksMax() / 20) / 2 + " Seconds").withStyle(ChatFormatting.GRAY));
         return true;
     }
 }

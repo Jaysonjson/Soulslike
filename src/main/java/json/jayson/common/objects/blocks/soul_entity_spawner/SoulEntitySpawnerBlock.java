@@ -58,7 +58,6 @@ public class SoulEntitySpawnerBlock extends HorizontalKineticBlock implements IB
                 ItemStack itemStack = player.getItemInHand(hand);
                 if(itemStack.is(SoulsItems.SOUL_VIAL.get())) {
                     if(itemStack.getTag().getInt("amount") >= SoulVialItem.MAX) {
-                        System.out.println("NYET");
                         te.setEntity(itemStack.getTag().getString("entity"));
                         te.setChanged();
                         itemStack.setCount(0);

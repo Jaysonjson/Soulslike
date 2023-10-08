@@ -29,7 +29,7 @@ public class SoulEntitySpawnerBlockRenderer extends KineticBlockEntityRenderer<S
 
     @Override
     public boolean shouldRenderOffScreen(SoulEntitySpawnerBlockEntity be) {
-        return true;
+        return false;
     }
 
     @Override

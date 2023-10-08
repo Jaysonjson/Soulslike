@@ -37,7 +37,6 @@ public class CrateSyncS2CPacket {
         NetworkEvent.Context context = supplier.get();
         context.enqueueWork(() -> {
             if(Minecraft.getInstance().level.getBlockEntity(pos) instanceof GenericCrateEntity blockEntity) {
-                System.out.println(itemStack.getItem().toString());
                 blockEntity.setItem(slot, itemStack);
             }
         });

@@ -20,6 +20,7 @@ import json.jayson.common.objects.blocks.SoulCasingBlock;
 import json.jayson.common.objects.blocks.cake_plate.CakePlateBlockItem;
 import json.jayson.common.objects.blocks.simple_soul_generator.SoulGeneratorBlock;
 import json.jayson.common.objects.blocks.simple_soul_generator.SoulGeneratorState;
+import json.jayson.common.objects.blocks.soul_catcher.SoulCatcherBlock;
 import json.jayson.common.objects.blocks.soul_dispenser.SoulDispenserBlock;
 import json.jayson.common.objects.blocks.soul_drain.SoulDrainBlock;
 import json.jayson.common.objects.blocks.soul_entity_spawner.SoulEntitySpawnerBlock;
@@ -110,12 +111,24 @@ public class SoulsBlocks {
     public static final BlockEntry<SoulEntitySpawnerBlock> SOUL_ENTITY_SPAWNER =
             SOULS_REGISTRATE.block("soul_entity_spawner", SoulEntitySpawnerBlock::new)
                     .initialProperties(SharedProperties::stone)
-                    .properties(p -> p.mapColor(MapColor.STONE))
+                    .properties(p -> p.mapColor(MapColor.SNOW))
                     .properties(BlockBehaviour.Properties::noOcclusion)
                     .transform(axeOrPickaxe())
                     .blockstate((c, p) -> p.simpleBlock(c.getEntry(), AssetLookup.partialBaseModel(c, p)))
-                    .transform(BlockStressDefaults.setImpact(128.0))
-                    .item(AssemblyOperatorBlockItem::new)
+                    .transform(BlockStressDefaults.setImpact(64.0))
+                    .item()
+                    .transform(customItemModel())
+                    .register();
+
+    public static final BlockEntry<SoulCatcherBlock> SOUL_CATCHER =
+            SOULS_REGISTRATE.block("soul_catcher", SoulCatcherBlock::new)
+                    .initialProperties(SharedProperties::stone)
+                    .properties(p -> p.mapColor(MapColor.SNOW))
+                    .properties(BlockBehaviour.Properties::noOcclusion)
+                    .transform(axeOrPickaxe())
+                    .blockstate((c, p) -> p.simpleBlock(c.getEntry(), AssetLookup.partialBaseModel(c, p)))
+                    .transform(BlockStressDefaults.setImpact(32.0))
+                    .item()
                     .transform(customItemModel())
                     .register();
 

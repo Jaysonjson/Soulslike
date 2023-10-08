@@ -8,6 +8,8 @@ import com.tterrag.registrate.util.entry.BlockEntityEntry;
 import json.jayson.Soulslike;
 import json.jayson.common.objects.blocks.simple_soul_generator.SoulGeneratorBlockEntity;
 import json.jayson.common.objects.blocks.simple_soul_generator.SoulGeneratorRenderer;
+import json.jayson.common.objects.blocks.soul_catcher.SoulCatcherBlockEntity;
+import json.jayson.common.objects.blocks.soul_catcher.SoulCatcherBlockRenderer;
 import json.jayson.common.objects.blocks.soul_dispenser.SoulDispenserBlockEntity;
 import json.jayson.common.objects.blocks.soul_dispenser.SoulDispenserRenderer;
 import json.jayson.common.objects.blocks.soul_drain.SoulDrainBlockEntity;
@@ -86,6 +88,12 @@ public class SoulsBlockEntities {
             .blockEntity("soul_dispenser", SoulDispenserBlockEntity::new)
             .validBlocks(SoulsBlocks.SOUL_DISPENSER)
             .renderer(() -> SoulDispenserRenderer::new)
+            .register();
+
+    public static final BlockEntityEntry<SoulCatcherBlockEntity> SOUL_CATCHER = SOULS_REGISTRATE
+            .blockEntity("soul_catcher", SoulCatcherBlockEntity::new)
+            .validBlocks(SoulsBlocks.SOUL_CATCHER)
+            .renderer(() -> SoulCatcherBlockRenderer::new)
             .register();
 
     public static void register(IEventBus eventBus) {
