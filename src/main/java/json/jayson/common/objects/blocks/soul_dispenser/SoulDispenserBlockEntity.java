@@ -1,6 +1,7 @@
 package json.jayson.common.objects.blocks.soul_dispenser;
 
 import com.simibubi.create.content.equipment.goggles.IHaveGoggleInformation;
+import com.simibubi.create.content.kinetics.base.KineticBlockEntity;
 import com.simibubi.create.foundation.advancement.AllAdvancements;
 import com.simibubi.create.foundation.block.WrenchableDirectionalBlock;
 import com.simibubi.create.foundation.blockEntity.SmartBlockEntity;
@@ -34,7 +35,7 @@ import java.util.concurrent.atomic.AtomicLong;
 
 public class SoulDispenserBlockEntity extends SmartBlockEntity implements IHaveGoggleInformation {
     public static final int cap = 500;
-    public boolean powered = false;
+    public boolean powered = true;
     SmartFluidTankBehaviour internalTank;
     public SoulDispenserBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state) {
         super(type, pos, state);

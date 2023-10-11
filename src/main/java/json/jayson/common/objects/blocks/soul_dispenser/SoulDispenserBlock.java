@@ -2,6 +2,11 @@ package json.jayson.common.objects.blocks.soul_dispenser;
 
 import com.simibubi.create.AllShapes;
 import com.simibubi.create.content.equipment.wrench.IWrenchable;
+import com.simibubi.create.content.kinetics.fan.EncasedFanBlock;
+import com.simibubi.create.content.kinetics.fan.NozzleBlock;
+import com.simibubi.create.content.kinetics.press.MechanicalPressRenderer;
+import com.simibubi.create.content.kinetics.press.PressInstance;
+import com.simibubi.create.content.kinetics.simpleRelays.CogWheelBlock;
 import com.simibubi.create.foundation.block.IBE;
 import com.simibubi.create.foundation.block.WrenchableDirectionalBlock;
 import json.jayson.common.objects.blocks.soul_drain.SoulDrainBlockEntity;
@@ -10,6 +15,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.*;
@@ -29,6 +35,10 @@ public class SoulDispenserBlock extends WrenchableDirectionalBlock implements IW
         return AllShapes.CASING_13PX.get(Direction.UP);
     }
 
+    @Override
+    public BlockState getStateForPlacement(BlockPlaceContext context) {
+        return defaultBlockState().setValue(FACING, context.getClickedFace());
+    }
 
     @Override
     public Class<SoulDispenserBlockEntity> getBlockEntityClass() {

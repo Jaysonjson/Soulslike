@@ -29,6 +29,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.SpawnEggItem;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -60,11 +61,18 @@ public class SoulEntitySpawnerBlock extends HorizontalKineticBlock implements IB
                     if(itemStack.getTag().getInt("amount") >= SoulVialItem.MAX) {
                         te.setEntity(itemStack.getTag().getString("entity"));
                         te.setChanged();
-                        itemStack.setCount(0);
+                        if(!player.isCreative()) itemStack.shrink(1);
                         player.setItemInHand(hand, itemStack);
                         ModMessages.sendToClients(new SoulEntitySpawnerSyncS2CPacket(p_60508_.getBlockPos(), te.getEntity()));
                     }
+                } else if(itemStack.getItem() instanceof SpawnEggItem spawnEggItem) {
+                    te.setEntity(spawnEggItem.getType(itemStack.getTag()).getDescriptionId());
+                    te.setChanged();
+                    if(!player.isCreative()) itemStack.shrink(1);
+                    player.setItemInHand(hand, itemStack);
+                    ModMessages.sendToClients(new SoulEntitySpawnerSyncS2CPacket(p_60508_.getBlockPos(), te.getEntity()));
                 }
+                return InteractionResult.CONSUME;
             }
         }
         return super.use(state, level, pos, player, hand, p_60508_);

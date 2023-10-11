@@ -17,7 +17,7 @@ import json.jayson.client.renderer.FireFlyEntityRenderer;
 import json.jayson.client.renderer.SoulOrbRenderer;
 import json.jayson.common.objects.entities.FireFlyEntity;
 import json.jayson.common.objects.entities.SoulOrbEntity;
-import json.jayson.common.registries.SoulsBlocks;
+import json.jayson.common.registries.*;
 import json.jayson.integration.create.PonderIndex;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
@@ -47,9 +47,6 @@ import json.jayson.common.objects.blocks.cake_plate.CakePlateEntityRenderer;
 import json.jayson.common.objects.blocks.fire_altar.FireAltarEntityRenderer;
 import json.jayson.common.objects.blocks.vase.GenericVaseEntityRenderer;
 import json.jayson.common.objects.entities.IEntityTextOverlay;
-import json.jayson.common.registries.SoulsBlockEntities;
-import json.jayson.common.registries.SoulsEntities;
-import json.jayson.common.registries.SoulsFluids;
 
 @Mod.EventBusSubscriber(modid = Soulslike.MODID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.FORGE)
 @OnlyIn(Dist.CLIENT)
@@ -72,6 +69,7 @@ public class ClientEvents {
             //ItemBlockRenderTypes.setRenderLayer(SoulsFluids.SOURCE_SOUL.get(), RenderType.translucent());
             //ItemBlockRenderTypes.setRenderLayer(SoulsFluids.FLOWING_SOUL.get(), RenderType.translucent());
             PonderIndex.add();
+            SoulsPartialModels.init();
             //ItemBlockRenderTypes.setRenderLayer(SoulsBlocks.MANGROVE_CRAFTING_TABLE.getBlock(), RenderType.translucent());
         }
         @SubscribeEvent

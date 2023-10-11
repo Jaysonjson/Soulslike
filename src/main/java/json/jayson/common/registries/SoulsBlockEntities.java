@@ -1,9 +1,5 @@
 package json.jayson.common.registries;
 
-import com.simibubi.create.AllBlocks;
-import com.simibubi.create.content.kinetics.mixer.MechanicalMixerBlockEntity;
-import com.simibubi.create.content.kinetics.mixer.MechanicalMixerRenderer;
-import com.simibubi.create.content.kinetics.mixer.MixerInstance;
 import com.tterrag.registrate.util.entry.BlockEntityEntry;
 import json.jayson.Soulslike;
 import json.jayson.common.objects.blocks.simple_soul_generator.SoulGeneratorBlockEntity;
@@ -24,12 +20,10 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import json.jayson.common.objects.blocks.bee_statue.SoulsBeeStatueEntity;
 import json.jayson.common.objects.blocks.cake_plate.CakePlateEntity;
-import json.jayson.common.objects.blocks.crate.GenericCrateEntity;
 import json.jayson.common.objects.blocks.fire_altar.FireAltarEntity;
 import json.jayson.common.objects.blocks.fox_altar.SoulsFoxAltarEntity;
 import json.jayson.common.objects.blocks.vase.GenericVaseEntity;
 
-import static com.simibubi.create.Create.REGISTRATE;
 import static json.jayson.Soulslike.SOULS_REGISTRATE;
 
 public class SoulsBlockEntities {
@@ -86,6 +80,7 @@ public class SoulsBlockEntities {
 
     public static final BlockEntityEntry<SoulDispenserBlockEntity> SOUL_DISPENSER = SOULS_REGISTRATE
             .blockEntity("soul_dispenser", SoulDispenserBlockEntity::new)
+            //.instance(() -> SoulDispenserInstance::new)
             .validBlocks(SoulsBlocks.SOUL_DISPENSER)
             .renderer(() -> SoulDispenserRenderer::new)
             .register();
