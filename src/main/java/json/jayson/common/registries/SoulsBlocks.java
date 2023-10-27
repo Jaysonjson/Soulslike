@@ -142,7 +142,7 @@ public class SoulsBlocks {
             .simpleItem()
             .register();
 
-    public static final BlockEntry<SoulGeneratorBlock> SIMPLE_SOUL_GENERATOR =
+    /*public static final BlockEntry<SoulGeneratorBlock> SIMPLE_SOUL_GENERATOR =
             SOULS_REGISTRATE.block("simple_soul_generator", SoulGeneratorBlock::new)
                     .initialProperties(SharedProperties::stone)
                     .properties(p -> p.mapColor(MapColor.SNOW).forceSolidOn())
@@ -153,7 +153,7 @@ public class SoulsBlocks {
                     .item()
                     .properties(p -> p.rarity(Rarity.RARE))
                     .transform(customItemModel())
-                    .register();
+                    .register();*/
 
     public static final SoulRegistryBlockItem<SoulsLiquidBlock> BLOOD_BLOCK = registerBlock("blood", () -> new SoulsLiquidBlock(SoulsFluids.SOURCE_BLOOD, BlockBehaviour.Properties.copy(Blocks.WATER)));
     public static final SoulRegistryBlockItem<SoulsLiquidBlock> SOUL_BLOCK = registerBlock("soul", () -> new SoulsLiquidBlock(SoulsFluids.SOURCE_SOUL, BlockBehaviour.Properties.copy(Blocks.WATER)));

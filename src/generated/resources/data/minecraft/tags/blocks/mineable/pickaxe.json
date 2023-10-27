@@ -1,6 +1,9 @@
 {
   "values": [
     "soulslike:soul_entity_spawner",
-    "soulslike:soul_drain"
+    "soulslike:soul_catcher",
+    "soulslike:soul_drain",
+    "soulslike:soul_dispenser",
+    "soulslike:soul_casing"
   ]
 }

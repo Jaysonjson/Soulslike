@@ -8,6 +8,7 @@ import com.simibubi.create.foundation.ponder.element.EntityElement;
 import com.simibubi.create.foundation.ponder.element.InputWindowElement;
 import com.simibubi.create.foundation.ponder.element.WorldSectionElement;
 import com.simibubi.create.foundation.utility.Pointing;
+import json.jayson.common.objects.items.SoulVialItem;
 import json.jayson.common.registries.SoulsItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -56,8 +57,10 @@ public class SoulSpawnerScene {
                 .placeNearTarget();
 
         scene.idle(5);
+        ItemStack soulVial = new ItemStack(SoulsItems.SOUL_VIAL.get());
+        soulVial.getOrCreateTag().putInt(SoulVialItem.NBT_CUSTOM_MODEL_DATA, 5);
         scene.overlay.showControls(new InputWindowElement(util.vector.centerOf(2, 1, 2), Pointing.DOWN).rightClick()
-                .withItem(new ItemStack(SoulsItems.SOUL_VIAL.get())), 40);
+                .withItem(soulVial), 40);
         scene.idle(70);
         scene.overlay.showText(70)
                 .text("Soul Vials can be filled by killing Entities while having the Vial in the Inventory")

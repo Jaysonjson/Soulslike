@@ -132,6 +132,9 @@ public class ModEvents {
                             if (tag.getString("entity").equals(event.getEntity().getType().getDescriptionId())) {
                                 tag.putInt("amount", tag.getInt("amount") + 1);
                             }
+                            float percentage = ((float) tag.getInt("amount") / SoulVialItem.MAX) * 5;
+                            tag.putInt(SoulVialItem.NBT_CUSTOM_MODEL_DATA, (int) percentage);
+                            if((int)percentage == 0) tag.putInt(SoulVialItem.NBT_CUSTOM_MODEL_DATA, 1);
                             item.setTag(tag);
                             break;
                         }
