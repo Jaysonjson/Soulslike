@@ -3,9 +3,9 @@
 	"parent": "block/block",
 	"render_type": "cutout_mipped",
 	"textures": {
-		"0": "soulslike:block/drain/soul_drain_side",
-		"2": "soulslike:block/soul_casing",
-		"particle": "soulslike:block/drain/soul_drain_side"
+		"0": "soulslike:block/drain/vibrant/soul_drain_side",
+		"2": "soulslike:block/vibrant_soul_casing",
+		"particle": "soulslike:block/drain/vibrant_soul_drain_side"
 	},
 	"elements": [
 		{

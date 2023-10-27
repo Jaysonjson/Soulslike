@@ -5,10 +5,10 @@
   "textures": {
     "0": "create:block/fluid_tank_top",
     "1": "create:block/fluid_tank",
-    "3": "soulslike:block/soul_entity_spawner_top",
+    "3": "soulslike:block/vibrant_soul_entity_spawner_top",
     "4": "create:block/fluid_tank_inner",
-    "5": "soulslike:block/soul_entity_spawner_side",
-    "6": "soulslike:block/soul_entity_spawner_bot",
+    "5": "soulslike:block/vibrant_soul_entity_spawner_side",
+    "6": "soulslike:block/vibrant_soul_entity_spawner_bot",
     "particle": "create:block/fluid_tank"
   },
   "elements": [

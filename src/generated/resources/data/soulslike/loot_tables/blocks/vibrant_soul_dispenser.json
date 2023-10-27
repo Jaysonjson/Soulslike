@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "soulslike:soul_drain"
+          "name": "soulslike:vibrant_soul_dispenser"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "soulslike:blocks/soul_drain"
+  "random_sequence": "soulslike:blocks/vibrant_soul_dispenser"
 }

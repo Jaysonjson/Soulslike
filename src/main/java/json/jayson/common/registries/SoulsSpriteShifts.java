@@ -12,7 +12,8 @@ import net.minecraft.resources.ResourceLocation;
 
 public class SoulsSpriteShifts {
 
-    public static final CTSpriteShiftEntry SOUL_CASING = omni("soul_casing");
+    public static final CTSpriteShiftEntry VIBRANT_SOUL_CASING = omni("vibrant_soul_casing");
+    public static final CTSpriteShiftEntry SOUL_CASING = omni("vibrant_soul_casing");
 
 
     private static CTSpriteShiftEntry omni(String name) {

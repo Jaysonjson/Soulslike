@@ -1,0 +1,23 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "minecraft:iron_ingot"
+    },
+    {
+      "amount": 1000,
+      "fluid": "minecraft:lava",
+      "nbt": {}
+    },
+    {
+      "amount": 64,
+      "fluid": "soulslike:soul",
+      "nbt": {}
+    }
+  ],
+  "results": [
+    {
+      "item": "soulslike:soul_ingot"
+    }
+  ]
+}

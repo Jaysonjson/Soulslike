@@ -1,7 +1,8 @@
 {
   "block.soulslike.soul_casing": "Soul Casing",
-  "block.soulslike.soul_catcher": "Soul Catcher",
-  "block.soulslike.soul_dispenser": "Soul Dispenser",
-  "block.soulslike.soul_drain": "Soul Drain",
-  "block.soulslike.soul_entity_spawner": "Soul Entity Spawner"
+  "block.soulslike.vibrant_soul_casing": "Vibrant Soul Casing",
+  "block.soulslike.vibrant_soul_catcher": "Vibrant Soul Catcher",
+  "block.soulslike.vibrant_soul_dispenser": "Vibrant Soul Dispenser",
+  "block.soulslike.vibrant_soul_drain": "Vibrant Soul Drain",
+  "block.soulslike.vibrant_soul_entity_spawner": "Vibrant Soul Entity Spawner"
 }

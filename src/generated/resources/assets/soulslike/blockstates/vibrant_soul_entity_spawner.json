@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "soulslike:block/vibrant_soul_entity_spawner/block"
+    }
+  }
+}

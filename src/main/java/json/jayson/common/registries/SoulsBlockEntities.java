@@ -62,32 +62,32 @@ public class SoulsBlockEntities {
     public static final BlockEntityEntry<SoulEntitySpawnerBlockEntity> SOUL_ENTITY_SPAWNER = SOULS_REGISTRATE
             .blockEntity("soul_entity_spawner", SoulEntitySpawnerBlockEntity::new)
             .instance(() -> SoulEntitySpawnerBlockInstance::new)
-            .validBlocks(SoulsBlocks.SOUL_ENTITY_SPAWNER)
+            .validBlocks(SoulsBlocks.VIBRANT_SOUL_ENTITY_SPAWNER)
             .renderer(() -> SoulEntitySpawnerBlockRenderer::new)
             .register();
 
     public static final BlockEntityEntry<SoulDrainBlockEntity> SOUL_DRAINER = SOULS_REGISTRATE
             .blockEntity("soul_drain", SoulDrainBlockEntity::new)
-            .validBlocks(SoulsBlocks.SOUL_DRAIN)
+            .validBlocks(SoulsBlocks.VIBRANT_SOUL_DRAIN)
             .renderer(() -> SoulDrainRenderer::new)
             .register();
 
     public static final BlockEntityEntry<SoulGeneratorBlockEntity> SIMPLE_SOUL_GENERATOR = SOULS_REGISTRATE
             .blockEntity("simple_soul_generator", SoulGeneratorBlockEntity::new)
-            .validBlocks(SoulsBlocks.SOUL_DRAIN)
+            //.validBlocks(SoulsBlocks.VIBRANT_SOUL_CATCHER)
             .renderer(() -> SoulGeneratorRenderer::new)
             .register();
 
     public static final BlockEntityEntry<SoulDispenserBlockEntity> SOUL_DISPENSER = SOULS_REGISTRATE
             .blockEntity("soul_dispenser", SoulDispenserBlockEntity::new)
             //.instance(() -> SoulDispenserInstance::new)
-            .validBlocks(SoulsBlocks.SOUL_DISPENSER)
+            .validBlocks(SoulsBlocks.VIBRANT_SOUL_DISPENSER)
             .renderer(() -> SoulDispenserRenderer::new)
             .register();
 
     public static final BlockEntityEntry<SoulCatcherBlockEntity> SOUL_CATCHER = SOULS_REGISTRATE
             .blockEntity("soul_catcher", SoulCatcherBlockEntity::new)
-            .validBlocks(SoulsBlocks.SOUL_CATCHER)
+            .validBlocks(SoulsBlocks.VIBRANT_SOUL_CATCHER)
             .renderer(() -> SoulCatcherBlockRenderer::new)
             .register();
 

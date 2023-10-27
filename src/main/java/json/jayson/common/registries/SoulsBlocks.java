@@ -93,8 +93,8 @@ public class SoulsBlocks {
 
     ;
 
-    public static final BlockEntry<SoulEntitySpawnerBlock> SOUL_ENTITY_SPAWNER =
-            SOULS_REGISTRATE.block("soul_entity_spawner", SoulEntitySpawnerBlock::new)
+    public static final BlockEntry<SoulEntitySpawnerBlock> VIBRANT_SOUL_ENTITY_SPAWNER =
+            SOULS_REGISTRATE.block("vibrant_soul_entity_spawner", SoulEntitySpawnerBlock::new)
                     .initialProperties(SharedProperties::stone)
                     .properties(p -> p.mapColor(MapColor.SNOW))
                     .properties(BlockBehaviour.Properties::noOcclusion)
@@ -105,8 +105,8 @@ public class SoulsBlocks {
                     .transform(customItemModel())
                     .register();
 
-    public static final BlockEntry<SoulCatcherBlock> SOUL_CATCHER =
-            SOULS_REGISTRATE.block("soul_catcher", SoulCatcherBlock::new)
+    public static final BlockEntry<SoulCatcherBlock> VIBRANT_SOUL_CATCHER =
+            SOULS_REGISTRATE.block("vibrant_soul_catcher", SoulCatcherBlock::new)
                     .initialProperties(SharedProperties::stone)
                     .properties(p -> p.mapColor(MapColor.SNOW))
                     .properties(BlockBehaviour.Properties::noOcclusion)
@@ -117,8 +117,8 @@ public class SoulsBlocks {
                     .transform(customItemModel())
                     .register();
 
-    public static final BlockEntry<SoulDrainBlock> SOUL_DRAIN =
-            SOULS_REGISTRATE.block("soul_drain", SoulDrainBlock::new)
+    public static final BlockEntry<SoulDrainBlock> VIBRANT_SOUL_DRAIN =
+            SOULS_REGISTRATE.block("vibrant_soul_drain", SoulDrainBlock::new)
                     .initialProperties(SharedProperties::copperMetal)
                     .transform(pickaxeOnly())
                     .properties(BlockBehaviour.Properties::noOcclusion)
@@ -126,21 +126,31 @@ public class SoulsBlocks {
                     .simpleItem()
                     .register();
 
-    public static final BlockEntry<SoulDispenserBlock> SOUL_DISPENSER =
-            SOULS_REGISTRATE.block("soul_dispenser", SoulDispenserBlock::new)
+    public static final BlockEntry<SoulDispenserBlock> VIBRANT_SOUL_DISPENSER =
+            SOULS_REGISTRATE.block("vibrant_soul_dispenser", SoulDispenserBlock::new)
                     .initialProperties(SharedProperties::copperMetal)
                     .transform(pickaxeOnly())
                     .properties(BlockBehaviour.Properties::noOcclusion)
                     .blockstate((c, p) -> p.simpleBlock(c.get(), AssetLookup.standardModel(c, p)))
                     .simpleItem()
                     .register();
+
+    public static final BlockEntry<SoulCasingBlock> VIBRANT_SOUL_CASING = SOULS_REGISTRATE.block("vibrant_soul_casing", SoulCasingBlock::new)
+            .properties(p -> p.mapColor(MapColor.SNOW))
+            .transform(BuilderTransformers.casing(() -> SoulsSpriteShifts.VIBRANT_SOUL_CASING))
+            .blockstate((c, p) -> p.simpleBlock(c.get(), AssetLookup.standardModel(c, p)))
+            .simpleItem()
+            .register();
 
     public static final BlockEntry<SoulCasingBlock> SOUL_CASING = SOULS_REGISTRATE.block("soul_casing", SoulCasingBlock::new)
-            .properties(p -> p.mapColor(MapColor.SNOW))
+            .properties(p -> p.mapColor(MapColor.COLOR_CYAN))
             .transform(BuilderTransformers.casing(() -> SoulsSpriteShifts.SOUL_CASING))
             .blockstate((c, p) -> p.simpleBlock(c.get(), AssetLookup.standardModel(c, p)))
             .simpleItem()
             .register();
+
+
+
 
     /*public static final BlockEntry<SoulGeneratorBlock> SIMPLE_SOUL_GENERATOR =
             SOULS_REGISTRATE.block("simple_soul_generator", SoulGeneratorBlock::new)

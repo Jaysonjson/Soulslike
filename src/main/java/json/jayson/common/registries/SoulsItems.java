@@ -148,10 +148,11 @@ public class SoulsItems {
         }
         if(event.getTab() == SoulsCreativeTabs.BLOCK_TAB.get()) {
             event.accept(SoulsBlocks.SOUL_CASING.get());
-            event.accept(SoulsBlocks.SOUL_DRAIN.get());
-            event.accept(SoulsBlocks.SOUL_ENTITY_SPAWNER.get());
-            event.accept(SoulsBlocks.SOUL_DISPENSER.get());
-            event.accept(SoulsBlocks.SOUL_CATCHER.get());
+            event.accept(SoulsBlocks.VIBRANT_SOUL_CASING.get());
+            event.accept(SoulsBlocks.VIBRANT_SOUL_DRAIN.get());
+            event.accept(SoulsBlocks.VIBRANT_SOUL_ENTITY_SPAWNER.get());
+            event.accept(SoulsBlocks.VIBRANT_SOUL_DISPENSER.get());
+            event.accept(SoulsBlocks.VIBRANT_SOUL_CATCHER.get());
         }
     }
     public static void register(IEventBus eventBus) {

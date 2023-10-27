@@ -1,0 +1,174 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"render_type": "cutout_mipped",
+	"textures": {
+		"0": "create:block/fluid_tank_top",
+		"1": "create:block/fluid_tank",
+		"3": "soulslike:block/vibrant_soul_entity_spawner_top",
+		"4": "create:block/fluid_tank_inner",
+		"5": "soulslike:block/vibrant_soul_entity_spawner_side",
+		"6": "soulslike:block/vibrant_soul_entity_spawner_bot",
+		"particle": "create:block/fluid_tank"
+	},
+	"elements": [
+		{
+			"name": "Lid",
+			"from": [1, 1, 1],
+			"to": [15, 4, 15],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 8, -23]},
+			"faces": {
+				"north": {"uv": [0, 12, 16, 16], "texture": "#1", "cullface": "north"},
+				"east": {"uv": [0, 12, 16, 16], "texture": "#1", "cullface": "east"},
+				"south": {"uv": [0, 12, 16, 16], "texture": "#1", "cullface": "south"},
+				"west": {"uv": [0, 12, 16, 16], "texture": "#1", "cullface": "west"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#4"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#0", "cullface": "down"}
+			}
+		},
+		{
+			"name": "SideRight",
+			"from": [15, 4, 1],
+			"to": [15, 12, 15],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 12, 8]},
+			"faces": {
+				"east": {"uv": [0, 4, 16, 12], "texture": "#1", "cullface": "east"},
+				"west": {"uv": [0, 4, 16, 12], "texture": "#1", "cullface": "east"}
+			}
+		},
+		{
+			"name": "SideRight",
+			"from": [1, 4, 15],
+			"to": [15, 12, 15],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 12, 8]},
+			"faces": {
+				"north": {"uv": [0, 4, 16, 12], "texture": "#1", "cullface": "south"},
+				"south": {"uv": [0, 4, 16, 12], "texture": "#1", "cullface": "south"}
+			}
+		},
+		{
+			"name": "SideRight",
+			"from": [1, 4, 1],
+			"to": [15, 12, 15],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 12, 8]},
+			"faces": {
+				"east": {"uv": [0, 4, 16, 12], "texture": "#1", "cullface": "west"},
+				"west": {"uv": [0, 4, 16, 12], "texture": "#1", "cullface": "west"}
+			}
+		},
+		{
+			"from": [0, 0, 0],
+			"to": [16, 16, 16],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#5"},
+				"east": {"uv": [0, 0, 16, 16], "texture": "#5"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#5"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#5"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#3"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#6"}
+			}
+		},
+		{
+			"name": "Lid",
+			"from": [1, 12, 1],
+			"to": [15, 15, 15],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 8, -23]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 4], "texture": "#1", "cullface": "north"},
+				"east": {"uv": [0, 0, 16, 4], "texture": "#1", "cullface": "east"},
+				"south": {"uv": [0, 0, 16, 4], "texture": "#1", "cullface": "south"},
+				"west": {"uv": [0, 0, 16, 4], "texture": "#1", "cullface": "west"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#0", "cullface": "up"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#4"}
+			}
+		},
+		{
+			"name": "SideRight",
+			"from": [1, 4, 1],
+			"to": [15, 12, 15],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 8, -23]},
+			"faces": {
+				"north": {"uv": [0, 4, 16, 12], "texture": "#1", "cullface": "north"},
+				"south": {"uv": [0, 4, 16, 12], "texture": "#1", "cullface": "north"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [75, 45, 0],
+			"translation": [0, 2.5, 0],
+			"scale": [0.375, 0.375, 0.375]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [75, 45, 0],
+			"translation": [0, 2.5, 0],
+			"scale": [0.375, 0.375, 0.375]
+		},
+		"firstperson_righthand": {
+			"rotation": [0, 45, 0],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"firstperson_lefthand": {
+			"rotation": [0, 225, 0],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"ground": {
+			"translation": [0, 3, 0],
+			"scale": [0.25, 0.25, 0.25]
+		},
+		"gui": {
+			"rotation": [30, 225, 0],
+			"scale": [0.625, 0.625, 0.625]
+		},
+		"fixed": {
+			"scale": [0.5, 0.5, 0.5]
+		}
+	},
+	"groups": [
+		{
+			"name": "tank",
+			"origin": [8, 8, -23],
+			"color": 0,
+			"children": []
+		},
+		{
+			"name": "block_middle",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"children": [
+				{
+					"name": "tank",
+					"origin": [8, 8, -23],
+					"color": 0,
+					"children": []
+				}
+			]
+		},
+		{
+			"name": "block_bottom",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"children": [
+				{
+					"name": "tank",
+					"origin": [8, 8, -23],
+					"color": 0,
+					"children": [0, 1, 2, 3, 4]
+				}
+			]
+		},
+		{
+			"name": "block_top",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"children": [
+				{
+					"name": "tank",
+					"origin": [8, 8, -23],
+					"color": 0,
+					"children": [5, 6]
+				}
+			]
+		}
+	]
+}

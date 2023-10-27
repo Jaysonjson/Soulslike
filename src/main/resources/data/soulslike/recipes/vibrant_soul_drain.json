@@ -6,7 +6,7 @@
       "item": "minecraft:iron_bars"
     },
     "S": {
-      "item": "soulslike:soul_casing"
+      "item": "soulslike:vibrant_soul_casing"
     }
   },
   "pattern": [
@@ -14,7 +14,7 @@
     "S"
   ],
   "result": {
-    "item": "soulslike:soul_drain"
+    "item": "soulslike:vibrant_soul_drain"
   },
   "show_notification": true
 }

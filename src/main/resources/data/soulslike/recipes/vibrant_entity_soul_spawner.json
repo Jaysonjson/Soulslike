@@ -16,11 +16,11 @@
       "item": "create:shaft"
     },
     "B": {
-      "item": "soulslike:soul_casing"
+      "item": "soulslike:vibrant_soul_casing"
     }
   },
   "result": {
-    "item": "soulslike:soul_entity_spawner",
+    "item": "soulslike:vibrant_soul_entity_spawner",
     "count": 1
   }
 }

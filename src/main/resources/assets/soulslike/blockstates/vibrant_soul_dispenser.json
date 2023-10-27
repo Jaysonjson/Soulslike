@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "soulslike:block/vibrant_soul_dispenser",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "soulslike:block/vibrant_soul_dispenser",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "soulslike:block/vibrant_soul_dispenser",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "soulslike:block/vibrant_soul_dispenser",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "soulslike:block/vibrant_soul_dispenser"
+    },
+    "facing=west": {
+      "model": "soulslike:block/vibrant_soul_dispenser",
+      "x": 90,
+      "y": 270
+    }
+  }
+}
