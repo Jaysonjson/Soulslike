@@ -56,6 +56,8 @@
   "item.soulslike.oak_bark": "Oak Bark",
   "item.soulslike.scroll": "Scroll",
 
+  "item.soulslike.caveman_soul": "Caveman Soul",
+
 
   "item.soulslike.claymore": "Claymore",
 
@@ -75,12 +77,14 @@
 
   "item.soulslike.bottle_of_souls": "Bottle o Souls",
 
-
+  "item.soulslike.soul_bucket": "Soul Bucket",
   "item.soulslike.soul_spawner_core": "Soul Spawner Core",
+  "item.soulslike.soul_vial": "Soul Vial",
 
   "block.soulslike.soul_entity_spawner": "Soul Entity Spawner",
 
 
+  "block.soulslike.blossom_rod": "Blossom Rod",
   "block.soulslike.bee_statue": "Bee Statue",
   "block.soulslike.darkened_nether_bricks": "Darkened Nether Bricks",
   "block.soulslike.mud_vase": "Mud Vase",
@@ -134,7 +138,7 @@
   "fluid_type.soulslike.soul": "Souls",
 
   "creativemodetab.coal_tab": "Soulslike Coals",
-  "creativemodetab.soul_tab": "Soulslike Souls",
+  "creativemodetab.souls_tab": "Soulslike Souls",
   "creativemodetab.block_tab": "Soulslike Blocks",
   "creativemodetab.other_tab": "Soulslike",
   "creativemodetab.building_block_tab": "Soulslike Building Blocks",

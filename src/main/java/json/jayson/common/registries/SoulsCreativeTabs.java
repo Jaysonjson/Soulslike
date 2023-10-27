@@ -25,8 +25,8 @@ public class SoulsCreativeTabs {
     public static RegistryObject<CreativeModeTab> WEAPON_TAB = TABS.register("weapon_tab", () -> CreativeModeTab.builder()
             .icon(() -> SoulsItems.BIG_IRON_SWORD.get().getDefaultInstance()).title(Component.translatable("creativemodetab.weapon_tab")).withTabsBefore(CreativeModeTabs.SPAWN_EGGS).build());
 
-    /*public static RegistryObject<CreativeModeTab> BLOCK_TAB = TABS.register("block_tab", () -> CreativeModeTab.builder()
-            .icon(() -> SoulsBlocks.BEE_STATUE.getItem().getDefaultInstance()).title(Component.translatable("creativemodetab.block_tab")).withTabsBefore(CreativeModeTabs.SPAWN_EGGS).build());*/
+    public static RegistryObject<CreativeModeTab> BLOCK_TAB = TABS.register("block_tab", () -> CreativeModeTab.builder()
+            .icon(() -> SoulsBlocks.BEE_STATUE.getItem().getDefaultInstance()).title(Component.translatable("creativemodetab.block_tab")).withTabsBefore(CreativeModeTabs.SPAWN_EGGS).build());
 
     public static RegistryObject<CreativeModeTab> BUILDING_BLOCK_TAB = TABS.register("building_block_tab", () -> CreativeModeTab.builder()
             .icon(() -> SoulsBlocks.MUD_VASE.getItem().getDefaultInstance()).title(Component.translatable("creativemodetab.block_tab")).withTabsBefore(CreativeModeTabs.SPAWN_EGGS).build());

@@ -16,6 +16,7 @@ import java.util.List;
 public class SoulVialItem extends Item {
 
     public static int MAX = 32;
+    public static String NBT_CUSTOM_MODEL_DATA = "CustomModelData";
 
     public SoulVialItem(Properties p_41383_) {
         super(p_41383_);
@@ -26,8 +27,15 @@ public class SoulVialItem extends Item {
             CompoundTag tag = new CompoundTag();
             tag.putString("entity", "");
             tag.putInt("amount", 0);
+            checkModelData(tag);
             itemStack.setTag(tag);
         }
+    }
+
+    public void checkModelData(CompoundTag tag) {
+        float percentage = ((float) tag.getInt("amount") / MAX) * 5;
+        tag.putInt(NBT_CUSTOM_MODEL_DATA, (int) percentage);
+        if((int)percentage == 0) tag.putInt(NBT_CUSTOM_MODEL_DATA, 1);
     }
 
     @Override

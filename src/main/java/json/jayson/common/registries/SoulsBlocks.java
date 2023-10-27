@@ -1,30 +1,19 @@
 package json.jayson.common.registries;
 
-import com.simibubi.create.AllCreativeModeTabs;
-import com.simibubi.create.AllSpriteShifts;
-import com.simibubi.create.AllTags;
-import com.simibubi.create.content.decoration.encasing.CasingBlock;
 import com.simibubi.create.content.kinetics.BlockStressDefaults;
-import com.simibubi.create.content.kinetics.belt.BeltBlockEntity;
-import com.simibubi.create.content.kinetics.mixer.MechanicalMixerBlock;
-import com.simibubi.create.content.kinetics.motor.CreativeMotorBlock;
-import com.simibubi.create.content.kinetics.motor.CreativeMotorGenerator;
-import com.simibubi.create.content.processing.AssemblyOperatorBlockItem;
 import com.simibubi.create.foundation.data.AssetLookup;
 import com.simibubi.create.foundation.data.BuilderTransformers;
 import com.simibubi.create.foundation.data.SharedProperties;
 import com.simibubi.create.foundation.utility.Couple;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import json.jayson.Soulslike;
-import json.jayson.common.objects.blocks.SoulCasingBlock;
-import json.jayson.common.objects.blocks.cake_plate.CakePlateBlockItem;
+import json.jayson.common.objects.blocks.*;
 import json.jayson.common.objects.blocks.simple_soul_generator.SoulGeneratorBlock;
 import json.jayson.common.objects.blocks.simple_soul_generator.SoulGeneratorState;
 import json.jayson.common.objects.blocks.soul_catcher.SoulCatcherBlock;
 import json.jayson.common.objects.blocks.soul_dispenser.SoulDispenserBlock;
 import json.jayson.common.objects.blocks.soul_drain.SoulDrainBlock;
 import json.jayson.common.objects.blocks.soul_entity_spawner.SoulEntitySpawnerBlock;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -37,19 +26,14 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import json.jayson.common.objects.blocks.HardenedBlazePiece;
-import json.jayson.common.objects.blocks.SoulsCraftingTable;
-import json.jayson.common.objects.blocks.SoulsLiquidBlock;
 import json.jayson.common.objects.blocks.fire_altar.FireAltar;
 import json.jayson.common.objects.blocks.cake_plate.CakePlate;
-import json.jayson.common.objects.blocks.crate.GenericCrate;
 import json.jayson.common.objects.blocks.vase.GenericVase;
 import json.jayson.common.objects.blocks.bee_statue.SoulsBeeStatue;
 import json.jayson.common.objects.blocks.fox_altar.SoulsFoxAltar;
 
 import java.util.function.Supplier;
 
-import static com.simibubi.create.Create.REGISTRATE;
 import static com.simibubi.create.foundation.data.ModelGen.customItemModel;
 import static com.simibubi.create.foundation.data.TagGen.axeOrPickaxe;
 import static com.simibubi.create.foundation.data.TagGen.pickaxeOnly;
@@ -60,8 +44,8 @@ public class SoulsBlocks {
     static { SOULS_REGISTRATE.setCreativeTab(SoulsCreativeTabs.BUILDING_BLOCK_TAB); }
     @SuppressWarnings("deprecation")
 	public static final SoulRegistryBlockItem<Block>
-            BEE_STATUE = registerBlock("bee_statue", () -> new SoulsBeeStatue(BlockBehaviour.Properties.of().strength(99999f).noOcclusion()), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
-            FOX_ALTAR = registerBlock("fox_altar", () -> new SoulsFoxAltar(BlockBehaviour.Properties.of().strength(6f).noOcclusion()), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
+            BEE_STATUE = registerBlock("bee_statue", () -> new SoulsBeeStatue(BlockBehaviour.Properties.of().strength(99999f).noOcclusion()), SoulsCreativeTabs.BLOCK_TAB),
+            FOX_ALTAR = registerBlock("fox_altar", () -> new SoulsFoxAltar(BlockBehaviour.Properties.of().strength(6f).noOcclusion()), SoulsCreativeTabs.BLOCK_TAB),
             DARKENED_NETHER_BRICKS = registerBlock("darkened_nether_bricks", () -> new Block(BlockBehaviour.Properties.of().strength(3f)), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
             MUD_VASE = registerBlock("mud_vase", () -> new GenericVase(BlockBehaviour.Properties.of().strength(1f).noOcclusion().dynamicShape().offsetType(BlockBehaviour.OffsetType.XZ)), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
             NETHER_BRICKS_VASE = registerBlock("nether_bricks_vase", () -> new GenericVase(BlockBehaviour.Properties.of().strength(1f).noOcclusion().dynamicShape().offsetType(BlockBehaviour.OffsetType.XZ)), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
@@ -103,8 +87,9 @@ public class SoulsBlocks {
     RUBY_SHARD_BLOCK = registerBlock("ruby_shard_block", () -> new Block(BlockBehaviour.Properties.of().strength(3f)), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
     SAPPHIRE_SHARD_BLOCK = registerBlock("sapphire_shard_block", () -> new Block(BlockBehaviour.Properties.of().strength(3f)), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
     SAPPHIRE_BLOCK = registerBlock("sapphire_block", () -> new Block(BlockBehaviour.Properties.of().strength(3f)), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
-    GEM_STATION = registerBlock("gem_station", () -> new Block(BlockBehaviour.Properties.of().strength(3f)), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
-    BLOSSOM_LANTERN = registerBlock("blossom_lantern", () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN).strength(3f)), SoulsCreativeTabs.BUILDING_BLOCK_TAB)
+    GEM_STATION = registerBlock("gem_station", () -> new Block(BlockBehaviour.Properties.of().strength(3f)), SoulsCreativeTabs.BLOCK_TAB),
+    BLOSSOM_LANTERN = registerBlock("blossom_lantern", () -> new LanternBlock(BlockBehaviour.Properties.copy(Blocks.LANTERN).strength(3f)), SoulsCreativeTabs.BUILDING_BLOCK_TAB),
+    BLOSSOM_ROD = registerBlock("blossom_rod", () -> new BlossomRod(BlockBehaviour.Properties.copy(Blocks.END_ROD).strength(3f)), SoulsCreativeTabs.BUILDING_BLOCK_TAB)
 
     ;
 

@@ -3,6 +3,7 @@ package json.jayson;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.mojang.logging.LogUtils;
+import com.simibubi.create.AllParticleTypes;
 import com.simibubi.create.content.fluids.drain.ItemDrainBlock;
 import com.simibubi.create.content.fluids.transfer.FillingRecipe;
 import com.simibubi.create.content.kinetics.motor.CreativeMotorBlock;
@@ -10,14 +11,18 @@ import com.simibubi.create.content.kinetics.motor.CreativeMotorGenerator;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.data.recipe.FillingRecipeGen;
 import json.jayson.common.objects.items.RandomItemColor;
+import json.jayson.common.objects.particles.BlossomParticle;
 import json.jayson.common.registries.*;
 import json.jayson.integration.create.PonderIndex;
+import net.minecraft.client.particle.EndRodParticle;
+import net.minecraft.client.particle.ParticleProvider;
 import net.minecraft.world.entity.ExperienceOrb;
 import net.minecraft.world.level.GameRules;
 import net.minecraft.world.level.block.BarrierBlock;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.RegisterColorHandlersEvent;
+import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.AddReloadListenerEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -67,12 +72,19 @@ public class Soulslike {
         SoulsEntities.register(modEventBus);
         SoulsFeatures.registerBus(modEventBus);
         SoulsVillagers.registerBus(modEventBus);
+        SoulsParticles.register(modEventBus);
     }
 
     @SubscribeEvent
     @OnlyIn(Dist.CLIENT)
     public void registerItemColors(RegisterColorHandlersEvent.Item event) {
         event.register(new RandomItemColor(), SoulsItems.THIGH_HIGHS.get());
+    }
+
+    @SubscribeEvent
+    public void registerParticle(RegisterParticleProvidersEvent event) {
+        event.registerSpecial(SoulsParticles.BLOSSOM_ROD.get(), BlossomParticle::createParticle);
+       //event.registerSpecial(SoulsParticles.BLOSSOM_ROD.get(), BlossomParticle.Provider::new);
     }
 
     @SubscribeEvent

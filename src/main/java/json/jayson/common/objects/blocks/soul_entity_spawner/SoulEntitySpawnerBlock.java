@@ -79,11 +79,6 @@ public class SoulEntitySpawnerBlock extends HorizontalKineticBlock implements IB
     }
 
     @Override
-    public SpeedLevel getMinimumRequiredSpeedLevel() {
-        return SpeedLevel.FAST;
-    }
-
-    @Override
     public Class<SoulEntitySpawnerBlockEntity> getBlockEntityClass() {
         return SoulEntitySpawnerBlockEntity.class;
     }

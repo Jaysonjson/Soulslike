@@ -1,0 +1,18 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "soulslike:item/soul_vial/soul_vial_empty"
+  } ,
+  "overrides": [
+    { "predicate": { "custom_model_data": 1}, "model": "soulslike:item/soul_vial_cmd/1" },
+
+    { "predicate": { "custom_model_data": 2}, "model": "soulslike:item/soul_vial_cmd/2" },
+
+    { "predicate": { "custom_model_data": 3}, "model": "soulslike:item/soul_vial_cmd/3" },
+    { "predicate": { "custom_model_data": 4}, "model": "soulslike:item/soul_vial_cmd/4" },
+    { "predicate": { "custom_model_data": 5}, "model": "soulslike:item/soul_vial_cmd/5" }
+
+
+  ]
+
+}
