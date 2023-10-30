@@ -39,6 +39,7 @@ public class SoulsItems {
     DIMENSIONALS_SOUL = registerItem("dimensionals_soul", () -> new SoulItem(new Item.Properties(), 1000, "item.soulslike.soul_of_a_giant.description"), SoulsCreativeTabs.SOULS_TAB),
     EXPLORERS_SOUL = registerItem("explorers_soul", () -> new SoulItem(new Item.Properties(), 125, "item.soulslike.soul_of_a_giant.description"), SoulsCreativeTabs.SOULS_TAB),
     CAVEMAN_SOUL = registerItem("caveman_soul", () -> new SoulItem(new Item.Properties(), 75, "item.soulslike.soul_of_a_giant.description"), SoulsCreativeTabs.SOULS_TAB),
+    NUGGET_OF_SOULS = registerItem("soul_nugget", () -> new SoulItem(new Item.Properties(), 5, "item.soulslike.soul_of_a_giant.description"), SoulsCreativeTabs.SOULS_TAB),
 
     WTF_SOUL = registerItem("wtf_souls", () -> new SoulItem(new Item.Properties(), 999999999, "item.soulslike.soul_of_a_giant.description")),
     TITANITOL_INGOT = registerItem("titanitol_ingot",
@@ -56,6 +57,7 @@ public class SoulsItems {
     FEATHER_WAND = registerItem("feather_wand", () -> new FeatherStaff(new Item.Properties().defaultDurability(325), 200), SoulsCreativeTabs.WEAPON_TAB),
     BLOOD_BUCKET = registerItem("blood_bucket", () -> new BucketItem(SoulsFluids.SOURCE_BLOOD, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1))),
     SOUL_BUCKET = registerItem("soul_bucket", () -> new BucketItem(SoulsFluids.SOURCE_SOUL, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)), SoulsCreativeTabs.OTHER_TAB),
+    VIBRANT_SOUL_BUCKET = registerItem("vibrant_soul_bucket", () -> new BucketItem(SoulsFluids.SOURCE_VIBRANT_SOUL, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)), SoulsCreativeTabs.OTHER_TAB),
 
     SCROLL = registerItem("scroll", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
     OAK_BARK = registerItem("oak_bark", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),

@@ -16,10 +16,11 @@ public class SoulsFluidTypes {
     public static final DeferredRegister<FluidType> FLUID_TYPES = DeferredRegister.create(ForgeRegistries.Keys.FLUID_TYPES, Soulslike.MODID);
 
     public static RegistryObject<FluidType> BLOOD_WATER_FLUID_TYPE = register("blood", FluidType.Properties.create().canDrown(true), 0xFFFFFFFF);
-    public static RegistryObject<FluidType> SOUL_WATER_FLUID_TYPE = register("soul", FluidType.Properties.create().canDrown(true), 0xFFFFFFFF);
+    public static RegistryObject<FluidType> SOUL_WATER_FLUID_TYPE = register("soul", FluidType.Properties.create().canDrown(true), 0x5d96f0aa);
+    public static RegistryObject<FluidType> VIBRANT_SOUL_WATER_FLUID_TYPE = register("vibrant_soul", FluidType.Properties.create().canDrown(true), 0xFFFFFFFF);
 
     private static RegistryObject<FluidType> register(String name, FluidType.Properties properties, int tintcolor) {
-        return FLUID_TYPES.register(name, () -> new BaseFluidType(WATER_STILL_RESOURCE, WATER_FLOWING_RESOURCE, WATER_STILL_RESOURCE, tintcolor, new Vector3f(224f / 255f, 56f / 255f, 208f/255f), properties));
+        return FLUID_TYPES.register(name, () -> new BaseFluidType(WATER_STILL_RESOURCE, WATER_FLOWING_RESOURCE, WATER_STILL_RESOURCE, tintcolor, new Vector3f(255f / 255f, 255f / 255f, 255f/255f), properties));
     }
 
     public static void register(IEventBus eventBus) {

@@ -1,0 +1,19 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "minecraft:soul_sand"
+    }
+  ],
+  "processingTime": 350,
+  "results": [
+    {
+      "chance": 0.7,
+      "item": "minecraft:sand"
+    },
+    {
+      "chance": 0.125,
+      "item": "soulslike:soul_nugget"
+    }
+  ]
+}

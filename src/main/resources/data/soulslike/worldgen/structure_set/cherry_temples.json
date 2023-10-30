@@ -1,0 +1,18 @@
+{
+  "structures": [
+    {
+      "structure": "soulslike:cherry_temple",
+      "weight": 2
+    },
+	{
+      "structure": "soulslike:cherry_temple_small",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 6456242,
+    "spacing": 120,
+    "separation": 35
+  }
+}

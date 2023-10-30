@@ -167,6 +167,7 @@ public class SoulsBlocks {
 
     public static final SoulRegistryBlockItem<SoulsLiquidBlock> BLOOD_BLOCK = registerBlock("blood", () -> new SoulsLiquidBlock(SoulsFluids.SOURCE_BLOOD, BlockBehaviour.Properties.copy(Blocks.WATER)));
     public static final SoulRegistryBlockItem<SoulsLiquidBlock> SOUL_BLOCK = registerBlock("soul", () -> new SoulsLiquidBlock(SoulsFluids.SOURCE_SOUL, BlockBehaviour.Properties.copy(Blocks.WATER)));
+    public static final SoulRegistryBlockItem<SoulsLiquidBlock> VIBRANT_SOUL_BLOCK = registerBlock("vibrant_soul", () -> new SoulsLiquidBlock(SoulsFluids.SOURCE_VIBRANT_SOUL, BlockBehaviour.Properties.copy(Blocks.WATER)));
 
 
     private static <T extends Block> SoulRegistryBlockItem<T> registerBlock(String name, Supplier<T> block, RegistryObject<CreativeModeTab> tabProvider) {

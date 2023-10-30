@@ -24,6 +24,11 @@ public class SoulsFluids {
     public static final RegistryObject<FlowingFluid> FLOWING_SOUL = FLUIDS.register("flowing_soul",
             () -> new ForgeFlowingFluid.Flowing(SoulsFluids.SOULS_FLUID_PROPERTIES));
 
+    public static final RegistryObject<FlowingFluid> SOURCE_VIBRANT_SOUL = FLUIDS.register("vibrant_soul",
+            () -> new ForgeFlowingFluid.Source(SoulsFluids.VIBRANT_SOULS_FLUID_PROPERTIES));
+    public static final RegistryObject<FlowingFluid> FLOWING_VIBRANT_SOUL = FLUIDS.register("flowing_vibrant_soul",
+            () -> new ForgeFlowingFluid.Flowing(SoulsFluids.VIBRANT_SOULS_FLUID_PROPERTIES));
+
     public static final ForgeFlowingFluid.Properties BLOOD_FLUID_PROPERTIES = new ForgeFlowingFluid.Properties(
             SoulsFluidTypes.BLOOD_WATER_FLUID_TYPE, SOURCE_BLOOD, FLOWING_BLOOD)
             .slopeFindDistance(2).levelDecreasePerBlock(2).block(SoulsBlocks.BLOOD_BLOCK.Block())
@@ -33,6 +38,11 @@ public class SoulsFluids {
             SoulsFluidTypes.SOUL_WATER_FLUID_TYPE, SOURCE_SOUL, FLOWING_SOUL)
             .slopeFindDistance(2).levelDecreasePerBlock(2).block(SoulsBlocks.SOUL_BLOCK.Block())
             .bucket(SoulsItems.SOUL_BUCKET);
+
+    public static final ForgeFlowingFluid.Properties VIBRANT_SOULS_FLUID_PROPERTIES = new ForgeFlowingFluid.Properties(
+            SoulsFluidTypes.VIBRANT_SOUL_WATER_FLUID_TYPE, SOURCE_VIBRANT_SOUL, FLOWING_VIBRANT_SOUL)
+            .slopeFindDistance(2).levelDecreasePerBlock(2).block(SoulsBlocks.VIBRANT_SOUL_BLOCK.Block())
+            .bucket(SoulsItems.VIBRANT_SOUL_BUCKET);
 
 
     public static void register(IEventBus eventBus) {

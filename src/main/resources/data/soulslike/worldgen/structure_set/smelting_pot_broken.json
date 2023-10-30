@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "soulslike:smelting_pot_broken",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 534545083,
+    "spacing": 120,
+    "separation": 35
+  }
+}
