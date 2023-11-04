@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "soulslike:item/sapphire_shard"
+    "layer0": "soulslike:item/sapphire/sapphire_shard"
   }
 }

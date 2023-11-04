@@ -29,8 +29,7 @@ public class SoulsItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Soulslike.MODID);
 
     public static final RegistryObject<Item>
-    DWARF_COAL = registerItem("dwarf_coal", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
-    BEE_TEAR_VIAL = registerItem("bee_tear_vial", () -> new BeeTears(new Item.Properties().stacksTo(1)), SoulsCreativeTabs.OTHER_TAB),
+    DWARF_COAL = registerItem("dwarf_coal", () -> new Item(new Item.Properties())),
     UNKNOWN_SOUL = registerItem("unknown_soul", () -> new SoulItem(new Item.Properties(), 50, "item.soulslike.unknown_soul.description"), SoulsCreativeTabs.SOULS_TAB),
     SOUL_OF_A_GIANT = registerItem("soul_of_a_giant", () -> new SoulItem(new Item.Properties(), 375, "item.soulslike.soul_of_a_giant.description"), SoulsCreativeTabs.SOULS_TAB),
 
@@ -48,6 +47,7 @@ public class SoulsItems {
     ROSE_WAND = registerItem("rose_wand", () -> new RoseStaff(new Item.Properties().defaultDurability(325), 2), SoulsCreativeTabs.WEAPON_TAB),
     ROSE_STAFF = registerItem("rose_staff", () -> new RoseStaff(new Item.Properties().defaultDurability(450), 4), SoulsCreativeTabs.WEAPON_TAB),
     RUBY = registerItem("ruby", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
+    POLISHED_RUBY = registerItem("polished_ruby", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
     RUBY_SHARD = registerItem("ruby_shard", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
     SAPPHIRE = registerItem("sapphire", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
     SAPPHIRE_SHARD = registerItem("sapphire_shard", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
@@ -71,7 +71,6 @@ public class SoulsItems {
     PURA = registerItem("pura", () -> new Item(new Item.Properties())),
     MORTIS = registerItem("mortis", () -> new Item(new Item.Properties())),
     VITA = registerItem("vita", () -> new Item(new Item.Properties())),
-    POLISHED_RUBY = registerItem("polished_ruby", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
    SOUL_INGOT = registerItem("soul_ingot", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
    VIBRANT_SOUL_ALLOY = registerItem("vibrant_soul_alloy", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
     BOTTLE_OF_SOULS = registerItem("bottle_of_souls", () -> new BottleOfSoulsItem(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
@@ -79,7 +78,7 @@ public class SoulsItems {
     SOUL_SPAWNER_CORE = registerItem("soul_spawner_core", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
     SOUL_VIAL = registerItem("soul_vial", () -> new SoulVialItem(new Item.Properties().stacksTo(1)), SoulsCreativeTabs.OTHER_TAB),
     BEE_TEAR = registerItem("bee_tear", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
-
+    BEE_TEAR_VIAL = registerItem("bee_tear_vial", () -> new BeeTears(new Item.Properties().stacksTo(1)), SoulsCreativeTabs.OTHER_TAB),
 
 
     BLACK_CLOTH = registerItem("black_cloth", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
