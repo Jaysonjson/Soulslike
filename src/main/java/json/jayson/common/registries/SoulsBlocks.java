@@ -13,6 +13,7 @@ import json.jayson.common.objects.blocks.simple_soul_generator.SoulGeneratorStat
 import json.jayson.common.objects.blocks.soul_catcher.SoulCatcherBlock;
 import json.jayson.common.objects.blocks.soul_dispenser.SoulDispenserBlock;
 import json.jayson.common.objects.blocks.soul_drain.SoulDrainBlock;
+import json.jayson.common.objects.blocks.soul_drain.def.VibrantSoulDrainBlock;
 import json.jayson.common.objects.blocks.soul_entity_spawner.SoulEntitySpawnerBlock;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
@@ -105,20 +106,29 @@ public class SoulsBlocks {
                     .transform(customItemModel())
                     .register();
 
-    public static final BlockEntry<SoulCatcherBlock> VIBRANT_SOUL_CATCHER =
-            SOULS_REGISTRATE.block("vibrant_soul_catcher", SoulCatcherBlock::new)
+    public static final BlockEntry<SoulCatcherBlock> SOUL_CATCHER =
+            SOULS_REGISTRATE.block("soul_catcher", SoulCatcherBlock::new)
                     .initialProperties(SharedProperties::stone)
                     .properties(p -> p.mapColor(MapColor.SNOW))
                     .properties(BlockBehaviour.Properties::noOcclusion)
                     .transform(axeOrPickaxe())
                     .blockstate((c, p) -> p.simpleBlock(c.getEntry(), AssetLookup.partialBaseModel(c, p)))
-                    .transform(BlockStressDefaults.setImpact(32.0))
+                    .transform(BlockStressDefaults.setImpact(48.0))
                     .item()
                     .transform(customItemModel())
                     .register();
 
-    public static final BlockEntry<SoulDrainBlock> VIBRANT_SOUL_DRAIN =
-            SOULS_REGISTRATE.block("vibrant_soul_drain", SoulDrainBlock::new)
+    public static final BlockEntry<VibrantSoulDrainBlock> VIBRANT_SOUL_DRAIN =
+            SOULS_REGISTRATE.block("vibrant_soul_drain", VibrantSoulDrainBlock::new)
+                    .initialProperties(SharedProperties::copperMetal)
+                    .transform(pickaxeOnly())
+                    .properties(BlockBehaviour.Properties::noOcclusion)
+                    .blockstate((c, p) -> p.simpleBlock(c.get(), AssetLookup.standardModel(c, p)))
+                    .simpleItem()
+                    .register();
+
+    public static final BlockEntry<SoulDrainBlock> SOUL_DRAIN =
+            SOULS_REGISTRATE.block("soul_drain", SoulDrainBlock::new)
                     .initialProperties(SharedProperties::copperMetal)
                     .transform(pickaxeOnly())
                     .properties(BlockBehaviour.Properties::noOcclusion)
@@ -168,6 +178,7 @@ public class SoulsBlocks {
     public static final SoulRegistryBlockItem<SoulsLiquidBlock> BLOOD_BLOCK = registerBlock("blood", () -> new SoulsLiquidBlock(SoulsFluids.SOURCE_BLOOD, BlockBehaviour.Properties.copy(Blocks.WATER)));
     public static final SoulRegistryBlockItem<SoulsLiquidBlock> SOUL_BLOCK = registerBlock("soul", () -> new SoulsLiquidBlock(SoulsFluids.SOURCE_SOUL, BlockBehaviour.Properties.copy(Blocks.WATER)));
     public static final SoulRegistryBlockItem<SoulsLiquidBlock> VIBRANT_SOUL_BLOCK = registerBlock("vibrant_soul", () -> new SoulsLiquidBlock(SoulsFluids.SOURCE_VIBRANT_SOUL, BlockBehaviour.Properties.copy(Blocks.WATER)));
+    public static final SoulRegistryBlockItem<SoulsLiquidBlock> BEE_TEARS_BLOCK = registerBlock("fluid_bee_tears", () -> new SoulsLiquidBlock(SoulsFluids.SOURCE_BEE_TEARS, BlockBehaviour.Properties.copy(Blocks.WATER)));
 
 
     private static <T extends Block> SoulRegistryBlockItem<T> registerBlock(String name, Supplier<T> block, RegistryObject<CreativeModeTab> tabProvider) {

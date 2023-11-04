@@ -1,0 +1,42 @@
+{
+    "display": {
+        "title": {
+            "text": "Unlimited Power!",
+            "color": "dark_purple"
+        },
+        "description": {
+            "text": "Fill up a Soul Vial using only Ender Dragons"
+        },
+        "icon": {
+            "item": "minecraft:purple_glazed_terracotta"
+        },
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": true
+    },
+    "criteria": {
+        "dragonsouls": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": [
+                            "soulslike:soul_vial"
+                        ],
+                        "nbt":"{amount:32, entity:entity.minecraft.ender_dragon}"
+                    }
+                ]  
+            }
+        }
+    },
+    "requirements": [
+        [
+            "dragonsouls"
+        ]
+    ],
+    "rewards": {
+        "experience": 6000
+    },
+    "parent": "soulslike:obtain_full_soul_vial"
+}

@@ -2,7 +2,8 @@
   "item.soulslike.dwarf_coal": "Coal of the Dwarfs",
   "item.soulslike.unknown_soul": "Unknown Soul",
   "item.soulslike.soul_of_a_giant": "Soul of a Giant",
-  "item.soulslike.bee_tears": "Bee Tears Vial",
+  "item.soulslike.bee_tear_vial": "Vial of Bee Tears",
+  "item.soulslike.bee_tear": "Bee Tear",
   "item.soulslike.titanitol_ingot": "Titanitol Ingot",
   "item.soulslike.titanitol_ingot.description": "Long forgotten metal, may be found in chests of old ruins",
   "item.soulslike.blood_bucket": "Blood Bucket",
@@ -80,9 +81,15 @@
   "item.soulslike.soul_bucket": "Soul Bucket",
   "item.soulslike.soul_spawner_core": "Soul Spawner Core",
   "item.soulslike.soul_vial": "Soul Vial",
+  "item.soulslike.soul_nugget": "Nugget of Souls",
+
+  "item.soulslike.vibrant_soul_bucket": "Vibrant Soul Bucket",
+  "item.soulslike.bee_tears_bucket": "Bee Tears Bucket",
 
   "block.soulslike.vibrant_soul_entity_spawner": "Vibrant Soul Entity Spawner",
 
+  "block.soulslike.soul_drain": "Soul Drain",
+  "block.soulslike.soul_casing": "Soul Casing",
 
   "block.soulslike.blossom_rod": "Blossom Rod",
   "block.soulslike.bee_statue": "Bee Statue",
@@ -163,18 +170,18 @@
   "soulslike.ponder.gem_station_villager.text_1": "A Gem Station will turn a Villager into a Gem Cutter",
   "soulslike.ponder.gem_station_villager.text_2": "This Gem Cutter will now trade you Gems",
 
-  "soulslike.ponder.soul_drain.header": "Getting liquified Souls",
+  "soulslike.ponder.soul_drain.header": "Getting liquified souls",
   "soulslike.ponder.soul_drain.text_1": "Soul Drains can extract Souls from Players",
   "soulslike.ponder.soul_drain.text_2": "Pipe Networks can now pull the fluid from the drains' internal buffer",
-  "soulslike.ponder.soul_drain.text_3": "Soul Drains can also extract Souls from Entities",
-  "soulslike.ponder.soul_drain.text_4": "If the Entity runs out of Souls, it dies",
+  "soulslike.ponder.soul_drain.text_3": "Vibrant Soul Drains can also extract souls from entities",
+  "soulslike.ponder.soul_drain.text_4": "If the entity runs out of souls, it dies",
 
   "soulslike.ponder.soul_spawner.header": "Spawning Entities",
   "soulslike.ponder.soul_spawner.text_1": "Soul Spawners can spawn Entities",
-  "soulslike.ponder.soul_spawner.text_2": "Right Click with a filled Soul Vial to set the Entity",
-  "soulslike.ponder.soul_spawner.text_3": "Soul Vials can be filled by killing Entities while having the Vial in the Inventory",
-  "soulslike.ponder.soul_spawner.text_4": "Soul Spawners require Rotational Force in the Bottom to work",
-  "soulslike.ponder.soul_spawner.text_5": "Soul Spawners also require the Souls fluid in the Top to work",
-  "soulslike.ponder.soul_spawner.text_6": "Now after some random Time, the set Entity will spawn"
+  "soulslike.ponder.soul_spawner.text_2": "Right click with a filled Soul Vial to set the entity",
+  "soulslike.ponder.soul_spawner.text_3": "Soul Vials can be filled by killing entities while having the vial in the Inventory",
+  "soulslike.ponder.soul_spawner.text_4": "Soul Spawners require rotational force in the bottom to work",
+  "soulslike.ponder.soul_spawner.text_5": "Soul Spawners also require the souls fluid in the top to work",
+  "soulslike.ponder.soul_spawner.text_6": "Now after some random time, the set entity will spawn"
 
 }

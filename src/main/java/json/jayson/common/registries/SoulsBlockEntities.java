@@ -10,6 +10,8 @@ import json.jayson.common.objects.blocks.soul_dispenser.SoulDispenserBlockEntity
 import json.jayson.common.objects.blocks.soul_dispenser.SoulDispenserRenderer;
 import json.jayson.common.objects.blocks.soul_drain.SoulDrainBlockEntity;
 import json.jayson.common.objects.blocks.soul_drain.SoulDrainRenderer;
+import json.jayson.common.objects.blocks.soul_drain.def.VibrantSoulDrainBlockEntity;
+import json.jayson.common.objects.blocks.soul_drain.def.VibrantSoulDrainRenderer;
 import json.jayson.common.objects.blocks.soul_entity_spawner.SoulEntitySpawnerBlockEntity;
 import json.jayson.common.objects.blocks.soul_entity_spawner.SoulEntitySpawnerBlockInstance;
 import json.jayson.common.objects.blocks.soul_entity_spawner.SoulEntitySpawnerBlockRenderer;
@@ -68,9 +70,16 @@ public class SoulsBlockEntities {
 
     public static final BlockEntityEntry<SoulDrainBlockEntity> SOUL_DRAINER = SOULS_REGISTRATE
             .blockEntity("soul_drain", SoulDrainBlockEntity::new)
-            .validBlocks(SoulsBlocks.VIBRANT_SOUL_DRAIN)
+            .validBlocks(SoulsBlocks.SOUL_DRAIN)
             .renderer(() -> SoulDrainRenderer::new)
             .register();
+
+    public static final BlockEntityEntry<VibrantSoulDrainBlockEntity> VIBRANT_SOUL_DRAINER = SOULS_REGISTRATE
+            .blockEntity("vibrant_soul_drain", VibrantSoulDrainBlockEntity::new)
+            .validBlocks(SoulsBlocks.VIBRANT_SOUL_DRAIN, SoulsBlocks.VIBRANT_SOUL_DRAIN)
+            .renderer(() -> VibrantSoulDrainRenderer::new)
+            .register();
+
 
     public static final BlockEntityEntry<SoulGeneratorBlockEntity> SIMPLE_SOUL_GENERATOR = SOULS_REGISTRATE
             .blockEntity("simple_soul_generator", SoulGeneratorBlockEntity::new)
@@ -87,7 +96,7 @@ public class SoulsBlockEntities {
 
     public static final BlockEntityEntry<SoulCatcherBlockEntity> SOUL_CATCHER = SOULS_REGISTRATE
             .blockEntity("soul_catcher", SoulCatcherBlockEntity::new)
-            .validBlocks(SoulsBlocks.VIBRANT_SOUL_CATCHER)
+            .validBlocks(SoulsBlocks.SOUL_CATCHER)
             .renderer(() -> SoulCatcherBlockRenderer::new)
             .register();
 

@@ -99,12 +99,12 @@ public class ModEvents {
 
     @SubscribeEvent
     public static void onItemPickup(EntityItemPickupEvent event) {
-        Player player = event.getEntity();
+       /* Player player = event.getEntity();
         if(event.getItem().getItem().getItem().equals(SoulsItems.BEE_TEARS.get())) {
             if (player.getInventory().contains(event.getItem().getItem())) {
                 event.setCanceled(true);
             }
-        }
+        }*/
     }
 
     @SubscribeEvent

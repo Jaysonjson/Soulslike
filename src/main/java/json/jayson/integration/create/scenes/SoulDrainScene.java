@@ -16,6 +16,7 @@ import com.simibubi.create.infrastructure.ponder.scenes.fluid.DrainScenes;
 import com.simibubi.create.infrastructure.ponder.scenes.fluid.PipeScenes;
 import json.jayson.common.objects.blocks.cake_plate.CakePlateEntity;
 import json.jayson.common.objects.blocks.soul_drain.SoulDrainBlockEntity;
+import json.jayson.common.registries.SoulsBlocks;
 import json.jayson.common.registries.SoulsFluids;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
@@ -112,11 +113,13 @@ public class SoulDrainScene {
             player.yHeadRot = 210;
             return player;
         });
+
+        scene.world.setBlock(drainPos, SoulsBlocks.VIBRANT_SOUL_DRAIN.getDefaultState(), true);
         scene.overlay.showText(40)
                 .text("Soul Drains can also extract Souls from Entities")
                 .attachKeyFrame()
                 .placeNearTarget()
-                .pointAt(drainPos.above().getCenter());
+                .pointAt(drainPos.getCenter());
         for (int i = 0; i < 5; i++) {
             scene.idle(10);
             refillDrain(scene, drainPos);

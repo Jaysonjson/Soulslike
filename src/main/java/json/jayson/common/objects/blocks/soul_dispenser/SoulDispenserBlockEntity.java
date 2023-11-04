@@ -69,6 +69,20 @@ public class SoulDispenserBlockEntity extends SmartBlockEntity implements IHaveG
                     }
                 }
             }
+
+            if(fluid == SoulsFluids.SOURCE_VIBRANT_SOUL.get()) {
+                BlockPos pos = worldPosition;
+                pos.offset(level.getBlockState(pos).getValue(WrenchableDirectionalBlock.FACING).getNormal());
+                if(fluidAmount > 0) {
+                    if (fluidAmount > 1) {
+                        internalTank.getPrimaryHandler().drain(2, IFluidHandler.FluidAction.EXECUTE);
+                        SoulOrbEntity.award(serverLevel, new Vec3(pos.getX(), pos.getY(), pos.getZ()), 4);
+                    } else {
+                        SoulOrbEntity.award(serverLevel, new Vec3(pos.getX(), pos.getY(), pos.getZ()), fluidAmount * 2);
+                        internalTank.getPrimaryHandler().drain(fluidAmount, IFluidHandler.FluidAction.EXECUTE);
+                    }
+                }
+            }
         }
     }
 

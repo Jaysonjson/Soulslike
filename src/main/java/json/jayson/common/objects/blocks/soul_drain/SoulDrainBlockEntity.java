@@ -64,44 +64,7 @@ public class SoulDrainBlockEntity extends SmartBlockEntity implements IHaveGoggl
                             }
                         }
                     });
-                } else {
-                    entity.getCapability(EntitySoulsProvider.ENTITY_SOULS).ifPresent(entitySouls -> {
-                        if (cap - 39 > fluidAmount) {
-                            if (entitySouls.getSouls() > 0) {
-                                souls.addAndGet(1);
-                                entitySouls.setSouls(entitySouls.getSouls() - 1);
-                            } else {
-                                entity.kill();
-                            }
-                        }
-                    });
                 }
-            }
-            if(souls.get() != 0) {
-                internalTank.getPrimaryHandler().fill(new FluidStack(SoulsBlocks.SOUL_BLOCK.getBlock().getFluid(), (int) souls.get()), IFluidHandler.FluidAction.EXECUTE);
-            }
-            internalTank.forbidInsertion();
-        }
-    }
-
-    public void drainPlayersOLD() {
-        List<Player> players = level.getEntitiesOfClass(Player.class, new AABB(this.worldPosition.above()), LivingEntity::isAlive);
-        if (!players.isEmpty()) {
-            int fluidAmount = getCapability(ForgeCapabilities.FLUID_HANDLER).resolve().get().getFluidInTank(0).getAmount();
-            AtomicLong souls = new AtomicLong();
-            internalTank.allowInsertion();
-            for (Player player : players) {
-                player.getCapability(PlayerSoulsProvider.PLAYER_SOULS).ifPresent(playerSouls -> {
-                    if(cap - 39 > fluidAmount) {
-                        if (playerSouls.getSouls() > 39) {
-                            souls.addAndGet(40);
-                            playerSouls.setSouls(playerSouls.getSouls() - 40);
-                        } else {
-                            souls.addAndGet(playerSouls.getSouls());
-                            playerSouls.setSouls(0);
-                        }
-                    }
-                });
             }
             if(souls.get() != 0) {
                 internalTank.getPrimaryHandler().fill(new FluidStack(SoulsBlocks.SOUL_BLOCK.getBlock().getFluid(), (int) souls.get()), IFluidHandler.FluidAction.EXECUTE);

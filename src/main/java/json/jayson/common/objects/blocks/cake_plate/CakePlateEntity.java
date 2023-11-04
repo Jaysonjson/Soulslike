@@ -3,7 +3,7 @@ package json.jayson.common.objects.blocks.cake_plate;
 import json.jayson.common.SoulsNBTKeys;
 import json.jayson.common.registries.SoulsBlockEntities;
 import json.jayson.network.packet.CakePlateSyncS2CPacket;
-import json.jayson.network.packet.ModMessages;
+import json.jayson.network.packet.SoulsNetwork;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
@@ -35,7 +35,7 @@ public class CakePlateEntity extends BlockEntity {
                 new java.util.TimerTask() {
                     @Override
                     public void run() {
-                        ModMessages.sendToClients(new CakePlateSyncS2CPacket(getBlockPos(), cakeString));
+                        SoulsNetwork.sendToClients(new CakePlateSyncS2CPacket(getBlockPos(), cakeString));
                     }
                 },
                 1000

@@ -1,0 +1,42 @@
+{
+    "display": {
+        "title": {
+            "text": "It's basic Chemistry",
+            "color": "green"
+        },
+        "description": {
+            "text": "Fill up a Soul Vial"
+        },
+        "icon": {
+            "item": "soulslike:bottle_of_souls"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "soulvialininv": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": [
+                            "soulslike:soul_vial"
+                        ],
+                        "nbt":"{amount:32}"
+                    }
+                ]  
+            }
+        }
+    },
+    "requirements": [
+        [
+            "soulvialininv"
+        ]
+    ],
+    "rewards": {
+        "experience": 500
+    },
+    "parent": "soulslike:obtain_soul"
+}

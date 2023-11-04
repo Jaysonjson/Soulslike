@@ -1,0 +1,101 @@
+{
+    "display": {
+        "title": {
+            "text": "Master of Souls",
+            "color": "green"
+        },
+        "description": {
+            "text": "Collect every Soul"
+        },
+        "icon": {
+            "item": "soulslike:dimensionals_soul"
+        },
+        "frame": "goal",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "obtain_unknown_soul": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                      {
+                        "items": [
+                            "soulslike:unknown_soul"
+                        ]
+                      }
+                ]
+            }
+        },
+        "obtain_caveman_soul": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                      {
+                        "items":[
+                            "soulslike:caveman_soul"
+                        ]
+                      }
+                ]
+            }
+        },
+        "obtain_dimensionals_soul": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                      {
+                       "items": [
+                        "soulslike:dimensionals_soul"
+                       ]
+                      }
+                ]
+            }
+        },
+        "obtain_explorers_soul": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                      {
+                        "items": [
+                            "soulslike:explorers_soul"
+                        ]
+                      }
+                ]
+            }
+        },
+        "obtain_soul_of_a_giant": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                      {
+                        "items": [
+                            "soulslike:soul_of_a_giant"
+                        ]
+                      }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "obtain_dimensionals_soul"
+        ],
+        [
+            "obtain_caveman_soul"
+        ],
+        [
+            "obtain_unknown_soul"
+        ],
+        [
+            "obtain_explorers_soul"
+        ],
+        [
+            "obtain_soul_of_a_giant"
+        ]
+    ],
+    "rewards": {
+        "experience": 2000
+    },
+    "parent": "soulslike:obtain_soul"
+}

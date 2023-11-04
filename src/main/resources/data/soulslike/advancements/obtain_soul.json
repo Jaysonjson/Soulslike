@@ -1,0 +1,46 @@
+{
+    "display": {
+        "title": {
+            "text": "The Very First One",
+            "bold": false,
+            "color": "green"
+        },
+        "description": {
+            "text": "Obtain your first Soul"
+        },
+        "icon": {
+            "item": "soulslike:caveman_soul"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "firstsoul": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": [
+                            "soulslike:caveman_soul",
+                            "soulslike:unknown_soul",
+                            "soulslike:dimensionals_soul",
+                            "soulslike:explorers_soul",
+                            "soulslike:soul_of_a_giant"
+                        ]
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "firstsoul"
+        ]
+    ],
+    "rewards": {
+        "experience": 20
+    },
+    "parent": "soulslike:root"
+}

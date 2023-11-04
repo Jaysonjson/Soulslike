@@ -1,0 +1,39 @@
+{
+    "display": {
+        "title": {
+            "text": "Don't Bee our Guest",
+            "color": "green"
+        },
+        "description": {
+            "text": "Collect Bee Tears with a glass bottle by destroying a Bee's Nest"
+        },
+        "icon": {
+            "item": "soulslike:bee_tears"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "beecry": {
+            "trigger": "minecraft:bee_nest_destroyed",
+            "conditions": {
+                "item": {
+                    "item": "minecraft:glass_bottle"
+                },
+                "block": "minecraft:bee_nest",
+                "bees":1
+            }
+        }
+    },
+    "requirements": [
+        [
+            "beecry"
+        ]
+    ],
+    "rewards": {
+        "experience": 100
+    },
+    "parent": "soulslike:root"
+}

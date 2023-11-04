@@ -26,6 +26,7 @@ public class PonderIndex {
         addStoryBoard(SoulsBlocks.QUARTZ_CAKE_PLATE.getItem(), "cake_plate/intro", CakePlateScene::spawn);
         addStoryBoard(SoulsBlocks.GEM_STATION.getItem(), "gem_station/gemcutter_villager", GemStationScene::villager);
         addStoryBoard(SoulsBlocks.VIBRANT_SOUL_DRAIN.get(), "soul_drain", SoulDrainScene::intro);
+        addStoryBoard(SoulsBlocks.SOUL_DRAIN.get(), "soul_drain", SoulDrainScene::intro);
         addStoryBoard(SoulsBlocks.SOUL_BLOCK.getItem(), "soul_drain", SoulDrainScene::intro);
         addStoryBoard(SoulsItems.SOUL_BUCKET.get(), "soul_drain", SoulDrainScene::intro);
         addStoryBoard(SoulsBlocks.VIBRANT_SOUL_ENTITY_SPAWNER.get(), "soul_spawner", SoulSpawnerScene::intro);

@@ -2,7 +2,7 @@ package json.jayson.common.objects.blocks.vase;
 
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import json.jayson.network.packet.GenericVaseInvSyncS2CPacket;
-import json.jayson.network.packet.ModMessages;
+import json.jayson.network.packet.SoulsNetwork;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.Container;
 import net.minecraft.world.Containers;
@@ -46,7 +46,7 @@ public class GenericVase extends BaseEntityBlock {
             for (int i = 0; i < container.getContainerSize(); i++) {
                 if (!container.getItem(i).is(Items.AIR)) {
                     mudVaseEntity.renderItems.add(container.getItem(i));
-                    ModMessages.sendToClients(new GenericVaseInvSyncS2CPacket(container.getItem(i), p_53519_));
+                    SoulsNetwork.sendToClients(new GenericVaseInvSyncS2CPacket(container.getItem(i), p_53519_));
                 }
             }
         }
@@ -100,7 +100,7 @@ public class GenericVase extends BaseEntityBlock {
                         if (container instanceof Container container1) {
                             Containers.dropContents(level, blockPos, container1);
                             mudVaseEntity.renderItems.clear();
-                            ModMessages.sendToClients(new GenericVaseInvSyncS2CPacket(new ItemStack(Items.AIR), blockPos, true));
+                            SoulsNetwork.sendToClients(new GenericVaseInvSyncS2CPacket(new ItemStack(Items.AIR), blockPos, true));
                         }
                     } else {
                         if (mudVaseEntity.items.size() < GenericVaseEntity.SIZE + 1) {
@@ -111,7 +111,7 @@ public class GenericVase extends BaseEntityBlock {
                                 newStack.setCount(1);
                                 mudVaseEntity.setItem(list.get(0), newStack);
                                 player.getMainHandItem().setCount(player.getMainHandItem().getCount() - 1);
-                                ModMessages.sendToClients(new GenericVaseInvSyncS2CPacket(mudVaseEntity.getItem(list.get(0)), blockPos));
+                                SoulsNetwork.sendToClients(new GenericVaseInvSyncS2CPacket(mudVaseEntity.getItem(list.get(0)), blockPos));
                             }
                         }
                     }
@@ -129,7 +129,7 @@ public class GenericVase extends BaseEntityBlock {
                 if(!ItemStack.isSameItem(container.getItem(i), new ItemStack(Items.AIR))) {
                     GenericVaseEntity mudVaseEntity = (GenericVaseEntity) blockentity;
                     mudVaseEntity.renderItems.add(container.getItem(i));
-                    if(!p_152431_.isClientSide()) ModMessages.sendToClients(new GenericVaseInvSyncS2CPacket(container.getItem(i), p_152432_));
+                    if(!p_152431_.isClientSide()) SoulsNetwork.sendToClients(new GenericVaseInvSyncS2CPacket(container.getItem(i), p_152432_));
                 }
             }
         }

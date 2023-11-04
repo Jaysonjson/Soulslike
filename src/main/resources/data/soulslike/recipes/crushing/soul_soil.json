@@ -12,7 +12,7 @@
       "item": "minecraft:dirt"
     },
     {
-      "chance": 0.125,
+      "chance": 0.05,
       "item": "soulslike:soul_nugget"
     }
   ]

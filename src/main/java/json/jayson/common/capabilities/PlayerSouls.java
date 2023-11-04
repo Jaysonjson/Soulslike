@@ -1,6 +1,6 @@
 package json.jayson.common.capabilities;
 
-import json.jayson.network.packet.ModMessages;
+import json.jayson.network.packet.SoulsNetwork;
 import json.jayson.network.packet.PlayerSoulsDataSyncS2CPacket;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
@@ -62,7 +62,7 @@ public class PlayerSouls {
     }
 
     public void sync(ServerPlayer player) {
-        ModMessages.sendToPlayer(new PlayerSoulsDataSyncS2CPacket(this), player);
+        SoulsNetwork.sendToPlayer(new PlayerSoulsDataSyncS2CPacket(this), player);
     }
 
 }

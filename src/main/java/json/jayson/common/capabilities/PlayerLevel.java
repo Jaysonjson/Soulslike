@@ -1,6 +1,6 @@
 package json.jayson.common.capabilities;
 
-import json.jayson.network.packet.ModMessages;
+import json.jayson.network.packet.SoulsNetwork;
 import json.jayson.network.packet.PlayerLevelDataSyncS2CPacket;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerPlayer;
@@ -90,7 +90,7 @@ public class PlayerLevel implements Cloneable {
     }
 
     public void sync(ServerPlayer player) {
-        ModMessages.sendToPlayer(new PlayerLevelDataSyncS2CPacket(this), player);
+        SoulsNetwork.sendToPlayer(new PlayerLevelDataSyncS2CPacket(this), player);
     }
 
     @Override

@@ -1,13 +1,12 @@
 package json.jayson.common.objects.blocks.cake_plate;
 
 import json.jayson.network.packet.CakePlateSyncS2CPacket;
-import json.jayson.network.packet.ModMessages;
+import json.jayson.network.packet.SoulsNetwork;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.BlockGetter;
@@ -84,7 +83,7 @@ public class CakePlate extends BaseEntityBlock {
                     cakePlateEntity.cakeBlock = null;
                 }
                 cakePlateEntity.setChanged();
-                ModMessages.sendToClients(new CakePlateSyncS2CPacket(blockPos, cakePlateEntity.cakeString));
+                SoulsNetwork.sendToClients(new CakePlateSyncS2CPacket(blockPos, cakePlateEntity.cakeString));
             }
         }
         return InteractionResult.CONSUME;

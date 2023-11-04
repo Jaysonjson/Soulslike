@@ -1,41 +1,24 @@
 package json.jayson.common.objects.blocks.soul_entity_spawner;
 
-import com.simibubi.create.AllCreativeModeTabs;
-import com.simibubi.create.content.contraptions.bearing.BearingBlock;
-import com.simibubi.create.content.contraptions.bearing.BearingInstance;
-import com.simibubi.create.content.contraptions.bearing.BearingRenderer;
-import com.simibubi.create.content.fluids.drain.ItemDrainBlock;
-import com.simibubi.create.content.fluids.drain.ItemDrainBlockEntity;
-import com.simibubi.create.content.fluids.spout.SpoutBlock;
-import com.simibubi.create.content.fluids.spout.SpoutBlockEntity;
 import com.simibubi.create.content.kinetics.base.HorizontalKineticBlock;
-import com.simibubi.create.content.kinetics.base.KineticBlock;
-import com.simibubi.create.content.kinetics.gearbox.GearboxBlock;
-import com.simibubi.create.content.kinetics.press.MechanicalPressBlockEntity;
-import com.simibubi.create.content.kinetics.simpleRelays.ICogWheel;
 import com.simibubi.create.foundation.block.IBE;
 import json.jayson.common.objects.items.SoulVialItem;
 import json.jayson.common.registries.SoulsBlockEntities;
 import json.jayson.common.registries.SoulsItems;
-import json.jayson.helpers.SoulsUtil;
-import json.jayson.network.packet.CakePlateSyncS2CPacket;
-import json.jayson.network.packet.ModMessages;
+import json.jayson.network.packet.SoulsNetwork;
 import json.jayson.network.packet.SoulEntitySpawnerSyncS2CPacket;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.SpawnEggItem;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraftforge.common.Tags;
 
 public class SoulEntitySpawnerBlock extends HorizontalKineticBlock implements IBE<SoulEntitySpawnerBlockEntity> {
     public SoulEntitySpawnerBlock(Properties properties) {
@@ -63,14 +46,14 @@ public class SoulEntitySpawnerBlock extends HorizontalKineticBlock implements IB
                         te.setChanged();
                         if(!player.isCreative()) itemStack.shrink(1);
                         player.setItemInHand(hand, itemStack);
-                        ModMessages.sendToClients(new SoulEntitySpawnerSyncS2CPacket(p_60508_.getBlockPos(), te.getEntity()));
+                        SoulsNetwork.sendToClients(new SoulEntitySpawnerSyncS2CPacket(p_60508_.getBlockPos(), te.getEntity()));
                     }
                 } else if(itemStack.getItem() instanceof SpawnEggItem spawnEggItem) {
                     te.setEntity(spawnEggItem.getType(itemStack.getTag()).getDescriptionId());
                     te.setChanged();
                     if(!player.isCreative()) itemStack.shrink(1);
                     player.setItemInHand(hand, itemStack);
-                    ModMessages.sendToClients(new SoulEntitySpawnerSyncS2CPacket(p_60508_.getBlockPos(), te.getEntity()));
+                    SoulsNetwork.sendToClients(new SoulEntitySpawnerSyncS2CPacket(p_60508_.getBlockPos(), te.getEntity()));
                 }
                 return InteractionResult.CONSUME;
             }

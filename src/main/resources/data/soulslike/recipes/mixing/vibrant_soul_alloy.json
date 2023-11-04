@@ -3,10 +3,11 @@
   "heatRequirement": "heated",
   "ingredients": [
     {
-      "item": "soulslike:soul_ingot"
+      "amount": 500,
+      "fluid": "soulslike:vibrant_soul"
     },
     {
-      "item": "minecraft:glowstone_dust"
+      "item": "minecraft:iron_ingot"
     }
   ],
   "results": [

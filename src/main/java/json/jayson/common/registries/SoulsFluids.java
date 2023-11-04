@@ -29,6 +29,11 @@ public class SoulsFluids {
     public static final RegistryObject<FlowingFluid> FLOWING_VIBRANT_SOUL = FLUIDS.register("flowing_vibrant_soul",
             () -> new ForgeFlowingFluid.Flowing(SoulsFluids.VIBRANT_SOULS_FLUID_PROPERTIES));
 
+    public static final RegistryObject<FlowingFluid> SOURCE_BEE_TEARS = FLUIDS.register("source_bee_tears",
+            () -> new ForgeFlowingFluid.Source(SoulsFluids.BEE_TEARS_FLUID_PROPERTIES));
+    public static final RegistryObject<FlowingFluid> FLOWING_BEE_TEARS = FLUIDS.register("flowing_bee_tears",
+            () -> new ForgeFlowingFluid.Flowing(SoulsFluids.BEE_TEARS_FLUID_PROPERTIES));
+
     public static final ForgeFlowingFluid.Properties BLOOD_FLUID_PROPERTIES = new ForgeFlowingFluid.Properties(
             SoulsFluidTypes.BLOOD_WATER_FLUID_TYPE, SOURCE_BLOOD, FLOWING_BLOOD)
             .slopeFindDistance(2).levelDecreasePerBlock(2).block(SoulsBlocks.BLOOD_BLOCK.Block())
@@ -43,6 +48,12 @@ public class SoulsFluids {
             SoulsFluidTypes.VIBRANT_SOUL_WATER_FLUID_TYPE, SOURCE_VIBRANT_SOUL, FLOWING_VIBRANT_SOUL)
             .slopeFindDistance(2).levelDecreasePerBlock(2).block(SoulsBlocks.VIBRANT_SOUL_BLOCK.Block())
             .bucket(SoulsItems.VIBRANT_SOUL_BUCKET);
+
+    public static final ForgeFlowingFluid.Properties BEE_TEARS_FLUID_PROPERTIES = new ForgeFlowingFluid.Properties(
+            SoulsFluidTypes.BEE_TEAR_FLUID_TYPE, SOURCE_BEE_TEARS, FLOWING_BEE_TEARS)
+            .slopeFindDistance(2).levelDecreasePerBlock(2).block(SoulsBlocks.BEE_TEARS_BLOCK.Block())
+            .bucket(SoulsItems.BEE_TEARS_BUCKET);
+
 
 
     public static void register(IEventBus eventBus) {

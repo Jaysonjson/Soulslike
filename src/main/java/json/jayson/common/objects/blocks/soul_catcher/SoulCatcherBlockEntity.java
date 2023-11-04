@@ -57,11 +57,30 @@ public class SoulCatcherBlockEntity extends KineticBlockEntity implements IHaveG
     }
 
     public int getWaitingTicks() {
-        return (int) (100000 / Math.abs(getSpeed()));
+        return (int) (145000 / Math.abs(getSpeed()));
     }
 
     public int getWaitingSeconds() {
         return getWaitingTicks() / 20;
+    }
+
+    public int getWaitingMinutes() {
+        return getWaitingSeconds() / 60;
+    }
+
+    public int getWaitingHours() {
+        return getWaitingMinutes() / 60;
+    }
+
+    public String getFormattedWaiting() {
+        String str = getWaitingSeconds() + " Second(s)";
+        if(getWaitingSeconds() > 60) {
+            str = getWaitingMinutes() + " Minute(s)";
+        }
+        if(getWaitingSeconds() > 3600) {
+            str = getWaitingMinutes() + " Hour(s)";
+        }
+        return str;
     }
 
     @Override
@@ -69,7 +88,7 @@ public class SoulCatcherBlockEntity extends KineticBlockEntity implements IHaveG
         containedFluidTooltip(tooltip, isPlayerSneaking,
                 getCapability(ForgeCapabilities.FLUID_HANDLER));
             tooltip.add(Component.literal("    Catcher Info:"));
-            tooltip.add(Component.literal("     Catch Time: " + getWaitingSeconds() + " Seconds").withStyle(ChatFormatting.GRAY));
+            tooltip.add(Component.literal("     Catch Time: " + getFormattedWaiting()).withStyle(ChatFormatting.GRAY));
         return true;
     }
 }

@@ -2,7 +2,7 @@ package json.jayson.common.objects.blocks.fire_altar;
 
 import json.jayson.SoulsTags;
 import json.jayson.network.packet.FireAltarSyncS2CPacket;
-import json.jayson.network.packet.ModMessages;
+import json.jayson.network.packet.SoulsNetwork;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -56,7 +56,7 @@ public class FireAltar extends BaseEntityBlock {
                 level.setBlock(blockPos, blockState.setValue(UNLIGHTED,true), 3);
                 if(fireAltarEntity != null) {
                     fireAltarEntity.soulFlame = false;
-                    ModMessages.sendToClients(new FireAltarSyncS2CPacket(blockPos, false));
+                    SoulsNetwork.sendToClients(new FireAltarSyncS2CPacket(blockPos, false));
                 }
             } else if(itemStack.is(SoulsTags.CAN_CREATE_FLAME)) {
                 //level.setBlock(blockPos, blockState.cycle(UNLIGHTED), 3);
@@ -65,7 +65,7 @@ public class FireAltar extends BaseEntityBlock {
                 level.setBlock(blockPos, blockState.setValue(UNLIGHTED, false), 3);
                 if(fireAltarEntity != null) {
                     fireAltarEntity.soulFlame = true;
-                    ModMessages.sendToClients(new FireAltarSyncS2CPacket(blockPos, true));
+                    SoulsNetwork.sendToClients(new FireAltarSyncS2CPacket(blockPos, true));
                 }
             }
         }

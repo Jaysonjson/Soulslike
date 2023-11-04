@@ -3,7 +3,7 @@
   "heatRequirement": "heated",
   "ingredients": [
     {
-      "amount": 750,
+      "amount": 1000,
       "fluid": "soulslike:soul"
     },
     {
@@ -12,7 +12,8 @@
   ],
   "results": [
     {
-      "item": "soulslike:vibrant_soul_alloy"
+      "amount": 500,
+      "fluid": "soulslike:vibrant_soul"
     }
   ]
 }
