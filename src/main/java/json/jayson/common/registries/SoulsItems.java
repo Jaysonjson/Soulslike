@@ -19,14 +19,12 @@ import json.jayson.common.objects.items.staff.CloudStaff;
 import json.jayson.common.objects.items.staff.FeatherStaff;
 import json.jayson.common.objects.items.staff.RoseStaff;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Supplier;
 
 public class SoulsItems {
 
-    public static HashMap< RegistryObject<Item>, RegistryObject<CreativeModeTab>> creativeTabs = new HashMap<>();
+    public static Map< RegistryObject<Item>, RegistryObject<CreativeModeTab>> creativeTabs = new LinkedHashMap<>();
 
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Soulslike.MODID);
 
@@ -174,7 +172,7 @@ public class SoulsItems {
             event.accept(SoulsBlocks.VIBRANT_SOUL_DRAIN.get());
             event.accept(SoulsBlocks.VIBRANT_SOUL_ENTITY_SPAWNER.get());
             event.accept(SoulsBlocks.VIBRANT_SOUL_DISPENSER.get());
-            event.accept(SoulsBlocks.VIBRANT_SOUL_CATCHER.get());
+            event.accept(SoulsBlocks.SOUL_CATCHER.get());
         }
     }
     public static void register(IEventBus eventBus) {
