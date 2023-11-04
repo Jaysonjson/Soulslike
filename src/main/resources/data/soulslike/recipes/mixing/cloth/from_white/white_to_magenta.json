@@ -1,0 +1,16 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "minecraft:magenta_dye"
+    },
+    {
+      "item": "soulslike:white_cloth"
+    }
+  ],
+  "results": [
+    {
+      "item": "soulslike:magenta_cloth"
+    }
+  ]
+}

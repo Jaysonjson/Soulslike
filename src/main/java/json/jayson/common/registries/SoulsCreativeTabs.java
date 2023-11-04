@@ -20,7 +20,7 @@ public class SoulsCreativeTabs {
     @Deprecated
     public static SoulsCreativeTabProvider SOUL_TAB = new SoulsCreativeTabProvider("creativemodetab.soul_tab");*/
     public static RegistryObject<CreativeModeTab> OTHER_TAB = TABS.register("other_tab", () -> CreativeModeTab.builder()
-            .icon(() -> SoulsItems.DWARF_COAL.get().getDefaultInstance()).title(Component.translatable("creativemodetab.other_tab")).withTabsBefore(CreativeModeTabs.SPAWN_EGGS).build());
+            .icon(() -> SoulsItems.SCROLL.get().getDefaultInstance()).title(Component.translatable("creativemodetab.other_tab")).withTabsBefore(CreativeModeTabs.SPAWN_EGGS).build());
 
     public static RegistryObject<CreativeModeTab> WEAPON_TAB = TABS.register("weapon_tab", () -> CreativeModeTab.builder()
             .icon(() -> SoulsItems.BIG_IRON_SWORD.get().getDefaultInstance()).title(Component.translatable("creativemodetab.weapon_tab")).withTabsBefore(CreativeModeTabs.SPAWN_EGGS).build());
@@ -29,7 +29,7 @@ public class SoulsCreativeTabs {
             .icon(() -> SoulsBlocks.BEE_STATUE.getItem().getDefaultInstance()).title(Component.translatable("creativemodetab.block_tab")).withTabsBefore(CreativeModeTabs.SPAWN_EGGS).build());
 
     public static RegistryObject<CreativeModeTab> BUILDING_BLOCK_TAB = TABS.register("building_block_tab", () -> CreativeModeTab.builder()
-            .icon(() -> SoulsBlocks.MUD_VASE.getItem().getDefaultInstance()).title(Component.translatable("creativemodetab.block_tab")).withTabsBefore(CreativeModeTabs.SPAWN_EGGS).build());
+            .icon(() -> SoulsBlocks.MUD_VASE.getItem().getDefaultInstance()).title(Component.translatable("creativemodetab.building_block_tab")).withTabsBefore(CreativeModeTabs.SPAWN_EGGS).build());
 
     public static RegistryObject<CreativeModeTab> SOULS_TAB = TABS.register("souls_tab", () -> CreativeModeTab.builder()
             .icon(() -> SoulsItems.EXPLORERS_SOUL.get().getDefaultInstance()).title(Component.translatable("creativemodetab.souls_tab")).withTabsBefore(CreativeModeTabs.SPAWN_EGGS).build());

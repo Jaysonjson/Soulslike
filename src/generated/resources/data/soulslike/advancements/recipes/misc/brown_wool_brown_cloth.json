@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "brown_cloth": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "soulslike:brown_cloth"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "soulslike:brown_wool_brown_cloth"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "brown_cloth",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "soulslike:brown_wool_brown_cloth"
+    ]
+  },
+  "sends_telemetry_event": false
+}

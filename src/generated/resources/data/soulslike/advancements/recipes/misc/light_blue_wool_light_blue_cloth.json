@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "soulslike:light_blue_wool_light_blue_cloth"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "light_blue_cloth": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "soulslike:light_blue_cloth"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "light_blue_cloth",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "soulslike:light_blue_wool_light_blue_cloth"
+    ]
+  },
+  "sends_telemetry_event": false
+}

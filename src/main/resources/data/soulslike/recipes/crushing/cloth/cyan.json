@@ -1,0 +1,19 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "soulslike:cyan_cloth"
+    }
+  ],
+  "processingTime": 150,
+  "results": [
+    {
+      "item": "minecraft:string",
+      "count": 6
+    },
+    {
+      "item": "minecraft:cyan_dye",
+      "chance": 0.35
+    }
+  ]
+}

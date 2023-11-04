@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "soulslike:yellow_wool_yellow_cloth"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "yellow_cloth": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "soulslike:yellow_cloth"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "yellow_cloth",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "soulslike:yellow_wool_yellow_cloth"
+    ]
+  },
+  "sends_telemetry_event": false
+}

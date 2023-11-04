@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "soulslike:light_gray_wool_light_gray_cloth"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "light_gray_cloth": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "soulslike:light_gray_cloth"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "light_gray_cloth",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "soulslike:light_gray_wool_light_gray_cloth"
+    ]
+  },
+  "sends_telemetry_event": false
+}

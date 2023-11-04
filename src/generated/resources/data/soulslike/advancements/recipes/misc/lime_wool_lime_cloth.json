@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "soulslike:lime_wool_lime_cloth"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "lime_cloth": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "soulslike:lime_cloth"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "lime_cloth",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "soulslike:lime_wool_lime_cloth"
+    ]
+  },
+  "sends_telemetry_event": false
+}

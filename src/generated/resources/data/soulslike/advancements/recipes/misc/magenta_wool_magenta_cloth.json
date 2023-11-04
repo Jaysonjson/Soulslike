@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "soulslike:magenta_wool_magenta_cloth"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "magenta_cloth": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "soulslike:magenta_cloth"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "magenta_cloth",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "soulslike:magenta_wool_magenta_cloth"
+    ]
+  },
+  "sends_telemetry_event": false
+}

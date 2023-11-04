@@ -1,0 +1,19 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "soulslike:black_cloth"
+    }
+  ],
+  "processingTime": 150,
+  "results": [
+    {
+      "item": "minecraft:string",
+      "count": 6
+    },
+    {
+      "item": "minecraft:black_dye",
+      "chance": 0.35
+    }
+  ]
+}

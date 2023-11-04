@@ -66,6 +66,20 @@ public abstract class SoulsRecipeBuilder extends RecipeProvider implements ICond
                 .save(consumer, new ResourceLocation(Soulslike.MODID, table + "_to_vanilla"));*/
     }
 
+
+    public void clothWool(Consumer<FinishedRecipe> consumer, Item wool, Item cloth) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, wool, 6).
+                define('M', cloth).
+                pattern("MM").
+                pattern("MM").
+                unlockedBy(cloth.toString(), inventoryTrigger(ItemPredicate.Builder.item().of(cloth).build()))
+                .save(consumer, new ResourceLocation(Soulslike.MODID, wool + "_" + cloth));
+        /*ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Blocks.CRAFTING_TABLE)
+                .requires(table)
+                .unlockedBy(table.toString(), inventoryTrigger(ItemPredicate.Builder.item().of(table).build()))
+                .save(consumer, new ResourceLocation(Soulslike.MODID, table + "_to_vanilla"));*/
+    }
+
     public void fullBlock(Consumer<FinishedRecipe> consumer, Item table, Item planks) {
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, table).
                 define('M', planks).

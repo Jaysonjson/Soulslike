@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "soulslike:vibrant_soul_catcher"
+          "name": "soulslike:soul_catcher"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "soulslike:blocks/vibrant_soul_catcher"
+  "random_sequence": "soulslike:blocks/soul_catcher"
 }

@@ -1,0 +1,17 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "amount": 10,
+      "fluid": "minecraft:water"
+    },
+    {
+      "item": "soulslike:pink_cloth"
+    }
+  ],
+  "results": [
+    {
+      "item": "soulslike:white_cloth"
+    }
+  ]
+}

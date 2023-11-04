@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "soulslike:pink_wool_pink_cloth"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "pink_cloth": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "soulslike:pink_cloth"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "pink_cloth",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "soulslike:pink_wool_pink_cloth"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "soulslike:white_wool_white_cloth"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "white_cloth": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "soulslike:white_cloth"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "white_cloth",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "soulslike:white_wool_white_cloth"
+    ]
+  },
+  "sends_telemetry_event": false
+}

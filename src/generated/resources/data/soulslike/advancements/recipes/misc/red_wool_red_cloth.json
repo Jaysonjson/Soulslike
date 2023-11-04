@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "soulslike:red_wool_red_cloth"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "red_cloth": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "soulslike:red_cloth"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "red_cloth",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "soulslike:red_wool_red_cloth"
+    ]
+  },
+  "sends_telemetry_event": false
+}

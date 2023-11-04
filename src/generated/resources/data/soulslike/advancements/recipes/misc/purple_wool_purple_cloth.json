@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "soulslike:purple_wool_purple_cloth"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "purple_cloth": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "soulslike:purple_cloth"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "purple_cloth",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "soulslike:purple_wool_purple_cloth"
+    ]
+  },
+  "sends_telemetry_event": false
+}

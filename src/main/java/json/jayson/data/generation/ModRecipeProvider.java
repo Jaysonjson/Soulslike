@@ -66,6 +66,23 @@ public class ModRecipeProvider extends SoulsRecipeBuilder {
         craftingTable(p_251297_, SoulsBlocks.JUNGLE_CRAFTING_TABLE.getItem(), Blocks.JUNGLE_PLANKS.asItem());
         craftingTable(p_251297_, SoulsBlocks.DARK_OAK_CRAFTING_TABLE.getItem(), Blocks.DARK_OAK_PLANKS.asItem());
 
+        clothWool(p_251297_, Blocks.BLACK_WOOL.asItem(), SoulsItems.BLACK_CLOTH.get());
+        clothWool(p_251297_, Blocks.BLUE_WOOL.asItem(), SoulsItems.BLUE_CLOTH.get());
+        clothWool(p_251297_, Blocks.BROWN_WOOL.asItem(), SoulsItems.BROWN_CLOTH.get());
+        clothWool(p_251297_, Blocks.CYAN_WOOL.asItem(), SoulsItems.CYAN_CLOTH.get());
+        clothWool(p_251297_, Blocks.GRAY_WOOL.asItem(), SoulsItems.GRAY_CLOTH.get());
+        clothWool(p_251297_, Blocks.GREEN_WOOL.asItem(), SoulsItems.GREEN_CLOTH.get());
+        clothWool(p_251297_, Blocks.LIGHT_BLUE_WOOL.asItem(), SoulsItems.LIGHT_BLUE_CLOTH.get());
+        clothWool(p_251297_, Blocks.LIGHT_GRAY_WOOL.asItem(), SoulsItems.LIGHT_GRAY_CLOTH.get());
+        clothWool(p_251297_, Blocks.LIME_WOOL.asItem(), SoulsItems.LIME_CLOTH.get());
+        clothWool(p_251297_, Blocks.MAGENTA_WOOL.asItem(), SoulsItems.MAGENTA_CLOTH.get());
+        clothWool(p_251297_, Blocks.ORANGE_WOOL.asItem(), SoulsItems.ORANGE_CLOTH.get());
+        clothWool(p_251297_, Blocks.PINK_WOOL.asItem(), SoulsItems.PINK_CLOTH.get());
+        clothWool(p_251297_, Blocks.PURPLE_WOOL.asItem(), SoulsItems.PURPLE_CLOTH.get());
+        clothWool(p_251297_, Blocks.RED_WOOL.asItem(), SoulsItems.RED_CLOTH.get());
+        clothWool(p_251297_, Blocks.WHITE_WOOL.asItem(), SoulsItems.WHITE_CLOTH.get());
+        clothWool(p_251297_, Blocks.YELLOW_WOOL.asItem(), SoulsItems.YELLOW_CLOTH.get());
+
         fullBlock(p_251297_, SoulsBlocks.RUBY_BLOCK.getItem(), SoulsItems.RUBY.get());
         fullBlock(p_251297_, SoulsBlocks.SAPPHIRE_BLOCK.getItem(), SoulsItems.SAPPHIRE.get());
         fullBlock(p_251297_, SoulsBlocks.SAPPHIRE_SHARD_BLOCK.getItem(), SoulsItems.SAPPHIRE_SHARD.get());
