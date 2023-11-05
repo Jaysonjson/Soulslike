@@ -68,7 +68,7 @@ public abstract class SoulsRecipeBuilder extends RecipeProvider implements ICond
 
 
     public void clothWool(Consumer<FinishedRecipe> consumer, Item wool, Item cloth) {
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, wool, 6).
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, wool, 4).
                 define('M', cloth).
                 pattern("MM").
                 pattern("MM").

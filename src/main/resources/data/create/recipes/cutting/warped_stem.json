@@ -1,0 +1,19 @@
+{
+  "type": "create:cutting",
+  "ingredients": [
+    {
+      "item": "minecraft:warped_stem"
+    }
+  ],
+  "processingTime": 50,
+  "results": [
+    {
+      "count": 4,
+      "item": "soulslike:warped_bark"
+    },
+    {
+      "count": 1,
+      "item": "minecraft:stripped_warped_stem"
+    }
+  ]
+}

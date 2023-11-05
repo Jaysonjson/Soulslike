@@ -59,7 +59,6 @@ public class SoulsItems {
     BEE_TEARS_BUCKET = registerItem("bee_tears_bucket", () -> new BucketItem(SoulsFluids.SOURCE_BEE_TEARS, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)), SoulsCreativeTabs.OTHER_TAB),
 
     SCROLL = registerItem("scroll", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
-    OAK_BARK = registerItem("oak_bark", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
     OAK_WAND = registerItem("oak_wand", () -> new WandItem(new Item.Properties()), SoulsCreativeTabs.WEAPON_TAB),
 
     LOVE_STAFF = registerItem("love_staff", () -> new LoveStaff(new Item.Properties().defaultDurability(100)), SoulsCreativeTabs.WEAPON_TAB),
@@ -80,6 +79,17 @@ public class SoulsItems {
     BEE_TEAR = registerItem("bee_tear", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
     BEE_TEAR_VIAL = registerItem("bee_tear_vial", () -> new BeeTears(new Item.Properties().stacksTo(1)), SoulsCreativeTabs.OTHER_TAB),
 
+    OAK_BARK = registerItem("oak_bark", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
+    BAMBOO_BARK = registerItem("bamboo_bark", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
+    BIRCH_BARK = registerItem("birch_bark", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
+    CHERRY_BARK = registerItem("cherry_bark", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
+    CRIMSON_BARK = registerItem("crimson_bark", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
+    DARK_OAK_BARK = registerItem("dark_oak_bark", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
+    JUNGLE_BARK = registerItem("jungle_bark", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
+    MANGROVE_BARK = registerItem("mangrove_bark", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
+    SPRUCE_BARK = registerItem("spruce_bark", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
+    WARPED_BARK = registerItem("warped_bark", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
+    ACACIA_BARK = registerItem("acacia_bark", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
 
     BLACK_CLOTH = registerItem("black_cloth", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),
     BLUE_CLOTH = registerItem("blue_cloth", () -> new Item(new Item.Properties()), SoulsCreativeTabs.OTHER_TAB),

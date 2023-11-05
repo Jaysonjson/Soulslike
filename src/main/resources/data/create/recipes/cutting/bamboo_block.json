@@ -1,0 +1,19 @@
+{
+  "type": "create:cutting",
+  "ingredients": [
+    {
+      "item": "minecraft:bamboo_block"
+    }
+  ],
+  "processingTime": 50,
+  "results": [
+    {
+      "count": 4,
+      "item": "soulslike:bamboo_bark"
+    },
+    {
+      "count": 1,
+      "item": "minecraft:stripped_bamboo_block"
+    }
+  ]
+}

@@ -9,6 +9,10 @@
     "soulslike:scrapped_dagger",
     "soulslike:cloud_staff",
     "soulslike:cloud_wand",
-    "soulslike:rose_wand"
+    "soulslike:rose_wand",
+    "soulslike:black_cloth",
+    "soulslike:red_cloth",
+    "soulslike:white_cloth",
+    "soulslike:green_cloth"
   ]
 }

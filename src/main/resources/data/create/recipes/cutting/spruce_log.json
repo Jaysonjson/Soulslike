@@ -1,0 +1,19 @@
+{
+  "type": "create:cutting",
+  "ingredients": [
+    {
+      "item": "minecraft:spruce_log"
+    }
+  ],
+  "processingTime": 50,
+  "results": [
+    {
+      "count": 4,
+      "item": "soulslike:spruce_bark"
+    },
+    {
+      "count": 1,
+      "item": "minecraft:stripped_spruce_log"
+    }
+  ]
+}

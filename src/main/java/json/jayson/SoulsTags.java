@@ -13,6 +13,8 @@ public class SoulsTags {
     public static final TagKey<Block> CRATE = BlockTags.create(new ResourceLocation(Soulslike.MODID, "crate"));
     public static final TagKey<Block> VASE = BlockTags.create(new ResourceLocation(Soulslike.MODID, "vase"));
     public static final TagKey<Item> BIG_SWORDS = ItemTags.create(new ResourceLocation(Soulslike.MODID, "big_swords"));
+    public static final TagKey<Item> CLOTH = ItemTags.create(new ResourceLocation(Soulslike.MODID, "cloth"));
+    public static final TagKey<Item> BARK = ItemTags.create(new ResourceLocation(Soulslike.MODID, "bark"));
 
     public static final TagKey<Block> CRAFTING_TABLES = BlockTags.create(new ResourceLocation(Soulslike.MODID, "souls_crafting_tables"));
     public static final TagKey<Item> CRAFTING_TABLES_ITEM = ItemTags.create(new ResourceLocation(Soulslike.MODID, "souls_crafting_tables"));

@@ -1,0 +1,19 @@
+{
+  "type": "create:cutting",
+  "ingredients": [
+    {
+      "item": "minecraft:cherry_log"
+    }
+  ],
+  "processingTime": 50,
+  "results": [
+    {
+      "count": 4,
+      "item": "soulslike:cherry_bark"
+    },
+    {
+      "count": 1,
+      "item": "minecraft:stripped_cherry_log"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "type": "create:cutting",
+  "ingredients": [
+    {
+      "item": "minecraft:dark_oak_log"
+    }
+  ],
+  "processingTime": 50,
+  "results": [
+    {
+      "count": 4,
+      "item": "soulslike:dark_oak_bark"
+    },
+    {
+      "count": 1,
+      "item": "minecraft:stripped_dark_oak_log"
+    }
+  ]
+}

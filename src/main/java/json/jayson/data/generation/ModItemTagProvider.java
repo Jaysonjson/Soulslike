@@ -1,6 +1,7 @@
 package json.jayson.data.generation;
 
 import json.jayson.Soulslike;
+import json.jayson.common.registries.SoulsLootCodecs;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
@@ -36,5 +37,12 @@ public class ModItemTagProvider extends ItemTagsProvider {
         addItems(SoulsTags.CRAFTING_TABLES_ITEM, SoulsBlocks.CHERRY_CRAFTING_TABLE.Item(), SoulsBlocks.BAMBOO_CRAFTING_TABLE.Item(), SoulsBlocks.ACACIA_CRAFTING_TABLE.Item(), SoulsBlocks.CRIMSON_CRAFTING_TABLE.Item(),
                 SoulsBlocks.BIRCH_CRAFTING_TABLE.Item(), SoulsBlocks.JUNGLE_CRAFTING_TABLE.Item(), SoulsBlocks.SPRUCE_CRAFTING_TABLE.Item(), SoulsBlocks.DARK_OAK_CRAFTING_TABLE.Item(), SoulsBlocks.MANGROVE_CRAFTING_TABLE.Item(),
                 SoulsBlocks.WARPED_CRAFTING_TABLE.Item());
+
+        addItems(SoulsTags.CLOTH, SoulsItems.BLACK_CLOTH, SoulsItems.YELLOW_CLOTH,
+                SoulsItems.WHITE_CLOTH, SoulsItems.RED_CLOTH, SoulsItems.PINK_CLOTH, SoulsItems.PURPLE_CLOTH, SoulsItems.ORANGE_CLOTH, SoulsItems.MAGENTA_CLOTH, SoulsItems.CYAN_CLOTH, SoulsItems.LIME_CLOTH,
+                SoulsItems.GREEN_CLOTH, SoulsItems.LIGHT_GRAY_CLOTH, SoulsItems.LIGHT_BLUE_CLOTH, SoulsItems.BLUE_CLOTH, SoulsItems.GREEN_CLOTH, SoulsItems.GRAY_CLOTH, SoulsItems.BROWN_CLOTH);
+
+        addItems(SoulsTags.BARK, SoulsItems.OAK_BARK, SoulsItems.BAMBOO_BARK, SoulsItems.BIRCH_BARK, SoulsItems.CHERRY_BARK, SoulsItems.CRIMSON_BARK, SoulsItems.DARK_OAK_BARK, SoulsItems.JUNGLE_BARK,
+                SoulsItems.MANGROVE_BARK, SoulsItems.SPRUCE_BARK, SoulsItems.WARPED_BARK, SoulsItems.ACACIA_BARK);
     }
 }
